@@ -1,9 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
+    android:id="@+id/main_layout"
     tools:context=".controller.LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/login_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_page"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_header_size"
+        />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/xxlarge_margin"
+
+        />
+
+    <RelativeLayout
+        android:id="@+id/login_layout"
+        android:layout_width="350dp"
+        android:layout_height="423dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_below="@id/logo"
+        android:layout_marginBottom="@dimen/xxxlarge_margin"
+        android:background="@drawable/login_layout_rounded"
+        tools:ignore="MissingConstraints" >
+
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_xxlarge_size"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/normal_margin"
+
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username_field"
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:background="@drawable/login_edittext"
+            android:backgroundTint="#82B1FF"
+            android:digits="@string/valid_character_username"
+            android:hint="@string/username_hint_text"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_below="@id/app_name"
+            android:padding="@dimen/small_margin"
+            android:textColorHint="#000000"
+            android:textSize="@dimen/text_large_size"
+            >
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editusername"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#82B1FF"
+                android:ems="15"
+                android:inputType="text"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_field"
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:layout_below="@id/username_field"
+            android:layout_centerHorizontal="true"
+            app:hintEnabled="true"
+            android:hint="@string/password_hint_text"
+            app:hintAnimationEnabled="true"
+            android:textColorHint="@color/black"
+            android:backgroundTint="#82B1FF"
+            android:background="@drawable/login_edittext">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editpassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:backgroundTint="#82B1FF"
+                android:ems="15"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/sign_in"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/password_field"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/large_margin"
+            android:background="@drawable/login_btn_rounded"
+            android:text="@string/login_button_text"
+            android:textSize="@dimen/text_large_size"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:layout_below="@id/sign_in"
+            android:layout_marginTop="@dimen/xxlarge_margin"
+            android:textColor="#00B8D4"
+            android:textSize="@dimen/text_large_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/normal_margin"
+            android:clickable="true"
+
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
