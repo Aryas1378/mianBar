@@ -7,4 +7,9 @@
     <string name="login_page">صفحه ورود</string>
     <string name="username_hint_text">نام کاربری</string>
     <string name="password_hint_text">رمز عبور</string>
+    <string-array name="job_title">
+        <item>حسابدار</item>
+        <item>غرفه دار</item>
+        <item>راننده</item>
+    </string-array>
 </resources>

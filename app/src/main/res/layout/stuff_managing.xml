@@ -1,6 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="مدیریت کارمندان"
+        tools:ignore="MissingConstraints"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_xlarge_size"
+        android:layout_marginTop="@dimen/text_small_size"
+        />
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/line"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="@dimen/text_small_size"
+        android:layout_marginLeft="@dimen/text_small_size"
+        />
+
+        <EditText
+            android:id="@+id/stuff_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/stuff_managing_size_text_filed"
+            android:paddingRight="10dp"
+            android:layout_below="@+id/line"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_xlarge_size"
+            android:layout_marginRight="@dimen/xxxlarge_margin"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="نام"
+            android:background="@drawable/edit_text_border"
+
+            />
+
+        <EditText
+            android:id="@+id/stuff_Lname"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/stuff_managing_size_text_filed"
+            android:layout_below="@+id/stuff_name"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_xlarge_size"
+            android:layout_marginRight="@dimen/xxxlarge_margin"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="نام خانوادگی"
+            android:background="@drawable/edit_text_border"
+            android:paddingRight="10dp"
+            />
+
+        <EditText
+            android:id="@+id/stuff_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/stuff_managing_size_text_filed"
+            android:layout_below="@+id/stuff_Lname"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_xlarge_size"
+            android:layout_marginRight="@dimen/xxxlarge_margin"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="phone"
+            android:text="شماره تلفن"
+            android:background="@drawable/edit_text_border"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            />
+
+        <EditText
+            android:id="@+id/stuff_salary"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/stuff_managing_size_text_filed"
+            android:layout_below="@+id/stuff_phone_number"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_xlarge_size"
+            android:layout_marginRight="@dimen/xxxlarge_margin"
+            android:ems="10"
+            android:inputType="number"
+            android:text="میزان حقوق"
+            android:background="@drawable/edit_text_border"
+            android:paddingRight="10dp"
+            />
+
+
+    <Spinner
+        android:id="@+id/job_title_spiner"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/stuff_managing_size_text_filed"
+        android:entries="@array/job_title"
+        android:layout_below="@+id/stuff_salary"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/text_xlarge_size"
+        android:layout_marginRight="@dimen/xxxlarge_margin"
+        />
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="تاریخ"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@+id/job_title_spiner"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_xlarge_size"
+        android:layout_marginRight="@dimen/btn_margin_larger"
+        android:layout_marginTop="@dimen/date_margin_top"
+        />
+
+    <Button
+        android:id="@+id/button_date"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Jan 01 2020"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/job_title_spiner"
+        android:layout_marginLeft="@dimen/btn_margin"
+        android:background="@drawable/edit_text_border"
+        android:layout_marginTop="33sp"
+        app:backgroundTint="@color/gray"
+        />
+
+    <Button
+        android:id="@+id/stuff_sub_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:layout_below="@id/button_date"
+        android:layout_marginTop="@dimen/xxxlarge_margin"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        app:backgroundTint="@color/green"
+        android:text="ثبت"
+        android:background="@drawable/edit_text_border"
+        />
+
+
+</RelativeLayout>

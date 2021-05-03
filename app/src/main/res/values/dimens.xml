@@ -8,7 +8,8 @@
     <dimen name="text_small_size">15sp</dimen>
     <dimen name="btn_margin">50dp</dimen>
     <dimen name="btn_margin_larger">70dp</dimen>
-
+    <dimen name="stuff_managing_size_text_filed">35dp</dimen>
+    <dimen name="date_margin_top">40dp</dimen>
 
 
     <dimen name="text_normal_size">16sp</dimen>
