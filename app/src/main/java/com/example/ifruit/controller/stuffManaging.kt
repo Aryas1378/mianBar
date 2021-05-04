@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.DatePicker
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ifruit.R
 import java.util.*
@@ -21,7 +22,7 @@ class stuffManaging :AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.stuff_managing)
 
         pickDate()
 
@@ -38,6 +39,7 @@ class stuffManaging :AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     private fun pickDate(){
         val dateBtn = findViewById(R.id.button_date) as Button
         dateBtn.setOnClickListener{
+
             getDateTimeCalender()
             DatePickerDialog(this, this, year, month, day).show()
         }
