@@ -21,23 +21,23 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/xxlarge_margin"
+        android:layout_marginTop="@dimen/xlarge_margin"
 
         />
 
     <RelativeLayout
         android:id="@+id/login_layout"
         android:layout_width="350dp"
-        android:layout_height="423dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/large_margin"
         android:layout_below="@id/logo"
-        android:layout_marginBottom="@dimen/xxxlarge_margin"
+
         android:background="@drawable/login_layout_rounded"
         tools:ignore="MissingConstraints" >
 
@@ -134,9 +134,10 @@
             android:layout_height="wrap_content"
             android:text="@string/forgot_password"
             android:layout_below="@id/sign_in"
-            android:layout_marginTop="@dimen/xxlarge_margin"
+            android:layout_marginTop="@dimen/large_margin"
             android:textColor="#00B8D4"
             android:textSize="@dimen/text_large_size"
+            android:layout_marginBottom="@dimen/large_margin"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/normal_margin"
             android:clickable="true"
