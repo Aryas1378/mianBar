@@ -21,11 +21,11 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/xlarge_margin"
+        android:layout_marginTop="@dimen/xxlarge_margin"
 
         />
 
@@ -33,9 +33,10 @@
         android:id="@+id/login_layout"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/xlarge_margin"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginTop="@dimen/normal_margin"
         android:layout_below="@id/logo"
 
         android:background="@drawable/login_layout_rounded"
@@ -134,7 +135,7 @@
             android:layout_height="wrap_content"
             android:text="@string/forgot_password"
             android:layout_below="@id/sign_in"
-            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginTop="@dimen/normal_margin"
             android:textColor="#00B8D4"
             android:textSize="@dimen/text_large_size"
             android:layout_marginBottom="@dimen/large_margin"

@@ -16,7 +16,7 @@
     <dimen name="text_xlarge_size">25sp</dimen>
     <dimen name="text_xxlarge_size">30sp</dimen>
     <dimen name="normal_margin">16dp</dimen>
-    <dimen name="xlarge_margin">45dp</dimen>
+    <dimen name="xlarge_margin">40dp</dimen>
     <dimen name="xxlarge_margin">60dp</dimen>
     <dimen name="xxxlarge_margin">80dp</dimen>
     <dimen name="normal_stroke">2dp</dimen>
