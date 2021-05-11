@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.SettingActivity">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/title_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:padding="@dimen/small_margin"
+            android:text="@string/setting"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_header_size"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/dividing_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_content"
+            android:layout_margin="@dimen/small_margin"
+            android:background="@drawable/line"
+            app:layout_constraintTop_toBottomOf="@id/title_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/setting_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_layout"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/change_name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_xlarge_size"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/account_name"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            />
+        <EditText
+            android:id="@+id/change_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="نام"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/large_margin"
+            android:layout_below="@id/change_name_title"
+            android:background="@drawable/edit_text_border"
+            android:textSize="@dimen/text_large_size"
+            android:padding="@dimen/small_margin"
+            />
+
+
+
+        <TextView
+            android:id="@+id/change_color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:text="@string/page_color"
+            android:layout_below="@id/change_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_xlarge_size"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/modifier_color_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/change_color_title"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:background="@color/black"
+            android:padding="@dimen/normal_margin">
+
+            <ImageButton
+                android:id="@+id/modifier_to_red_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circlebtn"
+                android:backgroundTint="#880E4F" />
+
+            <ImageButton
+                android:id="@+id/modifier_to_blue_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:background="@drawable/circlebtn"
+                android:backgroundTint="#1A237E" />
+
+            <ImageButton
+                android:id="@+id/modifier_to_green_btn"
+                android:layout_width="50dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:background="@drawable/circlebtn"
+                android:backgroundTint="#004D40" />
+
+            <ImageButton
+                android:id="@+id/modifier_to_gray_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:background="@drawable/circlebtn"
+                android:backgroundTint="#757575" />
+
+            <ImageButton
+                android:id="@+id/modifier_to_white_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:background="@drawable/circlebtn"
+                android:backgroundTint="#ffffff" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/change_font_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/modifier_color_btn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:text="@string/change_font"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_xlarge_size"
+            android:textStyle="bold"
+            />
+        <Spinner
+            android:id="@+id/change_font_style"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/change_font_title"
+            android:layout_margin="@dimen/normal_margin"
+            />
+
+        <ImageButton
+            android:id="@+id/savebtn"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/change_font_style"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/xlarge_margin"
+            android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
+
+
+            android:background="@drawable/savebtn"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
