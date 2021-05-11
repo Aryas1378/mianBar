@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.CostActivity">
+
+    <TextView
+        android:id="@+id/contractheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/normal_margin"
+        android:text="@string/fee"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_header_size"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/dividing_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contractheader"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/line"
+        app:layout_constraintTop_toBottomOf="@id/contractheader" />
+
+    <EditText
+        android:id="@+id/feereason"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dividing_line"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/fee_reason"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/feeamont"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feereason"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/normal_margin"
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/fee_amont"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feeamont"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/normal_margin"
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/date"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin" />
+
+    <ImageButton
+        android:id="@+id/savebtn"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/xxxlarge_margin"
+        android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
+        android:background="@drawable/savebtn"
+        />
+
+</RelativeLayout>
