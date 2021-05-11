@@ -27,4 +27,17 @@
     <string name="change_font">تغییر فونت</string>
     <string name="save_changes_button">ثبت تغییرات</string>
     <string name="account_name">تغییر نام</string>
+    ////////////////////////////////////////////////////////Costs
+    <string name="fee_reason">مورد هزینه</string>
+    <string name="fee_amont">مقدار هزینه</string>
+    <string name="date">تاریخ</string>
+    <string name="save">ثبت</string>
+    /////////////////////////////////////////////////////////Accounting Ac
+    <string name="accounting">حسابداری</string>
+    <string name="fee">هزینه ها</string>
+    <string name="contract">قرارداد</string>
+    <string name="income">درآمد</string>
+    <string name="salary">حقوق</string>
+    <string name="debt">بدهکاری و بستانکاری</string>
+    <string name="fruit_info">اطلاعات میوه</string>
 </resources>
