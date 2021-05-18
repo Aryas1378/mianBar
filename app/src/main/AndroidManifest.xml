@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IFruit">
-        <activity android:name=".controller.ForgotPasswordActivity"></activity>
+        <activity android:name=".controller.SMSPanelActivity"></activity>
+        <activity android:name=".controller.ForgotPasswordActivity" />
         <activity android:name=".controller.MainMenuActivity" />
         <activity android:name=".controller.CostActivity">
 
