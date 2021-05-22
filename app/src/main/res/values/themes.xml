@@ -22,4 +22,7 @@
     <style name="Theme.IFruit.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.IFruit.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
