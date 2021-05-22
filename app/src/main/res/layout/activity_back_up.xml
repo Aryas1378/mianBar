@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray"
     android:orientation="vertical"
+
     tools:context=".controller.MainActivity">
 
 
@@ -93,19 +94,18 @@
 
     </RadioGroup>
 
-    <Button
+    <ImageButton
         android:id="@+id/backUpSubBtn"
         android:layout_width="wrap_content"
-        android:layout_height="69dp"
+        android:layout_height="118dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="526dp"
-        android:layout_marginEnd="78dp"
-        android:backgroundTint="@color/gray"
-        android:text="ثبت"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/save_button"
         android:textSize="25dp"
         android:textStyle="bold" />
 
