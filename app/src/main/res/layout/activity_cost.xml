@@ -11,7 +11,7 @@
         android:id="@+id/contractheader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_margin"
+
         android:padding="@dimen/normal_margin"
         android:text="@string/fee"
         android:textColor="@color/black"
