@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".controller.MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bright_yellow"
+
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Toolbar.TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="15dp"
+        android:text="پشتیبان گیری"
+
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="489dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="94dp"
+        android:orientation="vertical"
+        >
+
+        <RadioButton
+            android:id="@+id/radio_button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layoutDirection="rtl"
+            android:text="هیچوقت"
+            style="@style/Toolbar.TitleText"
+            android:buttonTint="@color/black"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_button_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:layoutDirection="rtl"
+            style="@style/Toolbar.TitleText"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="روزانه"
+            android:checked="true"
+            android:layout_marginTop="50dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_button_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:layoutDirection="rtl"
+            style="@style/Toolbar.TitleText"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:text="هفتگی" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:layoutDirection="rtl"
+            style="@style/Toolbar.TitleText"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:text="ماهانه" />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/backUpSubBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="526dp"
+        android:layout_marginEnd="78dp"
+        android:backgroundTint="@color/gray"
+        android:text="ثبت"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
+
+

@@ -43,4 +43,6 @@
     ///////////////////////////////////////////////////////SMS AC
     <string name="phone_number">شماره تلفن</string>
     <string name="send">ارسال</string>
+    <string name="panel_title">پنل پیامکی</string>
+    <string name="massage_edittext_hint">متن پیام ...</string>
 </resources>

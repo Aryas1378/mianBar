@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="large_margin">20dp</dimen>
-    <dimen name="text_header_size">40sp</dimen>
     <dimen name="small_margin">10dp</dimen>
-    <dimen name="text_large_size">20sp</dimen>
-    <dimen name="text_larger_size">25sp</dimen>
-    <dimen name="text_small_size">15sp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="xlarge_margin">40dp</dimen>
+    <dimen name="xxlarge_margin">60dp</dimen>
+    <dimen name="xxxlarge_margin">80dp</dimen>
+    <dimen name="normal_stroke">2dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
     <dimen name="btn_margin">50dp</dimen>
     <dimen name="btn_margin_larger">70dp</dimen>
     <dimen name="stuff_managing_size_text_filed">35dp</dimen>
@@ -15,10 +17,10 @@
     <dimen name="text_normal_size">16sp</dimen>
     <dimen name="text_xlarge_size">25sp</dimen>
     <dimen name="text_xxlarge_size">30sp</dimen>
-    <dimen name="normal_margin">16dp</dimen>
-    <dimen name="xlarge_margin">40dp</dimen>
-    <dimen name="xxlarge_margin">60dp</dimen>
-    <dimen name="xxxlarge_margin">80dp</dimen>
-    <dimen name="normal_stroke">2dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_large_size">20sp</dimen>
+    <dimen name="text_larger_size">25sp</dimen>
+    <dimen name="text_small_size">15sp</dimen>
+    <dimen name="text_header_size">40sp</dimen>
+
+
 </resources>

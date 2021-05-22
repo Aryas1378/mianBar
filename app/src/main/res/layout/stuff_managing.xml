@@ -32,6 +32,8 @@
         android:layout_marginLeft="@dimen/text_small_size"
         />
 
+
+
     <EditText
         android:id="@+id/stuff_name"
         android:layout_width="wrap_content"
