@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/large_margin"
+        android:layout_margin="@dimen/small_margin"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <TextView
+                android:id="@+id/contract_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تیتر قرارداد"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/contract_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نام"
+                android:textSize="@dimen/text_normal_size"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/contract_title"
+                android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/transaction_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_normal_size"
+                android:text="حجم معامله"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/contract_name"
+                android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/national_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_normal_size"
+                android:text="کد ملی"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/transaction_volume"
+                android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/contract_product_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_normal_size"
+                android:text="مشخصات محصول"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/national_code"
+                android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/contract_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_normal_size"
+                android:layout_alignParentLeft="true"
+                android:text="date"
+                android:layout_below="@id/contract_product_info"
+                android:padding="@dimen/cardview_margin"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

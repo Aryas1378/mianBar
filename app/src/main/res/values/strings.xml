@@ -45,4 +45,8 @@
     <string name="send">ارسال</string>
     <string name="panel_title">پنل پیامکی</string>
     <string name="massage_edittext_hint">متن پیام ...</string>
+
+    ///////////////////////////////////////////////////////Search AC
+    <string name="data">اطلاعات</string>
+    <string name="search_edittext">جستجو ...</string>
 </resources>
