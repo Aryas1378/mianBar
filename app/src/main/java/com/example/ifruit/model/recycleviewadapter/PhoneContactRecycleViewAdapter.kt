@@ -44,7 +44,7 @@ class PhoneContactRecycleViewAdapter(
         return phoneNumberGroup.count()
     }
 
-    fun updateFruitList(dataList: ArrayList<PhoneContactDataBaseModel>) {
+    fun updatePhoneContactList(dataList: ArrayList<PhoneContactDataBaseModel>) {
         phoneNumberGroup = dataList
         notifyDataSetChanged()
     }

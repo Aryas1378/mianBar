@@ -253,7 +253,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         Log.d("Data Insertion", "Success")
     }
 
-    fun getDebtDataBase(id: Int): DebtInfo? {
+    fun readDebtDataBase(id: Int): DebtInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor: Cursor = db.query(
                 TABLE_NAME6, arrayOf(
@@ -442,6 +442,41 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return listFruitInfo
 
     }
+    fun readFruitDataBase(id: Int): FruitInfo? {
+        var db: SQLiteDatabase = writableDatabase
+        var cursor: Cursor = db.query(
+            TABLE_NAME2, arrayOf(
+                KEY_FRUIT_ID,
+                KEY_FRUIT_NAME,
+                KEY_FRUIT_PRICE,
+                KEY_FRUIT_QUALITY
+            ), KEY_DEBT_ID + "=?", arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+
+        if (cursor != null) {
+            cursor.moveToFirst()
+            var Mydb = FruitInfo()
+            Mydb.name = cursor.getString(cursor.getColumnIndex(KEY_FRUIT_NAME))
+            Mydb.price = cursor.getInt(cursor.getColumnIndex(KEY_FRUIT_PRICE))
+            Mydb.qlt = cursor.getInt(cursor.getColumnIndex(KEY_FRUIT_QUALITY))
+
+
+            return Mydb
+        }
+        return null
+    }
+
+
+    fun getFruitTableRowCount(): Int {
+        val db: SQLiteDatabase = readableDatabase
+        val counter = "SELECT * FROM $TABLE_NAME2"
+        var cursor: Cursor = db.rawQuery(counter, null)
+        return cursor.count
+
+    }
 
     ////////////////////////////////
     //CRUD functions for employee table
@@ -482,6 +517,34 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 //        db.close()
     }
 
+    fun readSalaryDataBase(id: Int): SalaryInfo? {
+        var db: SQLiteDatabase = writableDatabase
+        var cursor: Cursor = db.query(
+            TABLE_NAME3, arrayOf(
+                KEY_SALARY_ID,
+                KEY_SALARY_NAME,
+                KEY_SALARY_SALARY,
+                KEY_SALARY_PHONENUMBER
+            ), KEY_DEBT_ID + "=?", arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+
+        if (cursor != null) {
+            cursor.moveToFirst()
+            var Mydb = SalaryInfo()
+            Mydb.name = cursor.getString(cursor.getColumnIndex(KEY_SALARY_NAME))
+            Mydb.salary = cursor.getInt(cursor.getColumnIndex(KEY_SALARY_SALARY))
+            Mydb.phoneNumber = cursor.getInt(cursor.getColumnIndex(KEY_SALARY_PHONENUMBER))
+
+
+            return Mydb
+        }
+        return null
+    }
+
+
     fun updateSalary(salaryInfo: SalaryInfo): Int {
         val db = this.writableDatabase
         val values = ContentValues()
@@ -499,6 +562,14 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.delete(TABLE_NAME3, "$KEY_SALARY_ID=?", arrayOf(salaryInfo.id.toString()))
         db.close()
     }
+    fun getSalaryTableRowCount(): Int {
+        val db: SQLiteDatabase = readableDatabase
+        val counter = "SELECT * FROM $TABLE_NAME3"
+        var cursor: Cursor = db.rawQuery(counter, null)
+        return cursor.count
+
+    }
+
 
     ////////////////////////////////
     //CRUD functions for employee management table

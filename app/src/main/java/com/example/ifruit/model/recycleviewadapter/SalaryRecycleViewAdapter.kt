@@ -40,7 +40,7 @@ class SalaryRecycleViewAdapter(val context: Context, var salaryList: ArrayList<S
     override fun getItemCount(): Int {
         return salaryList.count()
     }
-    fun updateFruitList(dataList: ArrayList<SalaryDataBaseModel>) {
+    fun updateSalaryList(dataList: ArrayList<SalaryDataBaseModel>) {
         salaryList = dataList
         notifyDataSetChanged()
     }
