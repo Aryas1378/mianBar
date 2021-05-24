@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/background"
+    android:background="#616161"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".controller.CostActivity">
@@ -38,6 +39,7 @@
         android:layout_marginTop="@dimen/large_margin"
         android:background="@drawable/edit_text_border"
         android:hint="@string/fee_reason"
+        android:textColorHint="@color/white"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
@@ -52,6 +54,7 @@
         android:layout_margin="@dimen/normal_margin"
         android:background="@drawable/edit_text_border"
         android:hint="@string/fee_amont"
+        android:textColorHint="@color/white"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin" />
@@ -65,19 +68,20 @@
         android:layout_margin="@dimen/normal_margin"
         android:background="@drawable/edit_text_border"
         android:hint="@string/date"
+        android:textColorHint="@color/white"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin" />
 
     <ImageButton
         android:id="@+id/savebtn"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
         android:layout_below="@id/date"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/xxxlarge_margin"
         android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
-        android:background="@drawable/savebtn"
+        android:background="@drawable/save_button"
         />
 
 </RelativeLayout>

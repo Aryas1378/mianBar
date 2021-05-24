@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/large_margin"
+        android:layout_margin="@dimen/small_margin"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <TextView
+                android:id="@+id/salaryes_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نام"
+                android:textSize="@dimen/text_normal_size"
+                android:padding="@dimen/cardview_margin"
+                android:layout_alignParentEnd="true"
+                />
+            <TextView
+                android:id="@+id/salary_salary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="حقوق"
+                android:textSize="@dimen/text_normal_size"
+                android:padding="@dimen/cardview_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/salaryes_name"
+                />
+            <TextView
+                android:id="@+id/salary_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="شماره تماس"
+                android:textSize="@dimen/text_normal_size"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/salary_salary"
+                android:padding="@dimen/cardview_margin"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

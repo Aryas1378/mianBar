@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
                             user
                         ) && checkPassword(getUser.password.toString(), pass)
                     ) {
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, MainMenuActivity::class.java)
                         startActivity(intent)
                         id = i
                         counter++

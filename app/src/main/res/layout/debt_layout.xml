@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/large_margin"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <TextView
+                android:id="@+id/debt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardview_margin"
+                android:text="نام"
+                android:textSize="@dimen/text_normal_size"
+                android:layout_alignParentEnd="true"
+                />
+
+            <TextView
+                android:id="@+id/debt_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardview_margin"
+                android:text="شماره تماس"
+                android:textSize="@dimen/text_normal_size"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/debt_name"
+                />
+            <TextView
+                android:id="@+id/debt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_normal_size"
+                android:padding="@dimen/cardview_margin"
+                android:text="مقدار بدهی"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/debt_phone_number"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

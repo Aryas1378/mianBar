@@ -20,7 +20,7 @@ class SMSPanelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_s_m_s_panel)
 
-        val sendBtn = findViewById<Button>(R.id.send_massage)
+        val sendBtn = findViewById<ImageButton>(R.id.send_massage)
         val phoneNumber = findViewById<EditText>(R.id.phone_number)
         val textMassage = findViewById<EditText>(R.id.massage)
         val addNumImageButton = findViewById<ImageButton>(R.id.add_number)
