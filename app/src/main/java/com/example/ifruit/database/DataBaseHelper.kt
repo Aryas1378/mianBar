@@ -16,7 +16,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     var CREATE_DEBT_TABLE = "CREATE TABLE " + TABLE_NAME6 +
             "(" + KEY_DEBT_ID + " INTEGER PRIMARY KEY," +
             KEY_DEBT_NAME + " TEXT," +
-            KEY_DEBT_LAST_NAME + " TEXT," +
             KEY_DEBT_PHONE_NUMBER + " LONG," +
             KEY_DEBT_AMOUNT + " LONG)"
 
@@ -27,7 +26,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                     KEY_COST_DATE + " DATE)"
     var CREATE_CONTRACT_TABLE =
             "CREATE TABLE " + TABLE_NAME4 + "(" + KEY_CONTRACT_ID + " INTEGER PRIMARY KEY," +
-                    KEY_CONTRACT_NAME + " VARCHAR(25)," +
+                    KEY_CONTRACT_NAME + " VARCHAR(30)," +
                     KEY_CONTRACT_NATIONAL_CODE + " BIGINT," +
                     KEY_CONTRACT_TRANSACION_VOlLME + " BIGINT," +
                     KEY_CONTRACT_CONTRACT_TITLE + " TEXT," +
@@ -52,8 +51,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     val CREATE_EMPLOYEE_MANAGEMENT_TABLE =
             "CREATE TABLE " + TABLE_NAME7 + "(" + KEY_EMPLOYEE_MANAGEMENT_ID + " INTEGER PRIMARY KEY," +
-                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " VARCHAR(20)," +
-                    KEY_EMPLOYEE_MANAGEMENT_LAST_NAME + " VARCHAR(25)," +
+                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " VARCHAR(30)," +
                     KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " LONG," +
                     KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " DATE," +
                     KEY_EMPLOYEE_MANAGEMENT_SALARY + " LONG," +
@@ -61,14 +59,14 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     val CREATE_SETTING_TABLE =
             "CREATE TABLE " + TABLE_NAME8 + "(" + KEY_SETTING_ID + " INTEGER PRIMARY KEY," +
-                    KET_SETTING_NAME + " VARCHAR(20)," +
+                    KET_SETTING_NAME + " VARCHAR(30)," +
                     KEY_SETTING_COLOR + " TEXT," +
                     KEY_SETTING_FONT + " TEXT)"
 
     val CREATE_CONTACT_TABLE =
             "CREATE TABLE " + TABLE_NAME9 + "(" + KEY_CONTACT_ID + " INTEGER PRIMARY KEY," +
-                    KEY_CONTACT_FIRST_NAME + " VARCHAR(20)," +
-                    KEY_CONTACT_LAST_NAME + " VARCHAR(25)," +
+                    KEY_CONTACT_FIRST_NAME + " VARCHAR(30)," +
+                    KEY_CONTACT_TITLE + " VARCHAR(30)," +
                     KEY_CONTACT_PHONE_NUMBER + " LONG)"
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -246,7 +244,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         var values: ContentValues = ContentValues()
 
         values.put(KEY_DEBT_NAME, debtInfo.Name)
-        values.put(KEY_DEBT_LAST_NAME, debtInfo.LastName)
         values.put(KEY_DEBT_PHONE_NUMBER, debtInfo.PhoneNumber)
         values.put(KEY_DEBT_AMOUNT, debtInfo.DebtAmount)
 
@@ -262,7 +259,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 TABLE_NAME6, arrayOf(
                 KEY_DEBT_ID,
                 KEY_DEBT_NAME,
-                KEY_DEBT_LAST_NAME,
                 KEY_DEBT_PHONE_NUMBER,
                 KEY_DEBT_AMOUNT
         ), KEY_DEBT_ID + "=?", arrayOf(id.toString()),
@@ -275,7 +271,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             cursor.moveToFirst()
             var Mydb = DebtInfo()
             Mydb.Name = cursor.getString(cursor.getColumnIndex(KEY_DEBT_NAME))
-            Mydb.LastName = cursor.getString(cursor.getColumnIndex(KEY_DEBT_LAST_NAME))
             Mydb.PhoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_DEBT_PHONE_NUMBER))
             Mydb.DebtAmount = cursor.getLong(cursor.getColumnIndex(KEY_DEBT_AMOUNT))
 
@@ -515,7 +510,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
         var values: ContentValues = ContentValues();
         values.put(KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME, employeeManagementInfo.firstName)
-        values.put(KEY_EMPLOYEE_MANAGEMENT_LAST_NAME, employeeManagementInfo.lastName)
         values.put(KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER, employeeManagementInfo.phoneNumber)
         values.put(KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE, employeeManagementInfo.dateOfEmployee)
         values.put(KEY_EMPLOYEE_MANAGEMENT_SALARY, employeeManagementInfo.salary)
@@ -535,7 +529,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 TABLE_NAME7, arrayOf(
                 KEY_EMPLOYEE_MANAGEMENT_ID,
                 KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME,
-                KEY_EMPLOYEE_MANAGEMENT_LAST_NAME,
                 KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER,
                 KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
                 KEY_EMPLOYEE_MANAGEMENT_SALARY,
@@ -548,7 +541,6 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
             var employeeManagementInfo = EmployeeManagementInfo()
             employeeManagementInfo.firstName = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME))
-            employeeManagementInfo.lastName = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_LAST_NAME))
             employeeManagementInfo.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER))
             employeeManagementInfo.dateOfEmployee = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE))
             employeeManagementInfo.salary = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_SALARY))
@@ -651,7 +643,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
         values.put(KEY_CONTACT_FIRST_NAME, contactInfo.firstName)
-        values.put(KEY_CONTACT_LAST_NAME, contactInfo.lastName)
+        values.put(KEY_CONTACT_TITLE, contactInfo.title)
         values.put(KEY_CONTACT_PHONE_NUMBER, contactInfo.phoneNumber)
 
         db.insert(TABLE_NAME9, null, values)
@@ -667,7 +659,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 TABLE_NAME9, arrayOf(
                 KEY_CONTACT_ID,
                 KEY_CONTACT_FIRST_NAME,
-                KEY_CONTACT_LAST_NAME,
+                KEY_CONTACT_TITLE,
                 KEY_CONTACT_PHONE_NUMBER
         ), KEY_CONTACT_ID + "=?", arrayOf(id.toString()), null, null, null
         )
@@ -677,7 +669,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
             val contactInfo = ContactInfo()
             contactInfo.firstName = cursor.getString(cursor.getColumnIndex(KEY_CONTACT_FIRST_NAME))
-            contactInfo.lastName = cursor.getString(cursor.getColumnIndex(KEY_CONTACT_LAST_NAME))
+            contactInfo.title = cursor.getString(cursor.getColumnIndex(KEY_CONTACT_TITLE))
             contactInfo.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_CONTACT_PHONE_NUMBER))
 
 
@@ -698,7 +690,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
         db.execSQL("UPDATE " + TABLE_NAME9 + " SET " +
                 "first name = " + "'" + contactInfo.firstName + "'," +
-                "last name= " + "'" + contactInfo.lastName + "'," +
+                "last name= " + "'" + contactInfo.title + "'," +
                 "phone number= '" + contactInfo.phoneNumber + "'" +
                 " WHERE id = " + "'" + id + "'");
         //  return db.update(TABLE_NAME2, values, KEY_ID + "=?", new String[] { id })

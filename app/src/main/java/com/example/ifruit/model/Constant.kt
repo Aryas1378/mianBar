@@ -1,6 +1,6 @@
 package com.example.ifruit.model
 
-val DATABASE_VERSION: Int = 10
+val DATABASE_VERSION: Int = 11
 val DATABASE_NAME: String = "ifruit.db"
 val TABLE_NAME1: String = "User"
 val TABLE_NAME2: String = "Fruit"
@@ -54,7 +54,6 @@ val KEY_CONTRACT_PRODUCT_INFORMATON: String = "Product_Information"
 
 val KEY_DEBT_ID: String = "id"
 val KEY_DEBT_NAME: String = "people_names"
-val KEY_DEBT_LAST_NAME: String = "people_last_name"
 val KEY_DEBT_PHONE_NUMBER: String = "phone_number"
 val KEY_DEBT_AMOUNT: String = "debt_amount"
 
@@ -62,7 +61,6 @@ val KEY_DEBT_AMOUNT: String = "debt_amount"
 
 val KEY_EMPLOYEE_MANAGEMENT_ID :String="id"
 val KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME :String= "first_name"
-val KEY_EMPLOYEE_MANAGEMENT_LAST_NAME:String="last_name"
 val KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER:String="phone_number"
 val KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE:String="date_of_employee"
 val KEY_EMPLOYEE_MANAGEMENT_SALARY:String="salary"
@@ -79,5 +77,5 @@ val KEY_SETTING_FONT:String="font"
 
 val KEY_CONTACT_ID:String="id"
 val KEY_CONTACT_FIRST_NAME:String="first_name"
-val KEY_CONTACT_LAST_NAME:String="last_name"
+val KEY_CONTACT_TITLE:String="title"
 val KEY_CONTACT_PHONE_NUMBER:String="phone_number"
