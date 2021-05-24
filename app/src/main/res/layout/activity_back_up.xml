@@ -51,7 +51,9 @@
             style="@style/Toolbar.TitleText"
             android:buttonTint="@color/black"
             android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/xxlarge_margin"
+            />
 
         <RadioButton
             android:id="@+id/radio_button_2"
@@ -104,7 +106,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="120dp"
         android:layout_marginEnd="120dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         android:background="@drawable/save_button"
         android:textSize="25dp"
         android:textStyle="bold" />

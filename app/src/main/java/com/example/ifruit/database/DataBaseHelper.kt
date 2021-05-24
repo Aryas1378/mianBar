@@ -718,4 +718,17 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     }
 
+    fun userDbCopy():Cursor{
+        val fruitDb : SQLiteDatabase = readableDatabase
+        val cursor: Cursor = fruitDb.query(TABLE_NAME1, arrayOf(
+            KEY_USER_ID,
+            KEY_USER_NAME,
+            KEY_USER_EMAIL,
+            KEY_USER_PASSWORD
+        ), null, null,null,null,null)
+        cursor.moveToFirst()
+        fruitDb.close()
+        return cursor
+    }
+
 }
