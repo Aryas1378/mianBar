@@ -31,7 +31,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                     KEY_CONTRACT_TRANSACION_VOlLME + " BIGINT," +
                     KEY_CONTRACT_CONTRACT_TITLE + " TEXT," +
                     KEY_CONTRACT_PRODUCT_INFORMATON + " TEXT," +
-                    KEY_COST_DATE + " DATE)"
+                    KEY_CONTRACT_DATE + " DATE)"
     val CREATE_USER_TABLE =
             "CREATE TABLE " + TABLE_NAME1 + "(" + KEY_USER_ID + " INTEGER PRIMARY KEY," +
                     KEY_USER_NAME + " TEXT," +
@@ -301,7 +301,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         values.put(KEY_CONTRACT_TRANSACION_VOlLME, contractinfo.transactionVolume)
         values.put(KEY_CONTRACT_CONTRACT_TITLE, contractinfo.contractTitle)
         values.put(KEY_CONTRACT_PRODUCT_INFORMATON, contractinfo.productInformation)
-        values.put(KEY_COST_DATE, contractinfo.date)
+        values.put(KEY_CONTRACT_DATE, contractinfo.date)
 
 
         db.insert(TABLE_NAME4, null, values)
@@ -321,7 +321,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 KEY_CONTRACT_TRANSACION_VOlLME,
                 KEY_CONTRACT_CONTRACT_TITLE,
                 KEY_CONTRACT_PRODUCT_INFORMATON,
-                KEY_COST_DATE
+                KEY_CONTRACT_DATE
         ), KEY_CONTRACT_ID + "=?", arrayOf(id.toString()), null, null, null
         )
 
@@ -350,7 +350,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                             KEY_CONTRACT_PRODUCT_INFORMATON
                     )
             )
-            contractinfo.date = cursor.getLong(cursor.getColumnIndex(KEY_COST_DATE))
+            contractinfo.date = cursor.getLong(cursor.getColumnIndex(KEY_CONTRACT_DATE))
 
 
             return contractinfo
@@ -793,5 +793,108 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         fruitDb.close()
         return cursor
     }
+
+    fun debtDbCopy():Cursor{
+        val debtDb:SQLiteDatabase = readableDatabase
+        val cursor:Cursor = debtDb.query(TABLE_NAME6, arrayOf(
+            KEY_DEBT_ID,
+            KEY_DEBT_NAME,
+            KEY_DEBT_PHONE_NUMBER,
+            KEY_DEBT_PHONE_NUMBER
+        ), null, null, null, null, null)
+        cursor.moveToFirst()
+        debtDb.close()
+        return cursor
+    }
+
+    fun costDbCopy():Cursor{
+        val costDb:SQLiteDatabase = readableDatabase
+        val cursor:Cursor = costDb.query(TABLE_NAME5, arrayOf(
+            KEY_COST_ID,
+            KEY_COST_REASON,
+            KEY_COST_AMOUNT,
+            KEY_COST_DATE
+        ),null, null, null, null, null)
+        cursor.moveToFirst()
+        costDb.close()
+        return cursor
+    }
+
+    fun contractDbCopy():Cursor{
+        val contractDb:SQLiteDatabase = readableDatabase
+        val cursor:Cursor = contractDb.query(TABLE_NAME4, arrayOf(
+            KEY_CONTRACT_ID,
+            KEY_CONTRACT_NAME,
+            KEY_CONTRACT_NATIONAL_CODE,
+            KEY_CONTRACT_TRANSACION_VOlLME,
+            KEY_CONTRACT_CONTRACT_TITLE,
+            KEY_CONTRACT_PRODUCT_INFORMATON,
+            KEY_CONTRACT_DATE
+        ),null, null, null, null, null)
+        cursor.moveToFirst()
+        contractDb.close()
+        return cursor
+    }
+
+    fun fruitDbCopy():Cursor{
+        val fruitDb:SQLiteDatabase = readableDatabase
+        val cursor:Cursor = fruitDb.query(TABLE_NAME2, arrayOf(
+            KEY_FRUIT_ID,
+            KEY_FRUIT_NAME,
+            KEY_FRUIT_PRICE,
+            KEY_FRUIT_QUALITY
+        ), null, null,null,null,null)
+        cursor.moveToFirst()
+        fruitDb.close()
+        return cursor
+    }
+
+    fun salaryDbCopy():Cursor{
+        val salaryDb:SQLiteDatabase = readableDatabase
+        val cursor:Cursor = salaryDb.query(TABLE_NAME3, arrayOf(
+            KEY_SALARY_ID,
+            KEY_SALARY_NAME,
+            KEY_SALARY_SALARY,
+            KEY_SALARY_PHONENUMBER
+        ),null, null, null, null, null)
+        cursor.moveToFirst()
+        salaryDb.close()
+        return cursor
+    }
+
+    fun employeeDbCopy():Cursor{
+        val employeeDb:SQLiteDatabase = readableDatabase
+        val cursor:Cursor = employeeDb.query(TABLE_NAME7, arrayOf(
+            KEY_EMPLOYEE_MANAGEMENT_ID,
+            KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME,
+            KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER,
+            KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
+            KEY_EMPLOYEE_MANAGEMENT_SALARY,
+            KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE
+        ), null, null, null, null, null)
+        cursor.moveToFirst()
+        employeeDb.close()
+        return cursor
+    }
+
+    fun contactDbCopy():Cursor{
+        val contactDb:SQLiteDatabase= readableDatabase
+        val cursor:Cursor = contactDb.query(TABLE_NAME9, arrayOf(
+            KEY_CONTACT_ID,
+            KEY_CONTACT_FIRST_NAME,
+            KEY_CONTACT_TITLE,
+            KEY_CONTACT_PHONE_NUMBER
+        ),null, null, null, null, null)
+        cursor.moveToFirst()
+        contactDb.close()
+        return cursor
+    }
+
+
+
+
+
+
+
 
 }
