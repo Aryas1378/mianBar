@@ -17,31 +17,67 @@
             >
 
             <TextView
+                android:id="@+id/salaryes_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/salary_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+
+                />
+            <TextView
                 android:id="@+id/salaryes_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="نام"
+                android:text="..."
                 android:textSize="@dimen/text_normal_size"
                 android:padding="@dimen/cardview_margin"
-                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/salaryes_name_title"
+                />
+            <TextView
+                android:id="@+id/salary_salary_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/salary_amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:layout_below="@id/salaryes_name"
                 />
             <TextView
                 android:id="@+id/salary_salary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="حقوق"
+                android:text="..."
                 android:textSize="@dimen/text_normal_size"
                 android:padding="@dimen/cardview_margin"
-                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/salary_salary_title"
                 android:layout_below="@id/salaryes_name"
+                />
+            <TextView
+                android:id="@+id/salary_phone_number_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/salary_phone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:layout_below="@id/salary_salary"
                 />
             <TextView
                 android:id="@+id/salary_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="شماره تماس"
+                android:text="..."
                 android:textSize="@dimen/text_normal_size"
-                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/salary_phone_number_title"
                 android:layout_below="@id/salary_salary"
                 android:padding="@dimen/cardview_margin"
                 />

@@ -18,35 +18,70 @@
             >
 
             <TextView
+                android:id="@+id/debt_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:text="@string/debtor_name"
+                />
+
+            <TextView
                 android:id="@+id/debt_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/debt_name_title"
                 android:padding="@dimen/cardview_margin"
-                android:text="نام"
+                android:text="..."
+                android:textSize="@dimen/text_normal_size" />
+
+            <TextView
+                android:id="@+id/debt_phone_number_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_normal_size"
-                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:text="@string/debtor_phone_num"
+                android:layout_below="@id/debt_name"
                 />
 
             <TextView
                 android:id="@+id/debt_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/cardview_margin"
-                android:text="شماره تماس"
-                android:textSize="@dimen/text_normal_size"
-                android:layout_alignParentEnd="true"
                 android:layout_below="@id/debt_name"
+                android:layout_toLeftOf="@id/debt_phone_number_title"
+                android:padding="@dimen/cardview_margin"
+                android:text="..."
+                android:textSize="@dimen/text_normal_size" />
+            <TextView
+                android:id="@+id/debt_amount_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:text="@string/debtor_debt"
+                android:layout_below="@id/debt_phone_number"
                 />
+
             <TextView
                 android:id="@+id/debt_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_normal_size"
-                android:padding="@dimen/cardview_margin"
-                android:text="مقدار بدهی"
-                android:layout_alignParentEnd="true"
                 android:layout_below="@+id/debt_phone_number"
-                />
+                android:layout_toLeftOf="@id/debt_amount_title"
+                android:padding="@dimen/cardview_margin"
+                android:text="..."
+                android:textSize="@dimen/text_normal_size" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

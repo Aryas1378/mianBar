@@ -16,31 +16,68 @@
             >
 
             <TextView
+                android:id="@+id/phone_contact_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/contact_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
                 android:id="@+id/phone_contact_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/phone_contact_name_title"
+                android:padding="@dimen/cardview_margin"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phone_contact_number_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/contact_phone"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_normal_size"
                 android:textStyle="bold"
-                android:padding="@dimen/cardview_margin"
-                android:layout_alignParentEnd="true" />
-
+                android:layout_below="@id/phone_contact_name"
+                />
             <TextView
                 android:id="@+id/phone_contact_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_normal_size"
+                android:layout_below="@id/phone_contact_name"
+                android:layout_toLeftOf="@id/phone_contact_number_title"
                 android:padding="@dimen/cardview_margin"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@id/phone_contact_name" />
+                android:textSize="@dimen/text_normal_size" />
 
+            <TextView
+                android:id="@+id/contact_title_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/contact_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:layout_below="@id/phone_contact_number"
+                />
             <TextView
                 android:id="@+id/contact_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_normal_size"
+                android:layout_below="@id/phone_contact_number"
+                android:layout_toLeftOf="@id/contact_title_title"
                 android:padding="@dimen/cardview_margin"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@id/phone_contact_number" />
+                android:textSize="@dimen/text_normal_size" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

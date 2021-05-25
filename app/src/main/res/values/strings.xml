@@ -28,10 +28,19 @@
     <string name="save_changes_button">ثبت تغییرات</string>
     <string name="account_name">تغییر نام</string>
     ////////////////////////////////////////////////////////Costs
-    <string name="fee_reason">مورد هزینه</string>
-    <string name="fee_amont">مقدار هزینه</string>
-    <string name="date">تاریخ</string>
+    <string name="fee_reason_hint">مورد هزینه</string>
+    <string name="fee_amount_hint">مقدار هزینه</string>
+    <string name="date_hint">تاریخ</string>
     <string name="save">ثبت</string>
+
+    ///////////////////////////////////////////////////////Contract
+    <string name="name_hint">نام مشتری</string>
+    <string name="national_code_hint">کد ملی</string>
+    <string name="Transaction_volume_hint">حجم معامله</string>
+    <string name="Contract_title_hint">عنوان قرارداد</string>
+    <string name="Product_Information_hint">اطلاعات محصول</string>
+    <string name="contract_date_hint">تاریخ </string>
+
     /////////////////////////////////////////////////////////Accounting Ac
     <string name="accounting">حسابداری</string>
     <string name="fee">هزینه ها</string>
@@ -49,4 +58,40 @@
     ///////////////////////////////////////////////////////Search AC
     <string name="data">اطلاعات</string>
     <string name="search_edittext">جستجو ...</string>
+
+
+    //////////////////////////////////////////////////////cost recycle view layout
+    <string name="cost_reason">دلیل هزینه : </string>
+    <string name="cost_amount">مقدار هزینه : </string>
+    <string name="cost_date">تاریخ هزینه : </string>
+    /////////////////////////////////////////////////////contract recycle view layout
+    <string name="contract_title">عنوان قرارداد : </string>
+    <string name="contract_name">نام طرف قرارداد : </string>
+    <string name="contract_transaction_v">حجم معامله : </string>
+    <string name="contract_nationalcode">کد ملی طرف قرارداد : </string>
+    <string name="contract_product_info">مشخصات محصولات : </string>
+    <string name="contract_date">تاریخ عقد قرارداد : </string>
+    /////////////////////////////////////////////////////debt recycle view layout
+    <string name="debtor_name">نام بدهکار : </string>
+    <string name="debtor_phone_num">شماره تلفن بدهکار : </string>
+    <string name="debtor_debt">مقدار بدهی : </string>
+    /////////////////////////////////////////////////////employee managment recycle view layout
+    <string name="employee_name">نام کارمند : </string>
+    <string name="employee_phone">شماره تماس کارمند : </string>
+    <string name="employee_date_employee">تاریخ استخدام :</string>
+    <string name="employee_salary">حقوق پایه : </string>
+    <string name="employee_job_title">سمت کارمند : </string>
+    /////////////////////////////////////////////////////employee managment recycle view layout
+    <string name="fruit_name">نام میوه : </string>
+    <string name="fruit_price">قیمت میوه : </string>
+    <string name="fruit_qlt">کیفیت میوه : </string>
+    /////////////////////////////////////////////////////contact recycle view layout
+    <string name="contact_name">مخاطب : </string>
+    <string name="contact_title">عنوان : </string>
+    <string name="contact_phone">شماره : </string>
+    /////////////////////////////////////////////////////salary recycle view layout
+    <string name="salary_name">نام کارمند : </string>
+    <string name="salary_amount">حقوق پرداخت شده : </string>
+    <string name="salary_phone">شماره تماس : </string>
+
 </resources>
