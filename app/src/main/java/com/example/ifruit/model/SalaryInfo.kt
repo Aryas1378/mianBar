@@ -2,15 +2,15 @@ package com.example.annimation
 
 class SalaryInfo {
 
-    var id: Int = -1
+    var id: Int ?= null
     var name: String?=null
-    var salary: Int=-1
-    var phoneNumber: Int=-1
+    var salary: Int?=null
+    var phoneNumber: Long?=null
 
 
     constructor(){}
 
-    constructor(id:Int, name:String, salary: Int, phoneNumber:Int) {
+    constructor(id:Int, name:String, salary: Int, phoneNumber:Long) {
         this.id = id
         this.name = name
         this.salary = salary

@@ -9,14 +9,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ifruit.R
 import com.example.ifruit.model.recycleviewmodel.ContractDataBaseModel
 import com.example.ifruit.model.recycleviewmodel.CostDataBaseModel
+import com.example.ifruit.model.recycleviewmodel.DebtDataBaseModel
 import com.example.ifruit.model.recycleviewmodel.EmployeeManagementDataBaseModel
 
 class EmployeeRecycleViewAdapter(
     val context: Context,
     var employeeList: ArrayList<EmployeeManagementDataBaseModel>
+    ,val itemClick : (EmployeeManagementDataBaseModel) ->Unit
 ) : RecyclerView.Adapter<EmployeeRecycleViewAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View,val itemClick : (EmployeeManagementDataBaseModel) ->Unit) : RecyclerView.ViewHolder(itemView) {
 
         val employeeName = itemView.findViewById<TextView>(R.id.employee_name)
         val employeePhoneNumber = itemView.findViewById<TextView>(R.id.employee_phone_number)
@@ -35,14 +37,16 @@ class EmployeeRecycleViewAdapter(
             dateOfEmployee.text = employeeManagementDataBaseModel.dateOfEmployee.toString()
             salary.text = employeeManagementDataBaseModel.salary.toString()
             jobTitle.text = employeeManagementDataBaseModel.jobTitle
-
+            itemView.setOnClickListener {
+                itemClick(employeeManagementDataBaseModel)
+            }
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.employee_managment_layout,parent,false)
-        return ViewHolder(view)
+        return ViewHolder(view,itemClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
