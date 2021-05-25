@@ -11,9 +11,9 @@ import com.example.ifruit.model.recycleviewmodel.CostDataBaseModel
 import com.example.ifruit.model.recycleviewmodel.PhoneContactDataBaseModel
 import com.example.ifruit.model.recycleviewmodel.SalaryDataBaseModel
 
-class SalaryRecycleViewAdapter(val context: Context, var salaryList: ArrayList<SalaryDataBaseModel>) : RecyclerView.Adapter<SalaryRecycleViewAdapter.ViewHolder>() {
+class SalaryRecycleViewAdapter(val context: Context, var salaryList: ArrayList<SalaryDataBaseModel>,val itemClick : (SalaryDataBaseModel) ->Unit) : RecyclerView.Adapter<SalaryRecycleViewAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View,val itemClick : (SalaryDataBaseModel) ->Unit) : RecyclerView.ViewHolder(itemView) {
         val salaryName = itemView.findViewById<TextView>(R.id.salaryes_name)
         val salary = itemView.findViewById<TextView>(R.id.salary_salary)
         val salaryPhoneNumber = itemView.findViewById<TextView>(R.id.salary_phone_number)
@@ -23,14 +23,16 @@ class SalaryRecycleViewAdapter(val context: Context, var salaryList: ArrayList<S
             salaryName.text=salaryDataBaseModel.name
             salary.text=salaryDataBaseModel.salary.toString()
             salaryPhoneNumber.text=salaryDataBaseModel.phoneNumber.toString()
-
+            itemView.setOnClickListener {
+                itemClick(salaryDataBaseModel)
+            }
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.phone_contact_layout, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view,itemClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

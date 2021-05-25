@@ -2,10 +2,10 @@ package com.example.annimation
 
 class FruitInfo {
 
-    var id: Int = -1
+    var id: Int ?= null
     var name: String?=null
-    var price: Int=-1
-    var qlt: Int=-1
+    var price: Int?=null
+    var qlt: Int?=null
 
 
     constructor(){}

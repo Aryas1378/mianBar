@@ -47,7 +47,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             "CREATE TABLE " + TABLE_NAME3 + "(" + KEY_SALARY_ID + " INTEGER PRIMARY KEY ," +
                     KEY_SALARY_NAME + " TEXT," +
                     KEY_SALARY_SALARY + " INTEGER," +
-                    KEY_SALARY_PHONENUMBER + " INTEGER)"
+                    KEY_SALARY_PHONENUMBER + " LONG)"
 
     val CREATE_EMPLOYEE_MANAGEMENT_TABLE =
             "CREATE TABLE " + TABLE_NAME7 + "(" + KEY_EMPLOYEE_MANAGEMENT_ID + " INTEGER PRIMARY KEY," +
@@ -495,7 +495,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 employee.id = cursor.getString(cursor.getColumnIndex(KEY_SALARY_ID)).toInt()
                 employee.name = cursor.getString(cursor.getColumnIndex(KEY_SALARY_NAME))
                 employee.salary = cursor.getString(cursor.getColumnIndex(KEY_SALARY_SALARY)).toInt()
-                employee.phoneNumber = cursor.getString(cursor.getColumnIndex(KEY_SALARY_PHONENUMBER)).toInt()
+                employee.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_SALARY_PHONENUMBER))
                 list.add(employee)
 
             } while (cursor.moveToNext())
@@ -536,7 +536,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             var Mydb = SalaryInfo()
             Mydb.name = cursor.getString(cursor.getColumnIndex(KEY_SALARY_NAME))
             Mydb.salary = cursor.getInt(cursor.getColumnIndex(KEY_SALARY_SALARY))
-            Mydb.phoneNumber = cursor.getInt(cursor.getColumnIndex(KEY_SALARY_PHONENUMBER))
+            Mydb.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_SALARY_PHONENUMBER))
 
 
             return Mydb

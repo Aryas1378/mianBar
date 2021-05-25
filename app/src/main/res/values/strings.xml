@@ -41,6 +41,22 @@
     <string name="Product_Information_hint">اطلاعات محصول</string>
     <string name="contract_date_hint">تاریخ </string>
 
+    ///////////////////////////////////////////////////////fruit info AC
+    <string name="fruit_name_hint">نام میوه</string>
+    <string name="fruit_price_hint">قیمت میوه</string>
+    <string name="fruit_qlt_hint">کیفیت میوه</string>
+
+    //////////////////////////////////////////////////////debt AC
+    <string name="debtor_name_hint">نام بدهکار یا بستانکار</string>
+    <string name="debtor_phone_hint">شماره تلفن بدهکار</string>
+    <string name="debtor_debt_hint">مقدار بدهی</string>
+
+    //////////////////////////////////////////////////////salary AC
+    <string name="salary_name_hint">نام کارمند</string>
+    <string name="salary_salary_hint">مقدار حقوق پرداختی</string>
+    <string name="salary_phone_num_hint">شماره تلفن کارمند</string>
+
+
     /////////////////////////////////////////////////////////Accounting Ac
     <string name="accounting">حسابداری</string>
     <string name="fee">هزینه ها</string>
@@ -93,5 +109,6 @@
     <string name="salary_name">نام کارمند : </string>
     <string name="salary_amount">حقوق پرداخت شده : </string>
     <string name="salary_phone">شماره تماس : </string>
+    ////////////////////////////////////////////////////
 
 </resources>

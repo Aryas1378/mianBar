@@ -12,11 +12,12 @@ import com.example.ifruit.model.recycleviewmodel.CostDataBaseModel
 
 class ContractRecycleViewAdapter(
     val context: Context,
-    var contractList: ArrayList<ContractDataBaseModel>
+    var contractList: ArrayList<ContractDataBaseModel>,
+    val itemClick : (ContractDataBaseModel) ->Unit
 ) : RecyclerView.Adapter<ContractRecycleViewAdapter.ViewHolder>() {
 
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View,val itemClick : (ContractDataBaseModel) ->Unit) : RecyclerView.ViewHolder(itemView) {
         val contractTitle = itemView.findViewById<TextView>(R.id.contract_title)
         val name = itemView.findViewById<TextView>(R.id.contract_name)
         val transactionVolume = itemView.findViewById<TextView>(R.id.transaction_volume)
@@ -33,14 +34,16 @@ class ContractRecycleViewAdapter(
             nationalCode.text = contractDataBaseModel.nationalCode.toString()
             productInfo.text = contractDataBaseModel.productInformation
             date.text = contractDataBaseModel.date.toString()
-
+            itemView.setOnClickListener {
+                itemClick(contractDataBaseModel)
+            }
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.contract_layout,parent,false)
-        return ViewHolder(view)
+        return ViewHolder(view,itemClick)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

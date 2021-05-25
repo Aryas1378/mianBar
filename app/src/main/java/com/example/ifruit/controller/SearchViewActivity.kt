@@ -1,11 +1,13 @@
 package com.example.ifruit.controller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ifruit.R
@@ -204,7 +206,37 @@ class SearchViewActivity : AppCompatActivity() {
 
         }
         costList = dataGeneratorFromDataBase.getProduct("cost") as ArrayList<CostDataBaseModel>
-        costAdapter = CostRecycleViewAdapter(this, costList)
+        costAdapter = CostRecycleViewAdapter(this, costList) { costDataBaseModel ->
+            costDialogMassage(
+                costDataBaseModel.costReason,
+                costDataBaseModel.costAmount,
+                costDataBaseModel.costDate
+            )
+            println()
+        }
+
+    }
+
+    fun costDialogMassage(costReason: String, costAmount: Long, costDate: String) {
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("")
+        dialog.setIcon(R.drawable.ic_warning)
+        dialog.setMessage(
+            "دلیل هزینه انجام شده : " + costReason + "\n" +
+                    "مقدار هزینه : " + costAmount + "\n" +
+                    "تاریخ انجام شده : " + costDate
+        )
+        dialog.setPositiveButton("ویرایش") { _, which ->
+//            var intent = Intent(this,CostActivity::class.java)
+//            intent.putExtra("updateCost","update")
+//            startActivity(intent)
+        }
+
+        dialog.setNegativeButton("حذف") { _, witch ->
+            //costConfirmDeletion(costReason, costAmount, costDate)
+        }
+        dialog.show()
+
     }
 
     fun getContractDataAndAdaptIt() {
@@ -224,7 +256,50 @@ class SearchViewActivity : AppCompatActivity() {
         }
         contractList =
             dataGeneratorFromDataBase.getProduct("contract") as ArrayList<ContractDataBaseModel>
-        contractAdapter = ContractRecycleViewAdapter(this, contractList)
+        contractAdapter = ContractRecycleViewAdapter(this, contractList) { contractDataBaseModel ->
+            contractDialogMassage(
+                contractDataBaseModel.name,
+                contractDataBaseModel.nationalCode,
+                contractDataBaseModel.transactionVolume,
+                contractDataBaseModel.contractTitle,
+                contractDataBaseModel.productInformation,
+                contractDataBaseModel.date
+            )
+
+        }
+    }
+
+    fun contractDialogMassage(
+        contractName: String,
+        nationalCode: Long,
+        contractTransactionVolume: Long,
+        contractTitle: String,
+        contractProductInformation: String,
+        contractDate: Long
+    ) {
+
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("")
+        dialog.setIcon(R.drawable.ic_warning)
+        dialog.setMessage(
+            "نام طرف قرارداد : " + contractName + "\n" +
+                    "کد ملی : " + nationalCode + "\n" +
+                    "ارزش مالی قرارداد : " + contractTransactionVolume + "\n" +
+                    "عنوان قرارداد : " + contractTitle + "\n" +
+                    "مشخصات محصول : " + contractProductInformation + "\n" +
+                    "تاریخ عقد قراردا : " + contractDate
+        )
+        dialog.setPositiveButton("ویرایش") { _, which ->
+//            var intent = Intent(this,ContractActivity::class.java)
+//            intent.putExtra("updateCost","update")
+//            startActivity(intent)
+        }
+
+        dialog.setNegativeButton("حذف") { _, witch ->
+            //costConfirmDeletion(costReason, costAmount, costDate)
+        }
+        dialog.show()
+
     }
 
     fun getDebtDataAndAdaptIt() {
@@ -240,7 +315,36 @@ class SearchViewActivity : AppCompatActivity() {
 
         }
         debtList = dataGeneratorFromDataBase.getProduct("debt") as ArrayList<DebtDataBaseModel>
-        debtAdapter = DebtRecycleViewAdapter(this, debtList)
+        debtAdapter = DebtRecycleViewAdapter(this, debtList) { debtDataBaseModel ->
+            debtDialogMassage(
+                debtDataBaseModel.name,
+                debtDataBaseModel.phoneNumber,
+                debtDataBaseModel.debtAmount
+            )
+
+        }
+    }
+
+    fun debtDialogMassage(debtorName: String, debtorPhoneNum: Long, debtAmount: Long) {
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("")
+        dialog.setIcon(R.drawable.ic_warning)
+        dialog.setMessage(
+            "نام بدهکار : " + debtorName + "\n" +
+                    "شماره تماس بدهکار : " + debtorPhoneNum + "\n" +
+                    "مقدار بدهی : " + debtAmount
+        )
+        dialog.setPositiveButton("ویرایش") { _, which ->
+//            var intent = Intent(this,DebtActivity::class.java)
+//            intent.putExtra("updateCost","update")
+//            startActivity(intent)
+        }
+
+        dialog.setNegativeButton("حذف") { _, witch ->
+            //costConfirmDeletion(costReason, costAmount, costDate)
+        }
+        dialog.show()
+
     }
 
     fun getEmployeeDataAndAdaptIt() {
@@ -259,7 +363,47 @@ class SearchViewActivity : AppCompatActivity() {
         }
         employeeList =
             dataGeneratorFromDataBase.getProduct("employee") as ArrayList<EmployeeManagementDataBaseModel>
-        employeeAdapter = EmployeeRecycleViewAdapter(this, employeeList)
+        employeeAdapter =
+            EmployeeRecycleViewAdapter(this, employeeList) { employeeManagementDataBaseModel ->
+                employeeDialogMassage(
+                    employeeManagementDataBaseModel.firstName,
+                    employeeManagementDataBaseModel.phoneNumber,
+                    employeeManagementDataBaseModel.dateOfEmployee,
+                    employeeManagementDataBaseModel.salary,
+                    employeeManagementDataBaseModel.jobTitle
+                )
+
+            }
+    }
+
+    fun employeeDialogMassage(
+        employeeName: String,
+        employeePhone: Long,
+        employeeDateOfEmployee: Long,
+        employeeSalary: Long,
+        employeeJobTitle: String
+    ) {
+
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("")
+        dialog.setIcon(R.drawable.ic_warning)
+        dialog.setMessage(
+            "نام بدهکار : " + employeeName + "\n" +
+                    "شماره تماس کارمند : " + employeePhone + "\n" +
+                    "تاریخ استخدام : " + employeeDateOfEmployee + "\n" +
+                    "حقوق پایه کارمند : " + employeeSalary + "\n" +
+                    "سمت کاری کارمند : " + employeeJobTitle + "\n"
+        )
+        dialog.setPositiveButton("ویرایش") { _, which ->
+//            var intent = Intent(this,EmployeeManagementActivity::class.java)
+//            intent.putExtra("updateCost","update")
+//            startActivity(intent)
+        }
+
+        dialog.setNegativeButton("حذف") { _, witch ->
+            //costConfirmDeletion(costReason, costAmount, costDate)
+        }
+        dialog.show()
     }
 
     fun getFruitDataAndAdaptIt() {
@@ -270,12 +414,36 @@ class SearchViewActivity : AppCompatActivity() {
             dataGeneratorFromDataBase.fruitGenerateData(
                 index?.name.toString(),
                 index?.price!!.toLong(),
-                index.qlt.toInt()
+                index.qlt!!.toInt()
             )
 
         }
         fruitList = dataGeneratorFromDataBase.getProduct("fruit") as ArrayList<FruitDataBaseModel>
-        fruitAdapter = FruitRecycleViewAdapter(this, fruitList)
+        fruitAdapter = FruitRecycleViewAdapter(this, fruitList) { fruitDataBaseModel ->
+
+            fruitDialogMassage(fruitDataBaseModel.name,fruitDataBaseModel.price.toInt(),fruitDataBaseModel.qlt)
+        }
+    }
+
+    fun fruitDialogMassage(fruitName: String, fruitPrice: Int, fruitQlt: Int){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("")
+        dialog.setIcon(R.drawable.ic_warning)
+        dialog.setMessage(
+            "نام میوه : " + fruitName + "\n" +
+                    "قیمت پایه میوه : " + fruitPrice + "\n" +
+                    "درجه کیفیت : " + fruitQlt
+        )
+        dialog.setPositiveButton("ویرایش") { _, which ->
+//            var intent = Intent(this,FruitActivity::class.java)
+//            intent.putExtra("updateCost","update")
+//            startActivity(intent)
+        }
+
+        dialog.setNegativeButton("حذف") { _, witch ->
+            //costConfirmDeletion(costReason, costAmount, costDate)
+        }
+        dialog.show()
     }
 
     fun getContactDataAndAdaptIt() {
@@ -292,8 +460,16 @@ class SearchViewActivity : AppCompatActivity() {
         }
         phoneContactList =
             dataGeneratorFromDataBase.getProduct("contact") as ArrayList<PhoneContactDataBaseModel>
-        phoneContactAdapter = PhoneContactRecycleViewAdapter(this, phoneContactList)
+        phoneContactAdapter =
+            PhoneContactRecycleViewAdapter(this, phoneContactList) { phoneContactDataBaseModel ->
+                var intent = Intent(this,SMSPanelActivity::class.java)
+                intent.putExtra("NUMBER",phoneContactDataBaseModel.phoneNumber.toString() + ",")
+                startActivity(intent)
+            }
     }
+
+
+
 
     fun getSalaryDataAndAdaptIt() {
         dbHandler = DataBaseHelper(this)
@@ -303,12 +479,35 @@ class SearchViewActivity : AppCompatActivity() {
             dataGeneratorFromDataBase.salaryGenerateData(
                 index?.name.toString(),
                 index?.salary!!.toInt(),
-                index.phoneNumber.toLong()
+                index.phoneNumber!!.toLong()
             )
 
         }
         salaryList =
             dataGeneratorFromDataBase.getProduct("salary") as ArrayList<SalaryDataBaseModel>
-        salaryAdapter = SalaryRecycleViewAdapter(this, salaryList)
+        salaryAdapter = SalaryRecycleViewAdapter(this, salaryList) { salaryDataBaseModel ->
+            salaryDialogMassage(salaryDataBaseModel.name,salaryDataBaseModel.salary,salaryDataBaseModel.phoneNumber)
+
+        }
+    }
+    fun salaryDialogMassage(salaryName: String, salary: Int, salaryPhone: Long){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("")
+        dialog.setIcon(R.drawable.ic_warning)
+        dialog.setMessage(
+            "نام کارمند : " + salaryName + "\n" +
+                    "حقوق پرداختی : " + salary + "\n" +
+                    "شماره تلفن کارمند : " + salaryPhone
+        )
+        dialog.setPositiveButton("ویرایش") { _, which ->
+//            var intent = Intent(this,SalaryActivity::class.java)
+//            intent.putExtra("updateCost","update")
+//            startActivity(intent)
+        }
+
+        dialog.setNegativeButton("حذف") { _, witch ->
+            //costConfirmDeletion(costReason, costAmount, costDate)
+        }
+        dialog.show()
     }
 }

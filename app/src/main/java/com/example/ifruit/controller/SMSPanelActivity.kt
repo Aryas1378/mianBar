@@ -6,7 +6,6 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telephony.SmsManager
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
@@ -15,33 +14,47 @@ import androidx.core.content.ContextCompat
 import com.example.ifruit.R
 
 class SMSPanelActivity : AppCompatActivity() {
+
+
     private val PERMISSION_SEND_SMS = 0
+    var contactNumber: String ?= null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_s_m_s_panel)
 
-        val sendBtn = findViewById<ImageButton>(R.id.send_massage)
+        contactNumber = intent.getStringExtra("NUMBER").toString()
+
+        val sendButton = findViewById<ImageButton>(R.id.send_massage)
         val phoneNumber = findViewById<EditText>(R.id.phone_number)
         val textMassage = findViewById<EditText>(R.id.massage)
         val addNumImageButton = findViewById<ImageButton>(R.id.add_number)
 
-        sendBtn.setOnClickListener {
-            var text = textMassage.text
-            var number = phoneNumber.text
-            requestSmsPermission(number.toString(), text.toString())
+        if (contactNumber!=null){
+            phoneNumber.setText(contactNumber)
+        }
+
+        sendButton.setOnClickListener {
+            val text = textMassage.text
+            val number = phoneNumber.text
+            val phoneNumbers = number.split(",")
+            requestSmsPermission(phoneNumbers, text.toString())
 
         }
 
         addNumImageButton.setOnClickListener {
            // startActivity(Intent(this,Contact::class.java))
-            Toast.makeText(this,"jooooooooooooooooooooooooon", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this,SearchViewActivity::class.java)
+            intent.putExtra("TABLE","contact")
+            startActivity(intent)
         }
 
     }
-    private fun requestSmsPermission(phoneNo: String?, msg: String?) {
+
+    private fun requestSmsPermission(phoneNo: List<String>?, msg: String?) {
 
         // check permission is given
-        var checkPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+        val checkPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
         if (checkPermission == PackageManager.PERMISSION_GRANTED) {
             sendSMS(phoneNo,msg)
         } else {
@@ -51,11 +64,15 @@ class SMSPanelActivity : AppCompatActivity() {
                 PERMISSION_SEND_SMS
             )
         }
+
     }
-    fun sendSMS(phoneNo: String?, msg: String?) {
+
+    fun sendSMS(phoneNo: List<String>?, msg: String?) {
         try {
-            val smsManager: SmsManager = SmsManager.getDefault()
-            smsManager.sendTextMessage(phoneNo, null, msg, null, null)
+            for (i in phoneNo!!.indices) {
+                val smsManager: SmsManager = SmsManager.getDefault()
+                smsManager.sendTextMessage(phoneNo[0], null, msg, null, null)
+            }
             Toast.makeText(
                 applicationContext, "Message Sent",
                 Toast.LENGTH_LONG
@@ -68,6 +85,8 @@ class SMSPanelActivity : AppCompatActivity() {
             ex.printStackTrace()
         }
     }
+
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -86,4 +105,5 @@ class SMSPanelActivity : AppCompatActivity() {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
+
 }

@@ -12,9 +12,9 @@ import com.example.ifruit.model.recycleviewmodel.DebtDataBaseModel
 import com.example.ifruit.model.recycleviewmodel.EmployeeManagementDataBaseModel
 import com.example.ifruit.model.recycleviewmodel.FruitDataBaseModel
 
-class FruitRecycleViewAdapter(val context: Context, var fruitList: ArrayList<FruitDataBaseModel>) : RecyclerView.Adapter<FruitRecycleViewAdapter.ViewHolder>() {
+class FruitRecycleViewAdapter(val context: Context, var fruitList: ArrayList<FruitDataBaseModel>,val itemClick : (FruitDataBaseModel) ->Unit) : RecyclerView.Adapter<FruitRecycleViewAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View,val itemClick : (FruitDataBaseModel) ->Unit) : RecyclerView.ViewHolder(itemView) {
         val fruitName = itemView.findViewById<TextView>(R.id.fruit_name)
         val fruitPrice = itemView.findViewById<TextView>(R.id.fruit_price)
         val fruitQuality = itemView.findViewById<TextView>(R.id.fruit_quality)
@@ -24,14 +24,16 @@ class FruitRecycleViewAdapter(val context: Context, var fruitList: ArrayList<Fru
             fruitName.text=fruitDataBaseModel.name
             fruitPrice.text=fruitDataBaseModel.price.toString()
             fruitQuality.text=fruitDataBaseModel.qlt.toString()
-
+            itemView.setOnClickListener {
+                itemClick(fruitDataBaseModel)
+            }
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.fruit_layout,parent,false)
-        return ViewHolder(view)
+        return ViewHolder(view,itemClick)
 
     }
 

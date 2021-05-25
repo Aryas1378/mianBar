@@ -1,10 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.FruitInformationActivity">
+    android:background="#616161"
+    tools:context=".controller.CostActivity">
 
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/cost_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="@dimen/normal_margin"
+            android:text="@string/fruit_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_header_size"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_search"
+            android:padding="@dimen/normal_margin"
+            android:layout_marginLeft="@dimen/normal_margin"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dividing_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/line" />
+
+    <EditText
+        android:id="@+id/fruit_name_ac"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dividing_line"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:background="@drawable/edit_text_border2"
+        android:hint="@string/fruit_name_hint"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/fruit_price_ac"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fruit_name_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/normal_margin"
+        android:background="@drawable/edit_text_border2"
+        android:hint="@string/fruit_price_hint"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/fruit_qlt_ac"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fruit_price_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/normal_margin"
+        android:background="@drawable/edit_text_border2"
+        android:hint="@string/fruit_qlt_hint"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/savebtn_ac"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/fruit_qlt_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/xxlarge_margin"
+        android:background="@drawable/save_button"
+        android:shadowRadius="@android:integer/status_bar_notification_info_maxnum" />
+
+</RelativeLayout>
