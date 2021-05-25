@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl"
+       android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/nav_setting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_setting"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/nav_setting_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="تنظیمات"
+            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl"
+        android:layout_margin="8dp">
+        <ImageView
+            android:id="@+id/nav_backup"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_backup"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/nav_backup_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_gravity="center"
+            android:text="پشتیبان گیری"
+            android:layout_marginRight="8dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/nav_contactUs"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_contact_support"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/nav_contactUs_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="تماس با ما"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+
+
+
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layoutDirection="rtl"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/nav_logout"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_logout"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/nav_logout_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="خروج"
+        android:layout_marginRight="8dp"/>
+</LinearLayout>
+
+
+
+
+</LinearLayout>
+
