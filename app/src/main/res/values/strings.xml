@@ -65,6 +65,7 @@
     <string name="salary">حقوق</string>
     <string name="debt">بدهکاری و بستانکاری</string>
     <string name="fruit_info">اطلاعات میوه</string>
+    <string name="add_contact">اضافه کردن مخاطب</string>
     ///////////////////////////////////////////////////////SMS AC
     <string name="phone_number">شماره تلفن</string>
     <string name="send">ارسال</string>
@@ -74,6 +75,11 @@
     ///////////////////////////////////////////////////////Search AC
     <string name="data">اطلاعات</string>
     <string name="search_edittext">جستجو ...</string>
+
+    ///////////////////////////////////////////////////////Contact AC
+    <string name="contact_name_hint">نام مخاطب</string>
+    <string name="contact_title_hint">عنوان مخاطب</string>
+    <string name="contact_phone_num_hint">شماره تماس مخاطب</string>
 
 
     //////////////////////////////////////////////////////cost recycle view layout
