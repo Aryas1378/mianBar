@@ -1,6 +1,8 @@
 package com.example.ifruit.model
 
-val DATABASE_VERSION: Int = 11
+import java.util.*
+
+val DATABASE_VERSION: Int = 12
 val DATABASE_NAME: String = "ifruit.db"
 val TABLE_NAME1: String = "User"
 val TABLE_NAME2: String = "Fruit"
@@ -49,6 +51,7 @@ val KEY_CONTRACT_NATIONAL_CODE: String = "national_code"
 val KEY_CONTRACT_TRANSACION_VOlLME: String = "Transaction_volume"
 val KEY_CONTRACT_CONTRACT_TITLE: String = "Contract_title"
 val KEY_CONTRACT_PRODUCT_INFORMATON: String = "Product_Information"
+val KEY_CONTRACT_DATE: String = "date"
 
 //table debt columns
 

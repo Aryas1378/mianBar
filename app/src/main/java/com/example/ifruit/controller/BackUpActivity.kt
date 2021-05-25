@@ -19,34 +19,168 @@ import java.lang.Exception
 class BackUpActivity : AppCompatActivity() {
     var dbHandler:DataBaseHelper?=null
     private val userCSVHeader = "id,name,username,password"
+    private val debtCSVHeader = "id,name,phone,debtAmount"
+    private val costCSVHeader = "id,reason,amount,date"
+    private val contractCSVHeader = "id,name,nationalCode,transVolume,title,productInfo,date"
+    private val fruitCSVHeader = "id,name,price,quality"
+    private val salaryCSVHeader = "id,name,salary,phone"
+    private val employeeCSVHeader = "id,name,phone,dateOfEmployee,salary,jobTitle"
+    private val contactCSVHeader = "id,name,title,phone"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_back_up)
-
         dbHandler = DataBaseHelper(this@BackUpActivity)
         val backUpSubBtn = findViewById<ImageButton>(R.id.backUpSubBtn)
 
-        var fileOutPutStream: FileOutputStream? = null
+        var userFileOutPutStream: FileOutputStream? = null
+        var debtFileOutPutStream: FileOutputStream? = null
+        var costFileOutPutStream: FileOutputStream? = null
+        var contractFileOutPutStream: FileOutputStream? = null
+        var fruitFileOutPutStream: FileOutputStream? = null
+        var salaryFileOutPutStream: FileOutputStream? = null
+        var employeeFileOutPutStream: FileOutputStream? = null
+        var contactFileOutPutStream: FileOutputStream? = null
 
-        fileOutPutStream = openFileOutput("user.csv", Context.MODE_PRIVATE)
+
+        userFileOutPutStream = openFileOutput("user.csv", Context.MODE_APPEND)
+        debtFileOutPutStream = openFileOutput("debt.csv", Context.MODE_APPEND)
+        costFileOutPutStream = openFileOutput("cost.csv", Context.MODE_APPEND)
+        contractFileOutPutStream = openFileOutput("contract.csv", Context.MODE_APPEND)
+        fruitFileOutPutStream = openFileOutput("fruit.csv", Context.MODE_APPEND)
+        salaryFileOutPutStream = openFileOutput("salary.csv", Context.MODE_APPEND)
+        employeeFileOutPutStream = openFileOutput("employee.csv", Context.MODE_APPEND)
+        contactFileOutPutStream = openFileOutput("contact.csv", Context.MODE_APPEND)
 
         backUpSubBtn.setOnClickListener {
-            val curser:Cursor = dbHandler!!.userDbCopy()
+            val userCurser:Cursor = dbHandler!!.userDbCopy()
+            val debtCurser:Cursor = dbHandler!!.debtDbCopy()
+            val costCurser:Cursor = dbHandler!!.costDbCopy()
+            val contractCurser:Cursor = dbHandler!!.contractDbCopy()
+            val fruitCurser:Cursor = dbHandler!!.fruitDbCopy()
+            val salaryCurser:Cursor = dbHandler!!.salaryDbCopy()
+            val employeeCurser:Cursor = dbHandler!!.employeeDbCopy()
+            val contactCurser:Cursor = dbHandler!!.contactDbCopy()
+
             try {
-                Toast.makeText(this@BackUpActivity, "file is created", Toast.LENGTH_LONG).show()
-                fileOutPutStream?.write(userCSVHeader.toByteArray())
-                while (!curser.isNull(0)) {
-                    fileOutPutStream?.write("\n".toByteArray())
-                    fileOutPutStream?.write(curser.getString(0).toByteArray())
-                    fileOutPutStream?.write(",".toByteArray())
-                    fileOutPutStream?.write(curser.getString(1).toByteArray())
-                    fileOutPutStream?.write(",".toByteArray())
-                    fileOutPutStream?.write(curser.getString(2).toByteArray())
-                    fileOutPutStream?.write(",".toByteArray())
-                    fileOutPutStream?.write(curser.getString(3).toByteArray())
-                    curser.moveToNext()
+
+                while (!userCurser.isNull(0)) {
+                    userFileOutPutStream?.write("\n".toByteArray())
+                    userFileOutPutStream?.write(userCurser.getString(0).toByteArray())
+                    userFileOutPutStream?.write(",".toByteArray())
+                    userFileOutPutStream?.write(userCurser.getString(1).toByteArray())
+                    userFileOutPutStream?.write(",".toByteArray())
+                    userFileOutPutStream?.write(userCurser.getString(2).toByteArray())
+                    userFileOutPutStream?.write(",".toByteArray())
+                    userFileOutPutStream?.write(userCurser.getString(3).toByteArray())
+                    userCurser.moveToNext()
                 }
-                fileOutPutStream.close()
+                userFileOutPutStream.close()
+
+
+                while (!debtCurser.isNull(0)){
+                    debtFileOutPutStream?.write("\n".toByteArray())
+                    debtFileOutPutStream?.write(debtCurser.getString(0).toByteArray())
+                    debtFileOutPutStream?.write(",".toByteArray())
+                    debtFileOutPutStream?.write(debtCurser.getString(1).toByteArray())
+                    debtFileOutPutStream?.write(",".toByteArray())
+                    debtFileOutPutStream?.write(debtCurser.getString(2).toByteArray())
+                    debtFileOutPutStream?.write(",".toByteArray())
+                    debtFileOutPutStream?.write(debtCurser.getString(3).toByteArray())
+                    debtCurser.moveToNext()
+                }
+                debtFileOutPutStream.close()
+
+                while (!costCurser.isNull(0)){
+                    costFileOutPutStream?.write("\n".toByteArray())
+                    costFileOutPutStream?.write(costCurser.getString(0).toByteArray())
+                    costFileOutPutStream?.write(",".toByteArray())
+                    costFileOutPutStream?.write(costCurser.getString(1).toByteArray())
+                    costFileOutPutStream?.write(",".toByteArray())
+                    costFileOutPutStream?.write(costCurser.getString(2).toByteArray())
+                    costFileOutPutStream?.write(",".toByteArray())
+                    costFileOutPutStream?.write(costCurser.getString(3).toByteArray())
+                    costCurser.moveToNext()
+                }
+                costFileOutPutStream.close()
+
+                while (!contractCurser.isNull(0)){
+                    contractFileOutPutStream?.write("\n".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(0).toByteArray())
+                    contractFileOutPutStream?.write(",".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(1).toByteArray())
+                    contractFileOutPutStream?.write(",".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(2).toByteArray())
+                    contractFileOutPutStream?.write(",".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(3).toByteArray())
+                    contractFileOutPutStream?.write(",".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(4).toByteArray())
+                    contractFileOutPutStream?.write(",".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(5).toByteArray())
+                    contractFileOutPutStream?.write(",".toByteArray())
+                    contractFileOutPutStream?.write(contractCurser.getString(6).toByteArray())
+                }
+                contractFileOutPutStream.close()
+
+                while (!fruitCurser.isNull(0)){
+                    fruitFileOutPutStream?.write("\n".toByteArray())
+                    fruitFileOutPutStream?.write(fruitCurser.getString(0).toByteArray())
+                    fruitFileOutPutStream?.write(",".toByteArray())
+                    fruitFileOutPutStream?.write(fruitCurser.getString(1).toByteArray())
+                    fruitFileOutPutStream?.write(",".toByteArray())
+                    fruitFileOutPutStream?.write(fruitCurser.getString(2).toByteArray())
+                    fruitFileOutPutStream?.write(",".toByteArray())
+                    fruitFileOutPutStream?.write(fruitCurser.getString(3).toByteArray())
+                    fruitCurser.moveToNext()
+                }
+                fruitFileOutPutStream.close()
+
+
+                while (!salaryCurser.isNull(0)){
+                    salaryFileOutPutStream?.write("\n".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
+                    salaryFileOutPutStream?.write(",".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
+                    salaryFileOutPutStream?.write(",".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
+                    salaryFileOutPutStream?.write(",".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
+                    salaryCurser.moveToNext()
+                }
+                salaryFileOutPutStream.close()
+
+                while (!employeeCurser.isNull(0)){
+                    employeeFileOutPutStream?.write("\n".toByteArray())
+                    employeeFileOutPutStream?.write(employeeCurser.getString(0).toByteArray())
+                    employeeFileOutPutStream?.write(",".toByteArray())
+                    employeeFileOutPutStream?.write(employeeCurser.getString(1).toByteArray())
+                    employeeFileOutPutStream?.write(",".toByteArray())
+                    employeeFileOutPutStream?.write(employeeCurser.getString(2).toByteArray())
+                    employeeFileOutPutStream?.write(",".toByteArray())
+                    employeeFileOutPutStream?.write(employeeCurser.getString(3).toByteArray())
+                    employeeFileOutPutStream?.write(",".toByteArray())
+                    employeeFileOutPutStream?.write(employeeCurser.getString(4).toByteArray())
+                    employeeFileOutPutStream?.write(",".toByteArray())
+                    employeeFileOutPutStream?.write(employeeCurser.getString(5).toByteArray())
+                    employeeCurser.moveToNext()
+                }
+                employeeFileOutPutStream.close()
+
+                while (!contactCurser.isNull(0)){
+                    contactFileOutPutStream?.write("\n".toByteArray())
+                    contactFileOutPutStream?.write(contactCurser.getString(0).toByteArray())
+                    contactFileOutPutStream?.write(",".toByteArray())
+                    contactFileOutPutStream?.write(contactCurser.getString(1).toByteArray())
+                    contactFileOutPutStream?.write(",".toByteArray())
+                    contactFileOutPutStream?.write(contactCurser.getString(2).toByteArray())
+                    contactFileOutPutStream?.write(",".toByteArray())
+                    contactFileOutPutStream?.write(contactCurser.getString(3).toByteArray())
+                    contactCurser.moveToNext()
+                }
+                contactFileOutPutStream.close()
+
+                Toast.makeText(this@BackUpActivity, "file is created", Toast.LENGTH_LONG).show()
 
             }catch (e: FileNotFoundException){
                 e.printStackTrace()
