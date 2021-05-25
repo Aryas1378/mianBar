@@ -53,6 +53,7 @@ class BackUpActivity : AppCompatActivity() {
         employeeFileOutPutStream = openFileOutput("employee.csv", Context.MODE_APPEND)
         contactFileOutPutStream = openFileOutput("contact.csv", Context.MODE_APPEND)
 
+
         backUpSubBtn.setOnClickListener {
             val userCurser:Cursor = dbHandler!!.userDbCopy()
             val debtCurser:Cursor = dbHandler!!.debtDbCopy()
