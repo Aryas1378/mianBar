@@ -29,6 +29,7 @@ class SMSPanelActivity : AppCompatActivity() {
         val phoneNumber = findViewById<EditText>(R.id.phone_number)
         val textMassage = findViewById<EditText>(R.id.massage)
         val addNumImageButton = findViewById<ImageButton>(R.id.add_number)
+        val addContact = findViewById<ImageButton>(R.id.add_contact)
 
         if (contactNumber!=null){
             phoneNumber.setText(contactNumber)
@@ -46,6 +47,11 @@ class SMSPanelActivity : AppCompatActivity() {
            // startActivity(Intent(this,Contact::class.java))
             val intent = Intent(this,SearchViewActivity::class.java)
             intent.putExtra("TABLE","contact")
+            startActivity(intent)
+        }
+
+        addContact.setOnClickListener {
+            val intent = Intent(this,AddContact::class.java)
             startActivity(intent)
         }
 
