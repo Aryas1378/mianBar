@@ -22,7 +22,14 @@
         </activity>
         <activity android:name=".controller.SMSPanelActivity" />
         <activity android:name=".controller.ForgotPasswordActivity" />
-        <activity android:name=".controller.MainMenuActivity" />
+        <activity android:name=".controller.MainMenuActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".controller.CostActivity" />
         <activity android:name=".controller.SettingActivity" />
         <activity android:name=".controller.stuffManagingActivity"></activity>
@@ -32,11 +39,11 @@
         <activity
             android:name=".controller.MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
