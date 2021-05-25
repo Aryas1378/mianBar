@@ -1,43 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:id="@+id/background">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/large_margin"
         android:layout_margin="@dimen/small_margin"
-        >
+        android:padding="@dimen/large_margin">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             >
+
+            <TextView
+                android:id="@+id/cost_reason_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/cost_reason"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"/>
+
             <TextView
                 android:id="@+id/cost_reason"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="دلیل هزینه ...."
-                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/cost_reason_title"
+                android:maxLines="2"
                 android:padding="@dimen/cardview_margin"
-
+                android:text="..."
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_normal_size"
                 tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/cost_amount_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cost_reason"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/cost_amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"/>
+
             <TextView
                 android:id="@+id/cost_amount"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="مقذار هزینه ..."
-                android:layout_alignParentEnd="true"
+                android:layout_below="@id/cost_reason"
+                android:layout_toLeftOf="@id/cost_amount_title"
                 android:padding="@dimen/cardview_margin"
+                android:text="..."
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_normal_size"
-                android:layout_below="@id/cost_reason"
                 tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/cost_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cost_amount"
+                android:layout_toRightOf="@id/cost_date"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/cost_date"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_normal_size"
+                 />
 
             <TextView
                 android:id="@+id/cost_date"
@@ -45,15 +84,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cost_amount"
                 android:layout_alignParentEnd="false"
-                android:text="5/23/2021"
-                android:textSize="@dimen/text_normal_size"
-                android:textColor="@color/black"
                 android:padding="@dimen/cardview_margin"
-                />
+                android:text="5/23/2021"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 
 </RelativeLayout>

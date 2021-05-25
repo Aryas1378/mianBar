@@ -14,12 +14,12 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/cost_header"
+            android:id="@+id/contract_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:padding="@dimen/normal_margin"
-            android:text="@string/fee"
+            android:text="@string/contract"
             android:textColor="@color/white"
             android:textSize="@dimen/text_header_size"
             android:textStyle="bold"
@@ -44,31 +44,32 @@
         android:background="@drawable/line" />
 
     <EditText
-        android:id="@+id/feereason_ac"
+        android:id="@+id/contract_title_ac"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/dividing_line"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/normal_margin"
+
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/small_margin"
         android:layout_marginTop="@dimen/large_margin"
         android:background="@drawable/edit_text_border2"
-        android:hint="@string/fee_reason_hint"
+        android:hint="@string/Contract_title_hint"
         android:maxLength="@android:integer/config_shortAnimTime"
-        android:maxLines="1"
+        android:maxLines="2"
         android:padding="@dimen/normal_margin"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/feeamont_ac"
+        android:id="@+id/contract_name_ac"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/feereason_ac"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/normal_margin"
+        android:layout_below="@id/contract_title_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/small_margin"
         android:background="@drawable/edit_text_border2"
-        android:hint="@string/fee_amount_hint"
+        android:hint="@string/name_hint"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
@@ -76,27 +77,72 @@
         android:textColorHint="@color/white" />
 
     <EditText
-        android:id="@+id/date_ac"
+        android:id="@+id/customer_national_code_ac"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/feeamont_ac"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/normal_margin"
+        android:layout_below="@id/contract_name_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/small_margin"
         android:background="@drawable/edit_text_border2"
-        android:hint="@string/date_hint"
+        android:hint="@string/national_code_hint"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
+
+    <EditText
+        android:id="@+id/contract_transaction_v_ac"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customer_national_code_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/edit_text_border2"
+        android:hint="@string/national_code_hint"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+    <EditText
+        android:id="@+id/contract_product_info_ac"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contract_transaction_v_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/edit_text_border2"
+        android:hint="@string/national_code_hint"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+    <EditText
+        android:id="@+id/contract_date_ac"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contract_product_info_ac"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/edit_text_border2"
+        android:hint="@string/national_code_hint"
+        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLines="1"
+        android:padding="@dimen/normal_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
     <ImageButton
-        android:id="@+id/savebtn_ac"
+        android:id="@+id/savebtn"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:layout_below="@id/date_ac"
+        android:layout_below="@id/contract_date_ac"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/xxxlarge_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:background="@drawable/save_button"
         android:shadowRadius="@android:integer/status_bar_notification_info_maxnum" />
 

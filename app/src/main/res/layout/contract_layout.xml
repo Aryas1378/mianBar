@@ -15,54 +15,125 @@
 
             >
             <TextView
+                android:id="@+id/contract_title_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contract_title"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                />
+            <TextView
                 android:id="@+id/contract_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="تیتر قرارداد"
+                android:text="..."
                 android:textSize="@dimen/text_normal_size"
-                android:textStyle="bold"
+                android:layout_toLeftOf="@id/contract_title_title"
+                android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/contract_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:text="@string/contract_name"
+                android:layout_below="@id/contract_title"
                 />
             <TextView
                 android:id="@+id/contract_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="نام"
+                android:text="..."
                 android:textSize="@dimen/text_normal_size"
-                android:layout_alignParentRight="true"
+                android:layout_toLeftOf="@id/contract_name_title"
                 android:layout_below="@id/contract_title"
                 android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/transaction_volume_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:layout_below="@id/contract_name"
+                android:text="@string/contract_transaction_v"
+
                 />
             <TextView
                 android:id="@+id/transaction_volume"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_normal_size"
-                android:text="حجم معامله"
-                android:layout_alignParentRight="true"
+                android:text="..."
+                android:layout_toLeftOf="@id/transaction_volume_title"
                 android:layout_below="@id/contract_name"
                 android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/national_code_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:text="@string/contract_nationalcode"
+                android:layout_below="@id/transaction_volume"
                 />
             <TextView
                 android:id="@+id/national_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_normal_size"
-                android:text="کد ملی"
-                android:layout_alignParentRight="true"
+                android:text="..."
+                android:layout_toLeftOf="@id/national_code_title"
                 android:layout_below="@id/transaction_volume"
                 android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/contract_product_info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/cardview_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal_size"
+                android:textStyle="bold"
+                android:text="@string/contract_product_info"
+                android:layout_below="@id/national_code"
                 />
             <TextView
                 android:id="@+id/contract_product_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_normal_size"
-                android:text="مشخصات محصول"
-                android:layout_alignParentRight="true"
+                android:text="..."
+                android:layout_toLeftOf="@id/contract_product_info_title"
                 android:layout_below="@id/national_code"
                 android:padding="@dimen/cardview_margin"
+                />
+            <TextView
+                android:id="@+id/contract_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contract_product_info"
+                android:layout_toRightOf="@id/contract_date"
+                android:padding="@dimen/cardview_margin"
+                android:text="@string/contract_date"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_normal_size"
                 />
             <TextView
                 android:id="@+id/contract_date"
@@ -70,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_normal_size"
                 android:layout_alignParentLeft="true"
-                android:text="date"
+                android:text="..."
                 android:layout_below="@id/contract_product_info"
                 android:padding="@dimen/cardview_margin"
                 />
