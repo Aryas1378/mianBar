@@ -66,107 +66,108 @@ class BackUpActivity : AppCompatActivity() {
 
             try {
 
-                while (!userCurser.isNull(0)) {
-                    userFileOutPutStream?.write("\n".toByteArray())
-                    userFileOutPutStream?.write(userCurser.getString(0).toByteArray())
-                    userFileOutPutStream?.write(",".toByteArray())
-                    userFileOutPutStream?.write(userCurser.getString(1).toByteArray())
-                    userFileOutPutStream?.write(",".toByteArray())
-                    userFileOutPutStream?.write(userCurser.getString(2).toByteArray())
-                    userFileOutPutStream?.write(",".toByteArray())
-                    userFileOutPutStream?.write(userCurser.getString(3).toByteArray())
-                    userCurser.moveToNext()
-                }
-                userFileOutPutStream.close()
+//                while (!userCurser.isNull(0)) {
+//                    userFileOutPutStream?.write("\n".toByteArray())
+//                    userFileOutPutStream?.write(userCurser.getString(0).toByteArray())
+//                    userFileOutPutStream?.write(",".toByteArray())
+//                    userFileOutPutStream?.write(userCurser.getString(1).toByteArray())
+//                    userFileOutPutStream?.write(",".toByteArray())
+//                    userFileOutPutStream?.write(userCurser.getString(2).toByteArray())
+//                    userFileOutPutStream?.write(",".toByteArray())
+//                    userFileOutPutStream?.write(userCurser.getString(3).toByteArray())
+//                    userCurser.moveToNext()
+//                }
+//                userFileOutPutStream.close()
 
 
-                while (!debtCurser.isNull(0)){
-                    debtFileOutPutStream?.write("\n".toByteArray())
-                    debtFileOutPutStream?.write(debtCurser.getString(0).toByteArray())
-                    debtFileOutPutStream?.write(",".toByteArray())
-                    debtFileOutPutStream?.write(debtCurser.getString(1).toByteArray())
-                    debtFileOutPutStream?.write(",".toByteArray())
-                    debtFileOutPutStream?.write(debtCurser.getString(2).toByteArray())
-                    debtFileOutPutStream?.write(",".toByteArray())
-                    debtFileOutPutStream?.write(debtCurser.getString(3).toByteArray())
-                    debtCurser.moveToNext()
-                }
-                debtFileOutPutStream.close()
+//                while (!debtCurser.isNull(0)){
+//                    debtFileOutPutStream?.write("\n".toByteArray())
+//                    debtFileOutPutStream?.write(debtCurser.getString(0).toByteArray())
+//                    debtFileOutPutStream?.write(",".toByteArray())
+//                    debtFileOutPutStream?.write(debtCurser.getString(1).toByteArray())
+//                    debtFileOutPutStream?.write(",".toByteArray())
+//                    debtFileOutPutStream?.write(debtCurser.getString(2).toByteArray())
+//                    debtFileOutPutStream?.write(",".toByteArray())
+//                    debtFileOutPutStream?.write(debtCurser.getString(3).toByteArray())
+//                    debtCurser.moveToNext()
+//                }
+//                debtFileOutPutStream.close()
 
-                while (!costCurser.isNull(0)){
-                    costFileOutPutStream?.write("\n".toByteArray())
-                    costFileOutPutStream?.write(costCurser.getString(0).toByteArray())
-                    costFileOutPutStream?.write(",".toByteArray())
-                    costFileOutPutStream?.write(costCurser.getString(1).toByteArray())
-                    costFileOutPutStream?.write(",".toByteArray())
-                    costFileOutPutStream?.write(costCurser.getString(2).toByteArray())
-                    costFileOutPutStream?.write(",".toByteArray())
-                    costFileOutPutStream?.write(costCurser.getString(3).toByteArray())
-                    costCurser.moveToNext()
-                }
-                costFileOutPutStream.close()
+//                while (!costCurser.isNull(0)){
+//                    costFileOutPutStream?.write("\n".toByteArray())
+//                    costFileOutPutStream?.write(costCurser.getString(0).toByteArray())
+//                    costFileOutPutStream?.write(",".toByteArray())
+//                    costFileOutPutStream?.write(costCurser.getString(1).toByteArray())
+//                    costFileOutPutStream?.write(",".toByteArray())
+//                    costFileOutPutStream?.write(costCurser.getString(2).toByteArray())
+//                    costFileOutPutStream?.write(",".toByteArray())
+//                    costFileOutPutStream?.write(costCurser.getString(3).toByteArray())
+//                    costCurser.moveToNext()
+//                }
+//                costFileOutPutStream.close()
 
-                while (!contractCurser.isNull(0)){
-                    contractFileOutPutStream?.write("\n".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(0).toByteArray())
-                    contractFileOutPutStream?.write(",".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(1).toByteArray())
-                    contractFileOutPutStream?.write(",".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(2).toByteArray())
-                    contractFileOutPutStream?.write(",".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(3).toByteArray())
-                    contractFileOutPutStream?.write(",".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(4).toByteArray())
-                    contractFileOutPutStream?.write(",".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(5).toByteArray())
-                    contractFileOutPutStream?.write(",".toByteArray())
-                    contractFileOutPutStream?.write(contractCurser.getString(6).toByteArray())
-                }
-                contractFileOutPutStream.close()
+//                while (!contractCurser.isNull(0)){
+//                    contractFileOutPutStream?.write("\n".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(0).toByteArray())
+//                    contractFileOutPutStream?.write(",".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(1).toByteArray())
+//                    contractFileOutPutStream?.write(",".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(2).toByteArray())
+//                    contractFileOutPutStream?.write(",".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(3).toByteArray())
+//                    contractFileOutPutStream?.write(",".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(4).toByteArray())
+//                    contractFileOutPutStream?.write(",".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(5).toByteArray())
+//                    contractFileOutPutStream?.write(",".toByteArray())
+//                    contractFileOutPutStream?.write(contractCurser.getString(6).toByteArray())
+//                    contractCurser.moveToNext()
+//                }
+//                contractFileOutPutStream.close()
 
-                while (!fruitCurser.isNull(0)){
-                    fruitFileOutPutStream?.write("\n".toByteArray())
-                    fruitFileOutPutStream?.write(fruitCurser.getString(0).toByteArray())
-                    fruitFileOutPutStream?.write(",".toByteArray())
-                    fruitFileOutPutStream?.write(fruitCurser.getString(1).toByteArray())
-                    fruitFileOutPutStream?.write(",".toByteArray())
-                    fruitFileOutPutStream?.write(fruitCurser.getString(2).toByteArray())
-                    fruitFileOutPutStream?.write(",".toByteArray())
-                    fruitFileOutPutStream?.write(fruitCurser.getString(3).toByteArray())
-                    fruitCurser.moveToNext()
-                }
-                fruitFileOutPutStream.close()
+//                while (!fruitCurser.isNull(0)){
+//                    fruitFileOutPutStream?.write("\n".toByteArray())
+//                    fruitFileOutPutStream?.write(fruitCurser.getString(0).toByteArray())
+//                    fruitFileOutPutStream?.write(",".toByteArray())
+//                    fruitFileOutPutStream?.write(fruitCurser.getString(1).toByteArray())
+//                    fruitFileOutPutStream?.write(",".toByteArray())
+//                    fruitFileOutPutStream?.write(fruitCurser.getString(2).toByteArray())
+//                    fruitFileOutPutStream?.write(",".toByteArray())
+//                    fruitFileOutPutStream?.write(fruitCurser.getString(3).toByteArray())
+//                    fruitCurser.moveToNext()
+//                }
+//                fruitFileOutPutStream.close()
 
 
-                while (!salaryCurser.isNull(0)){
-                    salaryFileOutPutStream?.write("\n".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
-                    salaryFileOutPutStream?.write(",".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
-                    salaryFileOutPutStream?.write(",".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
-                    salaryFileOutPutStream?.write(",".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
-                    salaryCurser.moveToNext()
-                }
-                salaryFileOutPutStream.close()
+//                while (!salaryCurser.isNull(0)){
+//                    salaryFileOutPutStream?.write("\n".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
+//                    salaryFileOutPutStream?.write(",".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
+//                    salaryFileOutPutStream?.write(",".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
+//                    salaryFileOutPutStream?.write(",".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
+//                    salaryCurser.moveToNext()
+//                }
+//                salaryFileOutPutStream.close()
 
-                while (!employeeCurser.isNull(0)){
-                    employeeFileOutPutStream?.write("\n".toByteArray())
-                    employeeFileOutPutStream?.write(employeeCurser.getString(0).toByteArray())
-                    employeeFileOutPutStream?.write(",".toByteArray())
-                    employeeFileOutPutStream?.write(employeeCurser.getString(1).toByteArray())
-                    employeeFileOutPutStream?.write(",".toByteArray())
-                    employeeFileOutPutStream?.write(employeeCurser.getString(2).toByteArray())
-                    employeeFileOutPutStream?.write(",".toByteArray())
-                    employeeFileOutPutStream?.write(employeeCurser.getString(3).toByteArray())
-                    employeeFileOutPutStream?.write(",".toByteArray())
-                    employeeFileOutPutStream?.write(employeeCurser.getString(4).toByteArray())
-                    employeeFileOutPutStream?.write(",".toByteArray())
-                    employeeFileOutPutStream?.write(employeeCurser.getString(5).toByteArray())
-                    employeeCurser.moveToNext()
-                }
-                employeeFileOutPutStream.close()
+//                while (!employeeCurser.isNull(0)){
+//                    employeeFileOutPutStream?.write("\n".toByteArray())
+//                    employeeFileOutPutStream?.write(employeeCurser.getString(0).toByteArray())
+//                    employeeFileOutPutStream?.write(",".toByteArray())
+//                    employeeFileOutPutStream?.write(employeeCurser.getString(1).toByteArray())
+//                    employeeFileOutPutStream?.write(",".toByteArray())
+//                    employeeFileOutPutStream?.write(employeeCurser.getString(2).toByteArray())
+//                    employeeFileOutPutStream?.write(",".toByteArray())
+//                    employeeFileOutPutStream?.write(employeeCurser.getString(3).toByteArray())
+//                    employeeFileOutPutStream?.write(",".toByteArray())
+//                    employeeFileOutPutStream?.write(employeeCurser.getString(4).toByteArray())
+//                    employeeFileOutPutStream?.write(",".toByteArray())
+//                    employeeFileOutPutStream?.write(employeeCurser.getString(5).toByteArray())
+//                    employeeCurser.moveToNext()
+//                }
+//                employeeFileOutPutStream.close()
 
                 while (!contactCurser.isNull(0)){
                     contactFileOutPutStream?.write("\n".toByteArray())
