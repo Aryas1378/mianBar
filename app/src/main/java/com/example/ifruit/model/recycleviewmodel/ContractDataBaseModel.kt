@@ -6,5 +6,5 @@ class ContractDataBaseModel(
     val transactionVolume: Long,
     val contractTitle: String,
     val productInformation: String,
-    val date: Long
+    val date: String
 )

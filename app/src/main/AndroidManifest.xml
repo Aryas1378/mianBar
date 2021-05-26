@@ -26,6 +26,7 @@
             android:name=".controller.ContractActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".controller.RestoreActivity" />
+
         <activity
             android:name=".controller.SearchViewActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

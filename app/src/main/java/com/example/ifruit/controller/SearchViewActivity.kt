@@ -250,7 +250,7 @@ class SearchViewActivity : AppCompatActivity() {
                 index.transactionVolume!!.toLong(),
                 index.contractTitle.toString(),
                 index.productInformation.toString(),
-                index.date!!.toLong()
+                index.date.toString()
             )
 
         }
@@ -275,7 +275,7 @@ class SearchViewActivity : AppCompatActivity() {
         contractTransactionVolume: Long,
         contractTitle: String,
         contractProductInformation: String,
-        contractDate: Long
+        contractDate: String
     ) {
 
         val dialog = AlertDialog.Builder(this)
@@ -355,7 +355,7 @@ class SearchViewActivity : AppCompatActivity() {
             dataGeneratorFromDataBase.employeeGenerateData(
                 index?.firstName.toString(),
                 index?.phoneNumber!!.toLong(),
-                index?.dateOfEmployee!!.toLong(),
+                index?.dateOfEmployee.toString(),
                 index?.salary!!.toLong(),
                 index?.jobTitle.toString()
             )
@@ -379,7 +379,7 @@ class SearchViewActivity : AppCompatActivity() {
     fun employeeDialogMassage(
         employeeName: String,
         employeePhone: Long,
-        employeeDateOfEmployee: Long,
+        employeeDateOfEmployee: String,
         employeeSalary: Long,
         employeeJobTitle: String
     ) {
