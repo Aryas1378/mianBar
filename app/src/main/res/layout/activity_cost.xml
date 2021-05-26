@@ -91,7 +91,7 @@
         android:textColorHint="@color/white" />
 
     <ImageButton
-        android:id="@+id/savebtn_ac"
+        android:id="@+id/cost_save_btn"
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_below="@id/date_ac"

@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             val userName = dbHandler?.readUser(1)
             val settingInfo = SettingInfo()
             settingInfo.name = userName?.name.toString()
-            settingInfo.color = "#ffffff"
+            settingInfo.color = "#757575"
             settingInfo.font = "IArabics"
             dbHandler?.createSettingInfo(settingInfo)
         }

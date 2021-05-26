@@ -62,7 +62,7 @@ class SearchViewActivity : AppCompatActivity() {
             "employee" -> getEmployeeDataAndAdaptIt()
             "salary" -> getSalaryDataAndAdaptIt()
             "fruit" -> getFruitDataAndAdaptIt()
-            else -> getContactDataAndAdaptIt()
+            "contact" -> getContactDataAndAdaptIt()
         }
 
         val layoutManager = GridLayoutManager(this, 1)
@@ -75,7 +75,7 @@ class SearchViewActivity : AppCompatActivity() {
             "employee" -> listProduct.adapter = employeeAdapter
             "salary" -> listProduct.adapter = salaryAdapter
             "fruit" -> listProduct.adapter = fruitAdapter
-            else -> listProduct.adapter = phoneContactAdapter
+            "contact" -> listProduct.adapter = phoneContactAdapter
 
         }
 
@@ -97,7 +97,7 @@ class SearchViewActivity : AppCompatActivity() {
                     "employee" -> employeeFilterData(s.toString())
                     "salary" -> salaryFilterData(s.toString())
                     "fruit" -> fruitFilterData(s.toString())
-                    else -> phoneContactFilterData(s.toString())
+                    "contact" -> phoneContactFilterData(s.toString())
 
                 }
 
@@ -227,9 +227,12 @@ class SearchViewActivity : AppCompatActivity() {
                     "تاریخ انجام شده : " + costDate
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,CostActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            var intent = Intent(this,CostActivity::class.java)
+            intent.putExtra("UPDATE","update")
+            intent.putExtra("COSTREASON",costReason)
+            intent.putExtra("COSTAMOUNT",costAmount)
+            intent.putExtra("COSTDATE",costDate)
+            startActivity(intent)
         }
 
         dialog.setNegativeButton("حذف") { _, witch ->
@@ -290,9 +293,15 @@ class SearchViewActivity : AppCompatActivity() {
                     "تاریخ عقد قراردا : " + contractDate
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,ContractActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            val intent = Intent(this,ContractActivity::class.java)
+            intent.putExtra("UPDATE","update")
+            intent.putExtra("CONTRACTNAME",contractName)
+            intent.putExtra("NATIONALCODE",nationalCode)
+            intent.putExtra("TRANSACTIONVOLUME",contractTransactionVolume)
+            intent.putExtra("CONTRACTTITLE",contractTitle)
+            intent.putExtra("PRODUCTINFO",contractProductInformation)
+            intent.putExtra("CONTRACTDATE",contractDate)
+            startActivity(intent)
         }
 
         dialog.setNegativeButton("حذف") { _, witch ->
@@ -463,8 +472,11 @@ class SearchViewActivity : AppCompatActivity() {
         phoneContactAdapter =
             PhoneContactRecycleViewAdapter(this, phoneContactList) { phoneContactDataBaseModel ->
                 var intent = Intent(this,SMSPanelActivity::class.java)
-                intent.putExtra("NUMBER",phoneContactDataBaseModel.phoneNumber.toString() + ",")
+                //var num = intent.getStringExtra("PASTENUMBER")
+
+                intent.putExtra("NUMBER", phoneContactDataBaseModel.phoneNumber.toString() + ",")
                 startActivity(intent)
+                this.finish()
             }
     }
 
