@@ -21,9 +21,9 @@ class SettingActivity : AppCompatActivity() {
     var blueColor = Color.parseColor("#1A237E")
     var greenColor = Color.parseColor("#004D40")
     var grayColor = Color.parseColor("#757575")
-    var whiteColor = Color.parseColor("#ffffff")
+    var orangeColor = Color.parseColor("#b74d29")
 
-    var PRIMARY_COLOR: String = "#ffffff"
+    var PRIMARY_COLOR: String = "#757575"
     var PRIMARY_FONT: String = "IArabics"
     var PRIMARY_NAME: String = ""
 
@@ -36,7 +36,7 @@ class SettingActivity : AppCompatActivity() {
         val blueColorChanger = findViewById<ImageButton>(R.id.modifier_to_blue_btn)
         val greenColorChanger = findViewById<ImageButton>(R.id.modifier_to_green_btn)
         val grayColorChanger = findViewById<ImageButton>(R.id.modifier_to_gray_btn)
-        val whiteColorChanger = findViewById<ImageButton>(R.id.modifier_to_white_btn)
+        val orangeColorChanger = findViewById<ImageButton>(R.id.modifier_to_orange_btn)
         val titleContent = findViewById<TextView>(R.id.title_content)
         val changeColorTitle = findViewById<TextView>(R.id.change_color_title)
         val changeFontTitle = findViewById<TextView>(R.id.change_font_title)
@@ -115,27 +115,27 @@ class SettingActivity : AppCompatActivity() {
         redColorChanger.setOnClickListener {
             PRIMARY_COLOR = "#ffffff"
             generalBackground.setBackgroundColor(redColor)
-            PRIMARY_COLOR = "#EF9A9A"
+            PRIMARY_COLOR = "#880E4F"
         }
         blueColorChanger.setOnClickListener {
             PRIMARY_COLOR = "#ffffff"
             generalBackground.setBackgroundColor(blueColor)
-            PRIMARY_COLOR = "#64B5F6"
+            PRIMARY_COLOR = "#1A237E"
         }
         greenColorChanger.setOnClickListener {
             PRIMARY_COLOR = "#ffffff"
             generalBackground.setBackgroundColor(greenColor)
-            PRIMARY_COLOR = "#81C784"
+            PRIMARY_COLOR = "#004D40"
         }
         grayColorChanger.setOnClickListener {
             PRIMARY_COLOR = "#ffffff"
             generalBackground.setBackgroundColor(grayColor)
-            PRIMARY_COLOR = "#90A4AE"
+            PRIMARY_COLOR = "#757575"
         }
-        whiteColorChanger.setOnClickListener {
+        orangeColorChanger.setOnClickListener {
             PRIMARY_COLOR = "#ffffff"
-            generalBackground.setBackgroundColor(whiteColor)
-            PRIMARY_COLOR = "#ffffff"
+            generalBackground.setBackgroundColor(orangeColor)
+            PRIMARY_COLOR = "#b74d29"
         }
 
         saveButton.setOnClickListener {

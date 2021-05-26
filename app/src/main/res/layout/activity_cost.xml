@@ -5,7 +5,7 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#616161"
+    android:background="#757575"
     tools:context=".controller.CostActivity">
 
     <RelativeLayout

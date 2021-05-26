@@ -5,6 +5,7 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#757575"
     tools:context=".controller.SMSPanelActivity">
 
 
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/normal_margin"
         android:text="@string/panel_title"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
 
         android:textSize="@dimen/text_header_size" />
 
