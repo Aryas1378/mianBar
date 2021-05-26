@@ -58,7 +58,7 @@ class CostActivity : AppCompatActivity() {
         var costinfo = CostInfo()
         costinfo.reason = costReason
         costinfo.amount = costAmount.toLong()
-        costinfo.date = date.toLong()
+        costinfo.date = date
         dbHandler?.createCostInfo(costinfo)
 
     }

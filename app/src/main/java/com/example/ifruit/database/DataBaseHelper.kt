@@ -23,7 +23,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             "CREATE TABLE " + TABLE_NAME5 + "(" + KEY_COST_ID + " INTEGER PRIMARY KEY," +
                     KEY_COST_REASON + " TEXT," +
                     KEY_COST_AMOUNT + " BIGINT," +
-                    KEY_COST_DATE + " DATE)"
+                    KEY_COST_DATE + " TEXT)"
     var CREATE_CONTRACT_TABLE =
             "CREATE TABLE " + TABLE_NAME4 + "(" + KEY_CONTRACT_ID + " INTEGER PRIMARY KEY," +
                     KEY_CONTRACT_NAME + " VARCHAR(30)," +
@@ -31,7 +31,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                     KEY_CONTRACT_TRANSACION_VOlLME + " BIGINT," +
                     KEY_CONTRACT_CONTRACT_TITLE + " TEXT," +
                     KEY_CONTRACT_PRODUCT_INFORMATON + " TEXT," +
-                    KEY_CONTRACT_DATE + " DATE)"
+                    KEY_CONTRACT_DATE + " TEXT)"
     val CREATE_USER_TABLE =
             "CREATE TABLE " + TABLE_NAME1 + "(" + KEY_USER_ID + " INTEGER PRIMARY KEY," +
                     KEY_USER_NAME + " TEXT," +
@@ -53,7 +53,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             "CREATE TABLE " + TABLE_NAME7 + "(" + KEY_EMPLOYEE_MANAGEMENT_ID + " INTEGER PRIMARY KEY," +
                     KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " VARCHAR(30)," +
                     KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " LONG," +
-                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " DATE," +
+                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " TEXT," +
                     KEY_EMPLOYEE_MANAGEMENT_SALARY + " LONG," +
                     KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " TEXT)"
 
@@ -214,7 +214,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             val costInfo = CostInfo()
             costInfo.reason = cursor.getString(cursor.getColumnIndex(KEY_COST_REASON))
             costInfo.amount = cursor.getLong(cursor.getColumnIndex(KEY_COST_AMOUNT))
-            costInfo.date = cursor.getLong(cursor.getColumnIndex(KEY_COST_DATE))
+            costInfo.date = cursor.getString(cursor.getColumnIndex(KEY_COST_DATE))
 
 
 
@@ -350,7 +350,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                             KEY_CONTRACT_PRODUCT_INFORMATON
                     )
             )
-            contractinfo.date = cursor.getLong(cursor.getColumnIndex(KEY_CONTRACT_DATE))
+            contractinfo.date = cursor.getString(cursor.getColumnIndex(KEY_CONTRACT_DATE))
 
 
             return contractinfo
@@ -613,7 +613,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             var employeeManagementInfo = EmployeeManagementInfo()
             employeeManagementInfo.firstName = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME))
             employeeManagementInfo.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER))
-            employeeManagementInfo.dateOfEmployee = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE))
+            employeeManagementInfo.dateOfEmployee = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE))
             employeeManagementInfo.salary = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_SALARY))
             employeeManagementInfo.jobTitle = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE))
 

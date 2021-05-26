@@ -28,7 +28,7 @@ class DataGeneratorFromDataBase {
                               transactionVolume: Long,
                               contractTitle: String,
                               productInformation: String,
-                              date: Long) {
+                              date: String) {
         contractDataBaseModelList.plusAssign(ContractDataBaseModel(name, nationalCode, transactionVolume,contractTitle,productInformation,date))
 
     }
@@ -38,7 +38,7 @@ class DataGeneratorFromDataBase {
     }
     fun employeeGenerateData( firstName: String,
                               phoneNumber: Long,
-                              dateOfEmployee: Long,
+                              dateOfEmployee: String,
                               salary: Long,
                               jobTitle: String) {
         employeeDataBaseModelList.plusAssign(EmployeeManagementDataBaseModel(firstName, phoneNumber, dateOfEmployee, salary, jobTitle))

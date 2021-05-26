@@ -7,7 +7,7 @@ class ContractInfo() {
     var transactionVolume: Long? = null
     var contractTitle: String? = null
     var productInformation: String? = null
-    var date: Long? = null
+    var date: String? = null
 
     constructor(
         id: Int,
@@ -16,7 +16,7 @@ class ContractInfo() {
         transactionVolume: Long,
         contractTitle: String,
         productInformation: String,
-        date:Long
+        date:String
     ) : this() {
         this.id = id
         this.name = name

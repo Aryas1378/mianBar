@@ -6,13 +6,13 @@ class CostInfo() {
     var id: Int? = null
     var reason: String? = null
     var amount: Long? = null
-    var date: Long? = null
+    var date: String? = null
 
     constructor(
         id: Int,
         reason: String,
         amount: Long,
-        date: Long
+        date: String
     ) : this() {
         this.id = id
         this.reason = reason
