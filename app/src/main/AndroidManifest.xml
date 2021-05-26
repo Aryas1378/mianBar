@@ -11,14 +11,14 @@
         android:roundIcon="@drawable/background_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.IFruit">
-        <activity android:name=".controller.AccountingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".controller.AccountingActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".controller.AddContact" />
+
+        <activity android:name=".controller.AddContact"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
         <activity
             android:name=".controller.DebtActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
@@ -44,7 +44,14 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".controller.SMSPanelActivity" />
+        <activity android:name=".controller.SMSPanelActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".controller.ForgotPasswordActivity" />
         <activity
             android:name=".controller.MainMenuActivity"

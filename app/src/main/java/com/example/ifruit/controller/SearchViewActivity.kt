@@ -62,7 +62,7 @@ class SearchViewActivity : AppCompatActivity() {
             "employee" -> getEmployeeDataAndAdaptIt()
             "salary" -> getSalaryDataAndAdaptIt()
             "fruit" -> getFruitDataAndAdaptIt()
-            else -> getContactDataAndAdaptIt()
+            "contact" -> getContactDataAndAdaptIt()
         }
 
         val layoutManager = GridLayoutManager(this, 1)
@@ -75,7 +75,7 @@ class SearchViewActivity : AppCompatActivity() {
             "employee" -> listProduct.adapter = employeeAdapter
             "salary" -> listProduct.adapter = salaryAdapter
             "fruit" -> listProduct.adapter = fruitAdapter
-            else -> listProduct.adapter = phoneContactAdapter
+            "contact" -> listProduct.adapter = phoneContactAdapter
 
         }
 
@@ -97,7 +97,7 @@ class SearchViewActivity : AppCompatActivity() {
                     "employee" -> employeeFilterData(s.toString())
                     "salary" -> salaryFilterData(s.toString())
                     "fruit" -> fruitFilterData(s.toString())
-                    else -> phoneContactFilterData(s.toString())
+                    "contact" -> phoneContactFilterData(s.toString())
 
                 }
 
@@ -472,8 +472,11 @@ class SearchViewActivity : AppCompatActivity() {
         phoneContactAdapter =
             PhoneContactRecycleViewAdapter(this, phoneContactList) { phoneContactDataBaseModel ->
                 var intent = Intent(this,SMSPanelActivity::class.java)
-                intent.putExtra("NUMBER",phoneContactDataBaseModel.phoneNumber.toString() + ",")
+                //var num = intent.getStringExtra("PASTENUMBER")
+
+                intent.putExtra("NUMBER", phoneContactDataBaseModel.phoneNumber.toString() + ",")
                 startActivity(intent)
+                this.finish()
             }
     }
 

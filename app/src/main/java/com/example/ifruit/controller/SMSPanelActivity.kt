@@ -17,13 +17,13 @@ class SMSPanelActivity : AppCompatActivity() {
 
 
     private val PERMISSION_SEND_SMS = 0
-    var contactNumber: String ?= null
+   // var contactNumber: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_s_m_s_panel)
 
-        contactNumber = intent.getStringExtra("NUMBER").toString()
+        val contactNumber=  intent.getStringExtra("NUMBER").toString()
 
         val sendButton = findViewById<ImageButton>(R.id.send_massage)
         val phoneNumber = findViewById<EditText>(R.id.phone_number)
@@ -31,9 +31,7 @@ class SMSPanelActivity : AppCompatActivity() {
         val addNumImageButton = findViewById<ImageButton>(R.id.add_number)
         val addContact = findViewById<ImageButton>(R.id.add_contact)
 
-        if (contactNumber!=null){
-            phoneNumber.setText(contactNumber)
-        }
+
 
         sendButton.setOnClickListener {
             val text = textMassage.text
@@ -48,11 +46,18 @@ class SMSPanelActivity : AppCompatActivity() {
             val intent = Intent(this,SearchViewActivity::class.java)
             intent.putExtra("TABLE","contact")
             startActivity(intent)
+            this.finish()
         }
 
         addContact.setOnClickListener {
             val intent = Intent(this,AddContact::class.java)
             startActivity(intent)
+            this.finish()
+        }
+        if (contactNumber.length > 5){
+
+            System.out.println(contactNumber)
+            phoneNumber.setText(contactNumber)
         }
 
     }
