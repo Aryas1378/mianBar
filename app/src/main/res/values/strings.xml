@@ -66,6 +66,7 @@
     <string name="debt">بدهکاری و بستانکاری</string>
     <string name="fruit_info">اطلاعات میوه</string>
     <string name="add_contact">اضافه کردن مخاطب</string>
+    <string name="employee_manage">مدیریت کارمندان</string>
     ///////////////////////////////////////////////////////SMS AC
     <string name="phone_number">شماره تلفن</string>
     <string name="send">ارسال</string>
@@ -80,6 +81,12 @@
     <string name="contact_name_hint">نام مخاطب</string>
     <string name="contact_title_hint">عنوان مخاطب</string>
     <string name="contact_phone_num_hint">شماره تماس مخاطب</string>
+
+    //////////////////////////////////////////////////////Employee management
+    <string name="employee_name_hint">نام کارمند</string>
+    <string name="employee_job_title_hint">سمت کاری کارمند</string>
+    <string name="employee_phone_num_hint">شماره تماس کارمد</string>
+    <string name="employee_salary_hint">حقوق پایه</string>
 
 
     //////////////////////////////////////////////////////cost recycle view layout

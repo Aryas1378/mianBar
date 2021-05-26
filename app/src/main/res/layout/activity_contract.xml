@@ -100,7 +100,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/small_margin"
         android:background="@drawable/edit_text_border2"
-        android:hint="@string/national_code_hint"
+        android:hint="@string/Transaction_volume_hint"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
@@ -114,7 +114,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/small_margin"
         android:background="@drawable/edit_text_border2"
-        android:hint="@string/national_code_hint"
+        android:hint="@string/Product_Information_hint"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
@@ -128,7 +128,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/small_margin"
         android:background="@drawable/edit_text_border2"
-        android:hint="@string/national_code_hint"
+        android:hint="@string/contract_date_hint"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
@@ -137,7 +137,7 @@
 
 
     <ImageButton
-        android:id="@+id/savebtn"
+        android:id="@+id/contract_save_btn"
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_below="@id/contract_date_ac"

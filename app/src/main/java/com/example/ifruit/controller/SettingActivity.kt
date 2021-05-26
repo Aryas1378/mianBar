@@ -43,7 +43,7 @@ class SettingActivity : AppCompatActivity() {
         val fontStyleSpinner = findViewById<Spinner>(R.id.change_font_style)
         val changeNameTitle = findViewById<TextView>(R.id.change_name_title)
         val changeNameEditText = findViewById<EditText>(R.id.change_name)
-        val saveButton = findViewById<ImageButton>(R.id.savebtn)
+        val saveButton = findViewById<ImageButton>(R.id.contract_save_btn)
 
         dbHandler = DataBaseHelper(this)
 

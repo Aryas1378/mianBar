@@ -227,9 +227,12 @@ class SearchViewActivity : AppCompatActivity() {
                     "تاریخ انجام شده : " + costDate
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,CostActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            var intent = Intent(this,CostActivity::class.java)
+            intent.putExtra("UPDATE","update")
+            intent.putExtra("COSTREASON",costReason)
+            intent.putExtra("COSTAMOUNT",costAmount)
+            intent.putExtra("COSTDATE",costDate)
+            startActivity(intent)
         }
 
         dialog.setNegativeButton("حذف") { _, witch ->
@@ -290,9 +293,15 @@ class SearchViewActivity : AppCompatActivity() {
                     "تاریخ عقد قراردا : " + contractDate
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,ContractActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            val intent = Intent(this,ContractActivity::class.java)
+            intent.putExtra("UPDATE","update")
+            intent.putExtra("CONTRACTNAME",contractName)
+            intent.putExtra("NATIONALCODE",nationalCode)
+            intent.putExtra("TRANSACTIONVOLUME",contractTransactionVolume)
+            intent.putExtra("CONTRACTTITLE",contractTitle)
+            intent.putExtra("PRODUCTINFO",contractProductInformation)
+            intent.putExtra("CONTRACTDATE",contractDate)
+            startActivity(intent)
         }
 
         dialog.setNegativeButton("حذف") { _, witch ->
