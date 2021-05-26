@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IFruit">
+
         <activity android:name=".controller.AddContact"></activity>
         <activity
             android:name=".controller.DebtActivity"

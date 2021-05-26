@@ -54,8 +54,9 @@ class CostActivity : AppCompatActivity() {
 
     }
     fun insertDataToDataBase(costReason: String, costAmount: String, date: String) {
+        dbHandler = DataBaseHelper(this)
 
-        var costinfo = CostInfo()
+        val costinfo = CostInfo()
         costinfo.reason = costReason
         costinfo.amount = costAmount.toLong()
         costinfo.date = date.toLong()
