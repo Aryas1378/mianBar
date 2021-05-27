@@ -41,6 +41,7 @@ class CostActivity : AppCompatActivity() {
         dbHandler = DataBaseHelper(this)
 
 
+        ////////////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
         // SET BACKGROUND COLOR OF COST ACTIVITY
         var Color = Color.parseColor(getSetting?.color.toString())
@@ -50,7 +51,7 @@ class CostActivity : AppCompatActivity() {
         var fontName = getSetting?.font?.toLowerCase()
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
-
+        ////////////////////////////////////////////////////////////////////////
 
 
         if (!updateRequire.equals("update")) {

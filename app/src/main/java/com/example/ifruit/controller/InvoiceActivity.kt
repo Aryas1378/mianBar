@@ -2,10 +2,13 @@ package com.example.ifruit.controller
 
 import android.database.Cursor
 import android.database.DatabaseUtils
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,6 +41,20 @@ class InvoiceActivity : AppCompatActivity() {
         recyclerView.layoutManager=LinearLayoutManager(this)
 
 
+        val background = findViewById<ConstraintLayout>(R.id.background)
+        val activityHeader = findViewById<TextView>(R.id.invoice_header)
+
+        ////////////////////////////////////////////////////////////////////////
+        val getSetting = db?.readSettingInfo(1)
+        // SET BACKGROUND COLOR OF COST ACTIVITY
+        var color = Color.parseColor(getSetting?.color.toString())
+        background.setBackgroundColor(color)
+
+        // SET TEXTS FONT INSIDE COST ACTIVITY
+        var fontName = getSetting?.font?.toLowerCase()
+        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
+        activityHeader.typeface = font
+        ////////////////////////////////////////////////////////////////////////
 
         var result= db!!.readFruitData()
         for (i in 0..(result?.size-1)){

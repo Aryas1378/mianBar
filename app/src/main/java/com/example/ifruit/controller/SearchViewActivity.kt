@@ -1,12 +1,16 @@
 package com.example.ifruit.controller
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -57,6 +61,20 @@ class SearchViewActivity : AppCompatActivity() {
         val listProduct = findViewById<RecyclerView>(R.id.information_list)
         val searchViewEditText = findViewById<EditText>(R.id.search_edittext)
         val searchViewButton = findViewById<ImageButton>(R.id.search_btn)
+        val background = findViewById<RelativeLayout>(R.id.search_background)
+        val activityHeader = findViewById<TextView>(R.id.search_title)
+
+        ////////////////////////////////////////////////////////////////////////
+        val getSetting = dbHandler?.readSettingInfo(1)
+        // SET BACKGROUND COLOR OF COST ACTIVITY
+        var Color = Color.parseColor(getSetting?.color.toString())
+        background.setBackgroundColor(Color)
+
+        // SET TEXTS FONT INSIDE COST ACTIVITY
+        var fontName = getSetting?.font?.toLowerCase()
+        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
+        activityHeader.typeface = font
+        ////////////////////////////////////////////////////////////////////////
 
         when (tableRequire) {
             "cost" -> getCostDataAndAdaptIt()

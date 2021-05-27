@@ -4,6 +4,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,8 +33,23 @@ class BackUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_back_up)
-        dbHandler = DataBaseHelper(this@BackUpActivity)
+        dbHandler = DataBaseHelper(this)
+
         val backUpSubBtn = findViewById<ImageButton>(R.id.backUpSubBtn)
+        val background = findViewById<RelativeLayout>(R.id.backup_background)
+        val activityHeader = findViewById<TextView>(R.id.backup_header)
+
+        ////////////////////////////////////////////////////////////////////////
+        val getSetting = dbHandler?.readSettingInfo(1)
+        // SET BACKGROUND COLOR OF COST ACTIVITY
+        var Color = Color.parseColor(getSetting?.color.toString())
+        background.setBackgroundColor(Color)
+
+        // SET TEXTS FONT INSIDE COST ACTIVITY
+        var fontName = getSetting?.font?.toLowerCase()
+        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
+        activityHeader.typeface = font
+        ////////////////////////////////////////////////////////////////////////
 
         var userFileOutPutStream: FileOutputStream? = null
         var debtFileOutPutStream: FileOutputStream? = null
