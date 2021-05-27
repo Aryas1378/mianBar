@@ -1,14 +1,17 @@
 package com.example.ifruit.controller
 
 import android.app.DatePickerDialog
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.example.ifruit.R
+import com.example.ifruit.database.DataBaseHelper
 import java.util.*
 
-class StaffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener {
+class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     var day = 0
     var month = 0
     var year = 0
@@ -16,30 +19,54 @@ class StaffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetLi
     var SavedDay = 0
     var SavedMonth = 0
     var SavedYear = 0
-
+    var dbHandler: DataBaseHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stuff_managing)
-
+        dbHandler = DataBaseHelper(this)
         pickDate()
+
+        val activityHeader = findViewById<TextView>(R.id.employee_header)
+        val dataText = findViewById<TextView>(R.id.date_text_view)
+        val background = findViewById<RelativeLayout>(R.id.background)
+
+
+        val getSetting = dbHandler?.readSettingInfo(1)
+        // SET BACKGROUND COLOR OF COST ACTIVITY
+        var Color = Color.parseColor(getSetting?.color.toString())
+        background.setBackgroundColor(Color)
+
+        // SET TEXTS FONT INSIDE COST ACTIVITY
+        var fontName = getSetting?.font?.toLowerCase()
+        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
+        activityHeader.typeface = font
+        dataText.typeface = font
 
         //job title spinner definitions
         val job_title_spiner: Spinner = findViewById(R.id.job_title_spiner)
         val spinTitleJobList = listOf("حسابداری", "غرفه دار", "راننده")
-        val spinnerAdaper = ArrayAdapter<Any?>(this@StaffManagingActivity, R.layout.support_simple_spinner_dropdown_item,
-            spinTitleJobList)
+        val spinnerAdaper = ArrayAdapter<Any?>(
+            this@StaffManagingActivity, R.layout.support_simple_spinner_dropdown_item,
+            spinTitleJobList
+        )
 
         job_title_spiner.adapter = spinnerAdaper
 
-        job_title_spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        job_title_spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
 //                System.out.println(parent?.getItemAtPosition(position).toString())
-    //                should be completed
+                //                should be completed
 
 
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
@@ -47,8 +74,9 @@ class StaffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetLi
         }
 
     }
-//    Date picking time
-    private fun getDateTimeCalender(){
+
+    //    Date picking time
+    private fun getDateTimeCalender() {
         val cal: Calendar = Calendar.getInstance()
         day = cal.get(Calendar.DAY_OF_MONTH)
         month = cal.get(Calendar.MONTH)
@@ -56,9 +84,9 @@ class StaffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetLi
 
     }
 
-    private fun pickDate(){
+    private fun pickDate() {
         val dateBtn = findViewById(R.id.button_date) as Button
-        dateBtn.setOnClickListener{
+        dateBtn.setOnClickListener {
 
             getDateTimeCalender()
             DatePickerDialog(this, this, year, month, day).show()
