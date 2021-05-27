@@ -24,6 +24,7 @@ class RestoreActivity : AppCompatActivity() {
             val contractFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/contract.csv").readLines() as MutableList<String>
             val contactFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/contact.csv").readLines() as MutableList<String>
             val employeeFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/employee.csv").readLines() as MutableList<String>
+            val salaryFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/salary.csv").readLines() as MutableList<String>
             var counter = 0
 
             //user repairing database is successful
@@ -100,22 +101,35 @@ class RestoreActivity : AppCompatActivity() {
 //            }
 //            counter = 0
 
+            //employee repairing database successful
+//            employeeFileRead.forEach { read ->
+//                if(counter>0){
+//                    val employeeCorrectForm:List<String> = read.split(",")
+//                    val newEmployee = EmployeeManagementInfo()
+//                    newEmployee.firstName = employeeCorrectForm.get(1)
+//                    newEmployee.phoneNumber = employeeCorrectForm.get(2).toLong()
+//                    newEmployee.dateOfEmployee = employeeCorrectForm.get(3)
+//                    newEmployee.salary = employeeCorrectForm.get(4).toLong()
+//                    newEmployee.jobTitle = employeeCorrectForm.get(5)
+//                    dbHandler?.createEmployeeManagementInfo(newEmployee)
+//                }
+//                counter++
+//            }
+//            counter = 0
 
-            employeeFileRead.forEach { read ->
+
+            salaryFileRead.forEach { read ->
                 if(counter>0){
-                    val employeeCorrectForm:List<String> = read.split(",")
-                    val newEmployee = EmployeeManagementInfo()
-                    newEmployee.firstName = employeeCorrectForm.get(1)
-                    newEmployee.phoneNumber = employeeCorrectForm.get(2).toLong()
-                    newEmployee.dateOfEmployee = employeeCorrectForm.get(3)
-                    newEmployee.salary = employeeCorrectForm.get(4).toLong()
-                    newEmployee.jobTitle = employeeCorrectForm.get(5)
-                    dbHandler?.createEmployeeManagementInfo(newEmployee)
+                    val salaryCorrectForm:List<String> = read.split(",")
+                    val newSalary = SalaryInfo()
+                    newSalary.name = salaryCorrectForm.get(1)
+                    newSalary.salary = salaryCorrectForm.get(2).toInt()
+                    newSalary.phoneNumber = salaryCorrectForm.get(3).toLong()
+                    dbHandler?.addSalary(newSalary)
                 }
                 counter++
             }
             counter = 0
-
 
 
 

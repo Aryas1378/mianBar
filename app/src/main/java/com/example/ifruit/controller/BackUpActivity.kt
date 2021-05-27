@@ -139,18 +139,18 @@ class BackUpActivity : AppCompatActivity() {
 //                fruitFileOutPutStream.close()
 
 
-//                while (!salaryCurser.isNull(0)){
-//                    salaryFileOutPutStream?.write("\n".toByteArray())
-//                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
-//                    salaryFileOutPutStream?.write(",".toByteArray())
-//                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
-//                    salaryFileOutPutStream?.write(",".toByteArray())
-//                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
-//                    salaryFileOutPutStream?.write(",".toByteArray())
-//                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
-//                    salaryCurser.moveToNext()
-//                }
-//                salaryFileOutPutStream.close()
+                while (!salaryCurser.isNull(0)){
+                    salaryFileOutPutStream?.write("\n".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
+                    salaryFileOutPutStream?.write(",".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
+                    salaryFileOutPutStream?.write(",".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
+                    salaryFileOutPutStream?.write(",".toByteArray())
+                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
+                    salaryCurser.moveToNext()
+                }
+                salaryFileOutPutStream.close()
 
 //                while (!employeeCurser.isNull(0)){
 //                    employeeFileOutPutStream?.write("\n".toByteArray())
@@ -169,20 +169,20 @@ class BackUpActivity : AppCompatActivity() {
 //                }
 //                employeeFileOutPutStream.close()
 
-                while (!contactCurser.isNull(0)){
-                    contactFileOutPutStream?.write("\n".toByteArray())
-                    contactFileOutPutStream?.write(contactCurser.getString(0).toByteArray())
-                    contactFileOutPutStream?.write(",".toByteArray())
-                    contactFileOutPutStream?.write(contactCurser.getString(1).toByteArray())
-                    contactFileOutPutStream?.write(",".toByteArray())
-                    contactFileOutPutStream?.write(contactCurser.getString(2).toByteArray())
-                    contactFileOutPutStream?.write(",".toByteArray())
-                    contactFileOutPutStream?.write(contactCurser.getString(3).toByteArray())
-                    contactCurser.moveToNext()
-                }
-                contactFileOutPutStream.close()
-
-                Toast.makeText(this@BackUpActivity, "file is created", Toast.LENGTH_LONG).show()
+//                while (!contactCurser.isNull(0)){
+//                    contactFileOutPutStream?.write("\n".toByteArray())
+//                    contactFileOutPutStream?.write(contactCurser.getString(0).toByteArray())
+//                    contactFileOutPutStream?.write(",".toByteArray())
+//                    contactFileOutPutStream?.write(contactCurser.getString(1).toByteArray())
+//                    contactFileOutPutStream?.write(",".toByteArray())
+//                    contactFileOutPutStream?.write(contactCurser.getString(2).toByteArray())
+//                    contactFileOutPutStream?.write(",".toByteArray())
+//                    contactFileOutPutStream?.write(contactCurser.getString(3).toByteArray())
+//                    contactCurser.moveToNext()
+//                }
+//                contactFileOutPutStream.close()
+//
+//                Toast.makeText(this@BackUpActivity, "file is created", Toast.LENGTH_LONG).show()
 
             }catch (e: FileNotFoundException){
                 e.printStackTrace()
