@@ -117,19 +117,19 @@ class RestoreActivity : AppCompatActivity() {
 //            }
 //            counter = 0
 
-
-            salaryFileRead.forEach { read ->
-                if(counter>0){
-                    val salaryCorrectForm:List<String> = read.split(",")
-                    val newSalary = SalaryInfo()
-                    newSalary.name = salaryCorrectForm.get(1)
-                    newSalary.salary = salaryCorrectForm.get(2).toInt()
-                    newSalary.phoneNumber = salaryCorrectForm.get(3).toLong()
-                    dbHandler?.addSalary(newSalary)
-                }
-                counter++
-            }
-            counter = 0
+            //salary repairing database successful
+//            salaryFileRead.forEach { read ->
+//                if(counter>0){
+//                    val salaryCorrectForm:List<String> = read.split(",")
+//                    val newSalary = SalaryInfo()
+//                    newSalary.name = salaryCorrectForm.get(1)
+//                    newSalary.salary = salaryCorrectForm.get(2).toInt()
+//                    newSalary.phoneNumber = salaryCorrectForm.get(3).toLong()
+//                    dbHandler?.addSalary(newSalary)
+//                }
+//                counter++
+//            }
+//            counter = 0
 
 
 
