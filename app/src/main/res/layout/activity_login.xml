@@ -60,7 +60,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username_field"
             android:layout_width="300dp"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/large_margin"
             android:layout_marginBottom="@dimen/large_margin"
@@ -71,7 +71,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:layout_below="@id/app_name"
-            android:padding="@dimen/small_margin"
+            android:padding="@dimen/cardview_margin"
             android:textColorHint="#000000"
             android:textSize="@dimen/text_large_size"
             >
@@ -83,6 +83,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="#82B1FF"
                 android:ems="15"
+                android:textSize="@dimen/text_normal_size"
                 android:inputType="text"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +93,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_field"
             android:layout_width="300dp"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/black"
             android:layout_marginBottom="@dimen/large_margin"
@@ -103,6 +104,7 @@
             app:hintAnimationEnabled="true"
             android:textColorHint="@color/black"
             android:backgroundTint="#82B1FF"
+            android:padding="@dimen/cardview_margin"
             android:background="@drawable/login_edittext">
 
 
@@ -112,6 +114,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:backgroundTint="#82B1FF"
+                android:textSize="@dimen/text_normal_size"
                 android:ems="15"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
