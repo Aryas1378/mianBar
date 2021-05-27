@@ -16,8 +16,11 @@ import com.example.ifruit.R
 class SMSPanelActivity : AppCompatActivity() {
 
 
+
+
     private val PERMISSION_SEND_SMS = 0
-   // var contactNumber: String
+    var number : String?=null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,11 @@ class SMSPanelActivity : AppCompatActivity() {
         val addNumImageButton = findViewById<ImageButton>(R.id.add_number)
         val addContact = findViewById<ImageButton>(R.id.add_contact)
 
+        if (phoneNumber.text!=null && contactNumber!=null){
+            phoneNumber.setText(contactNumber)
+
+        }
+
 
 
         sendButton.setOnClickListener {
@@ -41,12 +49,14 @@ class SMSPanelActivity : AppCompatActivity() {
 
         }
 
+
         addNumImageButton.setOnClickListener {
            // startActivity(Intent(this,Contact::class.java))
             val intent = Intent(this,SearchViewActivity::class.java)
+            intent.putExtra("NUMBER",phoneNumber.text)
             intent.putExtra("TABLE","contact")
             startActivity(intent)
-            this.finish()
+            //this.finish()
         }
 
         addContact.setOnClickListener {
@@ -54,11 +64,11 @@ class SMSPanelActivity : AppCompatActivity() {
             startActivity(intent)
             this.finish()
         }
-        if (contactNumber.length > 5){
+        //if (contactNumber.length > 5){
 
-            System.out.println(contactNumber)
-            phoneNumber.setText(contactNumber)
-        }
+            System.out.println(number)
+            phoneNumber.setText(number)
+        //}
 
     }
 
@@ -116,5 +126,6 @@ class SMSPanelActivity : AppCompatActivity() {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
+
 
 }

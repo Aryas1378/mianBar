@@ -20,7 +20,7 @@ class InvoiceActivity : AppCompatActivity() {
     private lateinit var decrease_btn: Button
     private lateinit var increase_btn: Button
     private lateinit var add_btn: Button
-    private lateinit var submit_btn: Button
+    private lateinit var submit_btn: ImageButton
     private lateinit var fruitEditTextName: AutoCompleteTextView
     private lateinit var amountTextview: EditText
     private var db: DataBaseHelper?=null
@@ -183,7 +183,7 @@ class InvoiceActivity : AppCompatActivity() {
         decrease_btn=findViewById(R.id.decrease_btn) as Button
         increase_btn=findViewById(R.id.increase_btn) as Button
         add_btn=findViewById(R.id.addtobasket_btn) as Button
-        submit_btn=findViewById(R.id.submit_invoice_btn) as Button
+        submit_btn=findViewById(R.id.submit_invoice_btn) as ImageButton
         fruitEditTextName=findViewById(R.id.product_name_text) as AutoCompleteTextView
         amountTextview=findViewById(R.id.textview_amount) as EditText
 
