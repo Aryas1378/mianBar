@@ -22,7 +22,7 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
     var SavedMonth = 0
     var SavedYear = 0
 
-    var dateValue:String ?= null
+    var dateValue: String? = null
 
     var dbHandler: DataBaseHelper? = null
 
@@ -31,7 +31,7 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stuff_managing)
 
-        var spinnerRes:String ?= null
+        var spinnerRes: String? = null
         var dbHandler = DataBaseHelper(this)
         var newStaff = EmployeeManagementInfo()
         val saveBtn = findViewById<ImageButton>(R.id.stuff_sub_btn)
@@ -73,78 +73,87 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         job_title_spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                spinnerRes = parent?.getItemAtPosition(position).toString()
-
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
                 id: Long
             ) {
+                spinnerRes = parent?.getItemAtPosition(position).toString()
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
 //                System.out.println(parent?.getItemAtPosition(position).toString())
-                //                should be completed
+                    //                should be completed
 
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+
+            }
+            saveBtn.setOnClickListener
+            {
+
+                if (staffName.text.isEmpty() or staffAmount.text.isEmpty() or staffPhone.text.isEmpty()) {
+                    Toast.makeText(
+                        this@StaffManagingActivity,
+                        "اطلاعات را کامل کنید",
+                        Toast.LENGTH_LONG
+                    ).show()
+                } else {
+                    newStaff.firstName = staffName.text.toString()
+                    newStaff.phoneNumber = staffPhone!!.text.toString().toLong()
+                    newStaff.dateOfEmployee = dateValue
+                    newStaff.salary = staffAmount.text.toString().toLong()
+                    newStaff.jobTitle = spinnerRes
+                    dbHandler?.createEmployeeManagementInfo(newStaff)
+                    Toast.makeText(this@StaffManagingActivity, "ذخیره شد", Toast.LENGTH_LONG).show()
+                }
 
 
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
 
+        //    Date picking time
+        private fun getDateTimeCalender() {
+            val cal: Calendar = Calendar.getInstance()
+            day = cal.get(Calendar.DAY_OF_MONTH)
+            month = cal.get(Calendar.MONTH)
+            year = cal.get(Calendar.YEAR)
+
+        }
+
+        private fun pickDate() {
+            val dateBtn = findViewById(R.id.button_date) as Button
+            dateBtn.setOnClickListener {
+
+                getDateTimeCalender()
+                DatePickerDialog(this, this, year, month, day).show()
             }
 
         }
-         saveBtn.setOnClickListener {
 
-             if(staffName.text.isEmpty() or staffAmount.text.isEmpty() or staffPhone.text.isEmpty()){
-                 Toast.makeText(this@StaffManagingActivity, "اطلاعات را کامل کنید", Toast.LENGTH_LONG).show()
-             }
-             else{
-                 newStaff.firstName = staffName.text.toString()
-                 newStaff.phoneNumber = staffPhone!!.text.toString().toLong()
-                 newStaff.dateOfEmployee = dateValue
-                 newStaff.salary = staffAmount.text.toString().toLong()
-                 newStaff.jobTitle = spinnerRes
-                 dbHandler?.createEmployeeManagementInfo(newStaff)
-                 Toast.makeText(this@StaffManagingActivity, "ذخیره شد", Toast.LENGTH_LONG).show()
-             }
+        override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+            SavedDay = dayOfMonth
+            SavedMonth = month
+            SavedYear = year
 
-
-         }
-
-    }
-
-    //    Date picking time
-    private fun getDateTimeCalender() {
-        val cal: Calendar = Calendar.getInstance()
-        day = cal.get(Calendar.DAY_OF_MONTH)
-        month = cal.get(Calendar.MONTH)
-        year = cal.get(Calendar.YEAR)
-
-    }
-
-    private fun pickDate() {
-        val dateBtn = findViewById(R.id.button_date) as Button
-        dateBtn.setOnClickListener {
-
-            getDateTimeCalender()
-            DatePickerDialog(this, this, year, month, day).show()
-        }
-
-    }
-
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        SavedDay = dayOfMonth
-        SavedMonth = month
-        SavedYear = year
-
-        val btn_date = findViewById(R.id.button_date) as Button
+            val btn_date = findViewById(R.id.button_date) as Button
 //        "$year-"+(month+1).toString()+"-$dayOfMonth"
 //        btn_date.text = "$SavedMonth-$SavedDay-$SavedYear"
-        btn_date.text = "$SavedYear-"+(month+1).toString()+"-$SavedDay"
-        dateValue = "$SavedYear-"+(month+1).toString()+"-$SavedDay"
-        getDateTimeCalender()
+            btn_date.text = "$SavedYear-" + (month + 1).toString() + "-$SavedDay"
+            dateValue = "$SavedYear-" + (month + 1).toString() + "-$SavedDay"
+            getDateTimeCalender()
+
+        }
 
     }
-
 }
