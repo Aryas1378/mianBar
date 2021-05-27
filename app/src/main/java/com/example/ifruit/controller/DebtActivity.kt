@@ -5,22 +5,22 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD
+
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import com.example.annimation.DebtInfo
-=======
+
 import android.text.TextUtils
 import android.widget.*
 import com.example.annimation.CostInfo
->>>>>>> 7ffff3265c30fe28107318300d93a0a42a6ca0a4
+
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
 
 class DebtActivity : AppCompatActivity() {
 
-<<<<<<< HEAD
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_debt)
@@ -45,9 +45,6 @@ class DebtActivity : AppCompatActivity() {
         }
 
 
-
-
-=======
     var dbHandler: DataBaseHelper? = null
     private var updateRequire: String? = ""
     private var costReasonUpdateData: String? = null
@@ -162,6 +159,6 @@ class DebtActivity : AppCompatActivity() {
         oldCostInfo.date = oldCostDate
 
         dbHandler?.updateCostRow(oldCostInfo,newCostInfo)
->>>>>>> 7ffff3265c30fe28107318300d93a0a42a6ca0a4
+
     }
 }
