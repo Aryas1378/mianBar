@@ -95,16 +95,16 @@
                 android:layout_height="400dp"
                 android:layout_below="@+id/textview_amount" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <ImageButton
                 android:id="@+id/submit_invoice_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_btn"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:background="@drawable/save_button"
                 android:gravity="center"
                 android:layout_alignEnd="@id/invoice_recyclerview"
                 android:layout_alignStart="@+id/invoice_recyclerview"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
+
+                android:layout_centerHorizontal="true"
                 android:textStyle="bold"
                 android:layout_below="@+id/invoice_recyclerview"
                 android:textSize="20sp"

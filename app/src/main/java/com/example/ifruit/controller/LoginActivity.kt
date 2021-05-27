@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import at.favre.lib.crypto.bcrypt.BCrypt
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
@@ -83,11 +84,7 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 } else {
-                    Toast.makeText(
-                        this,
-                        "نام کاربری یا رمز عبور وارد شده صحیح نمی باشد.",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    logInDialogMassage(1)
                 }
 
             } else if (TextUtils.isEmpty(userName.text.toString()) || TextUtils.isEmpty(password.text.toString())) {
@@ -96,6 +93,8 @@ class LoginActivity : AppCompatActivity() {
                     "نام کاربری یا رمز عبور وارد نشده است.",
                     Toast.LENGTH_LONG
                 ).show()
+                logInDialogMassage(2)
+
             }
         }
 
@@ -108,5 +107,28 @@ class LoginActivity : AppCompatActivity() {
         val result: BCrypt.Result =
             BCrypt.verifyer().verify(editTextPass.toCharArray(), databasePass)
         return result.verified
+    }
+
+    fun logInDialogMassage(ID : Int) {
+        val dialog = AlertDialog.Builder(this)
+
+        if(ID == 1){
+            dialog.setTitle("خطا")
+            dialog.setIcon(R.drawable.ic_error)
+            dialog.setMessage("رمز عبور یا نام کاربری اشتباه است !")
+            dialog.setPositiveButton("تایید",null)
+
+            }
+
+        else if (ID==2){
+            dialog.setTitle("خطا")
+            dialog.setIcon(R.drawable.ic_warning)
+            dialog.setMessage("رمز عبور یا نام کاربری وارد نشده است !")
+            dialog.setPositiveButton("تایید",null)
+        }
+
+
+        dialog.show()
+
     }
 }

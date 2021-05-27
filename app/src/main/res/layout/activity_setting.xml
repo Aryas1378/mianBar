@@ -32,7 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/title_content"
-            android:layout_margin="@dimen/small_margin"
             android:background="@drawable/line"
             app:layout_constraintTop_toBottomOf="@id/title_content" />
 
@@ -59,7 +58,7 @@
             android:layout_alignParentTop="true"
             android:text="@string/account_name"
             android:layout_marginStart="@dimen/normal_margin"
-            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/normal_margin"
             android:layout_marginBottom="@dimen/normal_margin"
             />
@@ -86,9 +85,9 @@
 
             android:layout_alignParentEnd="true"
             android:layout_marginStart="@dimen/normal_margin"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/normal_margin"
-            android:layout_marginBottom="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/small_margin"
             android:text="@string/page_color"
             android:layout_below="@id/change_name"
             android:textColor="@color/white"
@@ -152,9 +151,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/modifier_color_btn"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/normal_margin"
-            android:layout_marginBottom="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/small_margin"
             android:text="@string/change_font"
             android:textColor="@color/white"
             android:textSize="@dimen/text_xlarge_size"
@@ -165,17 +164,17 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/change_font_title"
-            android:layout_margin="@dimen/normal_margin"
-
+            android:layout_margin="@dimen/small_margin"
+            
             />
 
         <ImageButton
             android:id="@+id/contract_save_btn"
             android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:layout_height="150dp"
             android:layout_below="@id/change_font_style"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/xlarge_margin"
+            android:layout_marginTop="@dimen/small_margin"
             android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
 
 

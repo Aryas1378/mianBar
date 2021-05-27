@@ -34,12 +34,15 @@ class SearchViewActivity : AppCompatActivity() {
     lateinit var salaryList: ArrayList<SalaryDataBaseModel>
     lateinit var phoneContactList: ArrayList<PhoneContactDataBaseModel>
 
+    private var number : String ?= null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_view)
 
         val tableRequire: String = intent.getStringExtra("TABLE").toString()
+        number = intent.getStringExtra("NUMBER")
 
         dbHandler = DataBaseHelper(this)
         costList = ArrayList()
@@ -474,10 +477,10 @@ class SearchViewActivity : AppCompatActivity() {
             PhoneContactRecycleViewAdapter(this, phoneContactList) { phoneContactDataBaseModel ->
                 var intent = Intent(this,SMSPanelActivity::class.java)
                 //var num = intent.getStringExtra("PASTENUMBER")
-
+                System.out.println("joooooooon be maola velet nmikonam"+ number)
                 intent.putExtra("NUMBER", phoneContactDataBaseModel.phoneNumber.toString() + ",")
                 startActivity(intent)
-                this.finish()
+                //this.finish()
             }
     }
 
