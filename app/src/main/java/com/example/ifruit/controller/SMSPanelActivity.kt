@@ -50,7 +50,7 @@ class SMSPanelActivity : AppCompatActivity() {
         }
 
         addContact.setOnClickListener {
-            val intent = Intent(this,AddContact::class.java)
+            val intent = Intent(this,AddContactActivity::class.java)
             startActivity(intent)
             this.finish()
         }

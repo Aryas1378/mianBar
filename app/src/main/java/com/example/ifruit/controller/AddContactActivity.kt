@@ -11,7 +11,7 @@ import com.example.annimation.CostInfo
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
 
-class AddContact : AppCompatActivity() {
+class AddContactActivity : AppCompatActivity() {
 
     var dbHandler: DataBaseHelper? = null
     override fun onCreate(savedInstanceState: Bundle?) {
