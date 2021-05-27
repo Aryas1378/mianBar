@@ -6,7 +6,8 @@
     android:background="#757575"
     android:id="@+id/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".controller.IncomeActivity">
+    tools:context=".controller.IncomeActivity"
+    android:padding="8dp">
 
 
     <TextView
@@ -37,151 +38,177 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/startDate_textview"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/start_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:text="از تاریخ"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/app_logo" />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/app_logo"
+        android:layoutDirection="rtl">
+        <TextView
+            android:id="@+id/startDate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:text="از تاریخ"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
-    <TextView
-        android:id="@+id/endtDate_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:text="تا تاریخ"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/startDate_textview" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startDateNum_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:text="2021-05-28"
+            android:backgroundTint="#757575"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
-    <TextView
-        android:id="@+id/income_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:text="درآمد خالص"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/endtDate_textview" />
 
-    <TextView
-        android:id="@+id/profit_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:text="سود"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/income_textview" />
 
-    <TextView
-        android:id="@+id/loss_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:text="ضرر"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/profit_textview" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/startDateNum_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:background="@color/white"
-        android:hint="--/--/--"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/startDate_textview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_logo" />
 
-    <EditText
-        android:id="@+id/endtDateNum_textview"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/second_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:background="@color/white"
-        android:hint="--/--/--"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/endtDate_textview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startDateNum_textview" />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/start_linear_layout"
+        android:layoutDirection="rtl">
 
-    <TextView
-        android:id="@+id/incomeAmount_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:background="@color/white"
-        android:hint="$$.$$.$$"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/income_textview"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/endtDateNum_textview" />
+        <TextView
+            android:id="@+id/endtDate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:text="تا تاریخ"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
 
-    <TextView
-        android:id="@+id/profitAmount_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:background="@color/white"
-        android:hint="$$.$$.$$"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/profit_textview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/incomeAmount_textview" />
 
-    <TextView
-        android:id="@+id/lossAmount_textview"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/endtDateNum_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:backgroundTint="#757575"
+            android:text="2021-05-28"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
-        android:background="@color/white"
-        android:hint="$$.$$.$$"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/loss_textview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profitAmount_textview" />
+        android:orientation="horizontal"
+        android:layoutDirection="rtl"
+        app:layout_constraintTop_toBottomOf="@+id/second_linear_layout">
+
+        <TextView
+            android:id="@+id/income_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:text="درآمد خالص"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/incomeAmount_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:hint="$$.$$.$$"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/fourth_linear_layout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:layoutDirection="rtl"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/third_linear_layout">-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/profit_textview"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_margin="@dimen/large_margin"-->
+    <!--            android:text="سود"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textStyle="bold" />-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/profitAmount_textview"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginRight="60dp"-->
+    <!--            android:hint="$$.$$.$$"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--    </LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--    android:id="@+id/fifth_linear_layout"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    android:layoutDirection="rtl"-->
+    <!--    app:layout_constraintTop_toBottomOf="@+id/fourth_linear_layout">-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/loss_textview"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="@dimen/large_margin"-->
+    <!--        android:text="ضرر"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textStyle="bold"-->
+    <!-- />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/lossAmount_textview"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:hint="$$.$$.$$"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:layout_marginRight="60dp"-->
+    <!--        android:textStyle="bold"/>-->
+
+
+    <!--</LinearLayout>-->
+
+
+
+
 
     <ImageButton
         android:id="@+id/search_btn"
         android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_marginTop="@dimen/btn_margin"
         android:layout_marginBottom="@dimen/large_margin"
         android:background="@drawable/search_btn"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_large_size"
-        android:textStyle="bold"
         android:layout_gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lossAmount_textview"
+        app:layout_constraintTop_toBottomOf="@+id/third_linear_layout"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

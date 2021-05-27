@@ -261,6 +261,22 @@ class DataBaseHelper(context: Context) :
 
     }
 
+    fun getAllFee(): Cursor {
+        val employeeDb =this.readableDatabase
+        val id:Int=100
+//        val selectQuery="name = " + qname
+        val cursor: Cursor = employeeDb.query(TABLE_NAME5, arrayOf( //table5
+             KEY_COST_ID,
+             KEY_COST_REASON,
+             KEY_COST_AMOUNT,
+             KEY_COST_DATE
+
+        ), null, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
+        cursor.moveToFirst()
+        employeeDb.close()
+        return cursor
+    }
+
     ////////////////////////////////
     //CRUD functions for debt table
     ////////////////////////////////
@@ -788,6 +804,20 @@ class DataBaseHelper(context: Context) :
 
     }
 
+    fun getAllEmployee(): Cursor {
+        val employeeDb =this.readableDatabase
+        val id:Int=100
+//        val selectQuery="name = " + qname
+        val cursor: Cursor = employeeDb.query(TABLE_NAME7, arrayOf( //table7
+            KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
+            KEY_EMPLOYEE_MANAGEMENT_SALARY
+
+        ), null, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
+        cursor.moveToFirst()
+        employeeDb.close()
+        return cursor
+    }
+
     ////////////////////////////////
     //CRUD functions for setting table
     ////////////////////////////////
@@ -1087,6 +1117,21 @@ class DataBaseHelper(context: Context) :
                 KEY_INVOICE_NUM
             ), null, null, null, null, null
         )
+        cursor.moveToFirst()
+        fruitDb.close()
+        return cursor
+    }
+
+    fun getAllInvoice(): Cursor {
+        val fruitDb =this.readableDatabase
+        val id:Int=100
+//        val selectQuery="name = " + qname
+        val cursor: Cursor = fruitDb.query(TABLE_NAME10, arrayOf(
+            KEY_INVOICE_ID,
+            KEY_INVOICE_FRUIT_NAME,
+            KEY_INVOICE_FRUIT_AMOUNT,
+            KEY_INVOICE_SUM
+        ), null, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
         cursor.moveToFirst()
         fruitDb.close()
         return cursor
