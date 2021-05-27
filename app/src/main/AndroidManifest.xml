@@ -11,9 +11,8 @@
         android:roundIcon="@drawable/background_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.IFruit">
-        <activity android:name=".controller.InvoiceActivity">
-
-        </activity>
+        <activity android:name=".controller.IncomeActivity"></activity>
+        <activity android:name=".controller.InvoiceActivity"></activity>
         <activity android:name=".controller.ManagementActivity" />
         <activity
             android:name=".controller.AccountingActivity"
