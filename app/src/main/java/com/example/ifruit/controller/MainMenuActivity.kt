@@ -15,9 +15,10 @@ import com.google.android.material.navigation.NavigationView
 
 class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var log_out: Button
+//    private lateinit var log_out: Button
 
-    //    private lateinit var acc_btn: Button
+    private lateinit var acc_btn: Button
+    private lateinit var mng_btn: Button
     private lateinit var setting_btn: ImageView
     private lateinit var setting_text_btn: TextView
     private lateinit var backup_btn: ImageView
@@ -58,54 +59,72 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         initViews()
 
         setting_btn.setOnClickListener {
-            Toast.makeText(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, SettingActivity::class.java)
+            startActivity(accountsIntent)
             drawer.closeDrawer(GravityCompat.END)
         }
         setting_text_btn.setOnClickListener {
-            Toast.makeText(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, SettingActivity::class.java)
+            startActivity(accountsIntent)
             drawer.closeDrawer(GravityCompat.END)
         }
 
         backup_btn.setOnClickListener {
-            Toast.makeText(this, "Backup Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Backup Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, BackUpActivity::class.java)
+            startActivity(accountsIntent)
             drawer.closeDrawer(GravityCompat.END)
         }
         backup_text_btn.setOnClickListener {
-            Toast.makeText(this, "Backup Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Backup Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, BackUpActivity::class.java)
+            startActivity(accountsIntent)
             drawer.closeDrawer(GravityCompat.END)
         }
 
         contactus_btn.setOnClickListener {
-            Toast.makeText(this, "ContactUs Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "ContactUs Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(accountsIntent)
             drawer.closeDrawer(GravityCompat.END)
         }
         contactus_text_btn.setOnClickListener {
-            Toast.makeText(this, "ContactUs Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "ContactUs Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(accountsIntent)
             drawer.closeDrawer(GravityCompat.END)
         }
 
         logoutDrawer_btn.setOnClickListener {
-            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, LoginActivity::class.java)
+            startActivity(accountsIntent)
+            finish()
             drawer.closeDrawer(GravityCompat.END)
         }
         logout_text_btn.setOnClickListener {
-            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
+            val accountsIntent = Intent(this, LoginActivity::class.java)
+            startActivity(accountsIntent)
+            finish()
             drawer.closeDrawer(GravityCompat.END)
         }
 //
 //
-        log_out.setOnClickListener {
-            val accountsIntent = Intent(this, MainActivity::class.java)
-            startActivity(accountsIntent)
-            finish()
-        }
-//        acc_btn.setOnClickListener {
-//            val accountsIntent = Intent(this, Accounting::class.java)
+//        log_out.setOnClickListener {
+//            val accountsIntent = Intent(this, LoginActivity::class.java)
 //            startActivity(accountsIntent)
-////            finish()
+//            finish()
 //        }
+        acc_btn.setOnClickListener {
+            val accountsIntent = Intent(this, AccountingActivity::class.java)
+            startActivity(accountsIntent)
+//            finish()
+        }
 //        mng_btn.setOnClickListener {
-//            val accountsIntent = Intent(this, Management::class.java)
+//            val accountsIntent = Intent(this, ::class.java)
 //            startActivity(accountsIntent)
 ////            finish()
 //        }
@@ -138,7 +157,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     }
 
     private fun initViews() {
-        log_out = findViewById(R.id.log_out) as Button
+//        log_out = findViewById(R.id.log_out) as Button
         item0=navigationView.menu.getItem(0)
 
         setting_btn = item0.actionView.findViewById(R.id.nav_setting) as ImageView
@@ -153,7 +172,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         logoutDrawer_btn=item0.actionView.findViewById(R.id.nav_logout) as ImageView
         logout_text_btn=item0.actionView.findViewById(R.id.nav_logout_text) as TextView
 
-//        acc_btn=findViewById(R.id.acc_btn) as Button
+        acc_btn=findViewById(R.id.acc_btn) as Button
 //        mng_btn=findViewById(R.id.mng_btn) as Button
     }
 }
