@@ -71,6 +71,13 @@
             android:background="@drawable/contractimg"
             android:scaleType="center"
             />
+        <ImageButton
+            android:id="@+id/invoice"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/invoic"
+            android:scaleType="center"
+            />
 
     </LinearLayout>
 </ScrollView>

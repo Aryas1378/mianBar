@@ -30,6 +30,7 @@ class AccountingActivity : AppCompatActivity() {
         val debtBtn = findViewById<ImageButton>(R.id.debt)
         val contractBtn = findViewById<ImageButton>(R.id.contract)
         val fruitInfoBtn = findViewById<ImageButton>(R.id.fruitinfo)
+        val invoiceActivity = findViewById<ImageButton>(R.id.invoice)
 
         ////////////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
@@ -50,8 +51,8 @@ class AccountingActivity : AppCompatActivity() {
 
         incomeBtn.setOnClickListener {
             Toast.makeText(this, "income", Toast.LENGTH_SHORT).show()
-            //  var intent = Intent(this,Setting::class.java)
-            //   startActivity(intent)
+              var intent = Intent(this,IncomeActivity::class.java)
+               startActivity(intent)
         }
 
         salaryBtn.setOnClickListener {
@@ -75,6 +76,11 @@ class AccountingActivity : AppCompatActivity() {
         fruitInfoBtn.setOnClickListener {
             Toast.makeText(this, "fruit information", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, FruitInformationActivity::class.java)
+            startActivity(intent)
+        }
+        invoiceActivity.setOnClickListener {
+            Toast.makeText(this, "fruit information", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, InvoiceActivity::class.java)
             startActivity(intent)
         }
 
