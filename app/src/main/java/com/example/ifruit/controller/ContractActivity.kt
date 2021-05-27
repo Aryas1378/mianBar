@@ -1,5 +1,6 @@
 package com.example.ifruit.controller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -43,6 +44,14 @@ class ContractActivity : AppCompatActivity() {
         val contractNameEditText = findViewById<EditText>(R.id.contract_name_ac)
         val contractProductInfoEditText = findViewById<EditText>(R.id.contract_product_info_ac)
         val contractActivitySaveData = findViewById<ImageButton>(R.id.contract_save_btn)
+
+        if (!updateRequire.equals("update")) {
+            searchButton.setOnClickListener {
+                val intent = Intent(this, SearchViewActivity::class.java)
+                intent.putExtra("TABLE", "contract")
+                startActivity(intent)
+            }
+        }
 
         contractActivitySaveData.setOnClickListener {
             if (!TextUtils.isEmpty(contractNameEditText.text.toString())
