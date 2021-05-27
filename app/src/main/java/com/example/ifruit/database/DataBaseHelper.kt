@@ -9,7 +9,8 @@ import android.util.Log
 import com.example.annimation.*
 import com.example.ifruit.model.*
 
-class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DataBaseHelper(context: Context) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     //sql command to creating all table
 
@@ -20,61 +21,61 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             KEY_DEBT_AMOUNT + " LONG)"
 
     var CREATE_COSTS_TABLE =
-            "CREATE TABLE " + TABLE_NAME5 + "(" + KEY_COST_ID + " INTEGER PRIMARY KEY," +
-                    KEY_COST_REASON + " TEXT," +
-                    KEY_COST_AMOUNT + " BIGINT," +
-                    KEY_COST_DATE + " TEXT)"
+        "CREATE TABLE " + TABLE_NAME5 + "(" + KEY_COST_ID + " INTEGER PRIMARY KEY," +
+                KEY_COST_REASON + " TEXT," +
+                KEY_COST_AMOUNT + " BIGINT," +
+                KEY_COST_DATE + " TEXT)"
     var CREATE_CONTRACT_TABLE =
-            "CREATE TABLE " + TABLE_NAME4 + "(" + KEY_CONTRACT_ID + " INTEGER PRIMARY KEY," +
-                    KEY_CONTRACT_NAME + " VARCHAR(30)," +
-                    KEY_CONTRACT_NATIONAL_CODE + " BIGINT," +
-                    KEY_CONTRACT_TRANSACION_VOlLME + " BIGINT," +
-                    KEY_CONTRACT_CONTRACT_TITLE + " TEXT," +
-                    KEY_CONTRACT_PRODUCT_INFORMATON + " TEXT," +
-                    KEY_CONTRACT_DATE + " TEXT)"
+        "CREATE TABLE " + TABLE_NAME4 + "(" + KEY_CONTRACT_ID + " INTEGER PRIMARY KEY," +
+                KEY_CONTRACT_NAME + " VARCHAR(30)," +
+                KEY_CONTRACT_NATIONAL_CODE + " BIGINT," +
+                KEY_CONTRACT_TRANSACION_VOlLME + " BIGINT," +
+                KEY_CONTRACT_CONTRACT_TITLE + " TEXT," +
+                KEY_CONTRACT_PRODUCT_INFORMATON + " TEXT," +
+                KEY_CONTRACT_DATE + " TEXT)"
     val CREATE_USER_TABLE =
-            "CREATE TABLE " + TABLE_NAME1 + "(" + KEY_USER_ID + " INTEGER PRIMARY KEY," +
-                    KEY_USER_NAME + " TEXT," +
-                    KEY_USER_EMAIL + " TEXT," +
-                    KEY_USER_PASSWORD + " TEXT)"
+        "CREATE TABLE " + TABLE_NAME1 + "(" + KEY_USER_ID + " INTEGER PRIMARY KEY," +
+                KEY_USER_NAME + " TEXT," +
+                KEY_USER_EMAIL + " TEXT," +
+                KEY_USER_PASSWORD + " TEXT)"
     val CREATE_FRUIT_TABLE =
-            "CREATE TABLE " + TABLE_NAME2 + "(" + KEY_FRUIT_ID + " INTEGER PRIMARY KEY ," +
-                    KEY_FRUIT_NAME + " TEXT," +
-                    KEY_FRUIT_PRICE + " INTEGER," +
-                    KEY_FRUIT_QUALITY + " INTEGER)"
+        "CREATE TABLE " + TABLE_NAME2 + "(" + KEY_FRUIT_ID + " INTEGER PRIMARY KEY ," +
+                KEY_FRUIT_NAME + " TEXT," +
+                KEY_FRUIT_PRICE + " INTEGER," +
+                KEY_FRUIT_QUALITY + " INTEGER)"
 
     val CREATE_SALARY_TABLE =
-            "CREATE TABLE " + TABLE_NAME3 + "(" + KEY_SALARY_ID + " INTEGER PRIMARY KEY ," +
-                    KEY_SALARY_NAME + " TEXT," +
-                    KEY_SALARY_SALARY + " INTEGER," +
-                    KEY_SALARY_PHONENUMBER + " LONG)"
+        "CREATE TABLE " + TABLE_NAME3 + "(" + KEY_SALARY_ID + " INTEGER PRIMARY KEY ," +
+                KEY_SALARY_NAME + " TEXT," +
+                KEY_SALARY_SALARY + " INTEGER," +
+                KEY_SALARY_PHONENUMBER + " LONG)"
 
     val CREATE_EMPLOYEE_MANAGEMENT_TABLE =
-            "CREATE TABLE " + TABLE_NAME7 + "(" + KEY_EMPLOYEE_MANAGEMENT_ID + " INTEGER PRIMARY KEY," +
-                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " VARCHAR(30)," +
-                    KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " LONG," +
-                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " TEXT," +
-                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " LONG," +
-                    KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " TEXT)"
+        "CREATE TABLE " + TABLE_NAME7 + "(" + KEY_EMPLOYEE_MANAGEMENT_ID + " INTEGER PRIMARY KEY," +
+                KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " VARCHAR(30)," +
+                KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " LONG," +
+                KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " TEXT," +
+                KEY_EMPLOYEE_MANAGEMENT_SALARY + " LONG," +
+                KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " TEXT)"
 
     val CREATE_SETTING_TABLE =
-            "CREATE TABLE " + TABLE_NAME8 + "(" + KEY_SETTING_ID + " INTEGER PRIMARY KEY," +
-                    KET_SETTING_NAME + " VARCHAR(30)," +
-                    KEY_SETTING_COLOR + " TEXT," +
-                    KEY_SETTING_FONT + " TEXT)"
+        "CREATE TABLE " + TABLE_NAME8 + "(" + KEY_SETTING_ID + " INTEGER PRIMARY KEY," +
+                KET_SETTING_NAME + " VARCHAR(30)," +
+                KEY_SETTING_COLOR + " TEXT," +
+                KEY_SETTING_FONT + " TEXT)"
 
     val CREATE_CONTACT_TABLE =
-            "CREATE TABLE " + TABLE_NAME9 + "(" + KEY_CONTACT_ID + " INTEGER PRIMARY KEY," +
-                    KEY_CONTACT_FIRST_NAME + " VARCHAR(30)," +
-                    KEY_CONTACT_TITLE + " VARCHAR(30)," +
-                    KEY_CONTACT_PHONE_NUMBER + " LONG)"
+        "CREATE TABLE " + TABLE_NAME9 + "(" + KEY_CONTACT_ID + " INTEGER PRIMARY KEY," +
+                KEY_CONTACT_FIRST_NAME + " VARCHAR(30)," +
+                KEY_CONTACT_TITLE + " VARCHAR(30)," +
+                KEY_CONTACT_PHONE_NUMBER + " LONG)"
 
     val CREATE_INVOICE_TABLE =
-        "CREATE TABLE "+ TABLE_NAME10+"("+ KEY_INVOICE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," +
-     KEY_INVOICE_FRUIT_NAME + " TEXT," +
-     KEY_INVOICE_FRUIT_AMOUNT + " FLOAT,"+
-     KEY_INVOICE_SUM + " INTEGER," + KEY_INVOICE_NUM + " INTEGER,"+
-     KEY_INVOICE_TIMESTAMP +" TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
+        "CREATE TABLE " + TABLE_NAME10 + "(" + KEY_INVOICE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," +
+                KEY_INVOICE_FRUIT_NAME + " TEXT," +
+                KEY_INVOICE_FRUIT_AMOUNT + " FLOAT," +
+                KEY_INVOICE_SUM + " INTEGER," + KEY_INVOICE_NUM + " INTEGER," +
+                KEY_INVOICE_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
 
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL(CREATE_USER_TABLE)
@@ -161,12 +162,13 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun readUser(id: Int): UserInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor = db.query(
-                TABLE_NAME1, arrayOf(
+            TABLE_NAME1, arrayOf(
                 KEY_USER_ID,
                 KEY_USER_NAME,
                 KEY_USER_EMAIL,
                 KEY_USER_PASSWORD
-        ), KEY_USER_ID + "=?", arrayOf(id.toString()), null, null, null)
+            ), KEY_USER_ID + "=?", arrayOf(id.toString()), null, null, null
+        )
 
         if (cursor != null) {
             cursor.moveToFirst()
@@ -207,13 +209,13 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun readCostInfo(id: Int): CostInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor = db.query(
-                TABLE_NAME5, arrayOf(
+            TABLE_NAME5, arrayOf(
                 KEY_COST_ID,
                 KEY_COST_REASON,
                 KEY_COST_AMOUNT,
                 KEY_COST_DATE
 
-        ), KEY_COST_ID + "=?", arrayOf(id.toString()), null, null, null
+            ), KEY_COST_ID + "=?", arrayOf(id.toString()), null, null, null
         )
 
         if (cursor != null) {
@@ -235,17 +237,17 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     }
 
-    fun updateCostRow(costInfo1: CostInfo,costInfo2: CostInfo) {
+    fun updateCostRow(costInfo1: CostInfo, costInfo2: CostInfo) {
         val db: SQLiteDatabase = writableDatabase
 
         val updateCommand =
-            "UPDATE "+ TABLE_NAME5 +" SET "+
-                    KEY_COST_REASON + " = '"+costInfo1.reason+"', "+
-                    KEY_COST_AMOUNT + " = '"+costInfo1.amount+"', "+
-                    KEY_COST_DATE + " = '"+costInfo1.date+"' "+
-                    "WHERE $KEY_COST_REASON = '"+costInfo2.reason+"' AND "+
-                    "$KEY_COST_AMOUNT = '"+costInfo2.amount+"' AND "+
-                    "$KEY_COST_DATE = '"+costInfo2.date+"'"
+            "UPDATE " + TABLE_NAME5 + " SET " +
+                    KEY_COST_REASON + " = '" + costInfo1.reason + "', " +
+                    KEY_COST_AMOUNT + " = '" + costInfo1.amount + "', " +
+                    KEY_COST_DATE + " = '" + costInfo1.date + "' " +
+                    "WHERE $KEY_COST_REASON = '" + costInfo2.reason + "' AND " +
+                    "$KEY_COST_AMOUNT = '" + costInfo2.amount + "' AND " +
+                    "$KEY_COST_DATE = '" + costInfo2.date + "'"
 
         db.execSQL(updateCommand)
 
@@ -281,15 +283,15 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun readDebtDataBase(id: Int): DebtInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor: Cursor = db.query(
-                TABLE_NAME6, arrayOf(
+            TABLE_NAME6, arrayOf(
                 KEY_DEBT_ID,
                 KEY_DEBT_NAME,
                 KEY_DEBT_PHONE_NUMBER,
                 KEY_DEBT_AMOUNT
-        ), KEY_DEBT_ID + "=?", arrayOf(id.toString()),
-                null,
-                null,
-                null
+            ), KEY_DEBT_ID + "=?", arrayOf(id.toString()),
+            null,
+            null,
+            null
         )
 
         if (cursor != null) {
@@ -305,17 +307,17 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return null
     }
 
-    fun updateDebtRow(oldDebtInfo: DebtInfo,newDebtInfo: DebtInfo){
+    fun updateDebtRow(oldDebtInfo: DebtInfo, newDebtInfo: DebtInfo) {
         val db: SQLiteDatabase = writableDatabase
 
         val updateCommand =
-            "UPDATE "+ TABLE_NAME6 +" SET "+
-                    KEY_DEBT_NAME + " = '"+oldDebtInfo.Name+"', "+
-                    KEY_DEBT_PHONE_NUMBER + " = '"+oldDebtInfo.PhoneNumber+"', "+
-                    KEY_DEBT_AMOUNT + " = '"+oldDebtInfo.DebtAmount+"' "+
-                    "WHERE $KEY_DEBT_NAME = '"+newDebtInfo.Name+"' AND "+
-                    "$KEY_DEBT_PHONE_NUMBER = '"+newDebtInfo.PhoneNumber+"' AND "+
-                    "$KEY_DEBT_AMOUNT = '"+newDebtInfo.DebtAmount+"'"
+            "UPDATE " + TABLE_NAME6 + " SET " +
+                    KEY_DEBT_NAME + " = '" + oldDebtInfo.Name + "', " +
+                    KEY_DEBT_PHONE_NUMBER + " = '" + oldDebtInfo.PhoneNumber + "', " +
+                    KEY_DEBT_AMOUNT + " = '" + oldDebtInfo.DebtAmount + "' " +
+                    "WHERE $KEY_DEBT_NAME = '" + newDebtInfo.Name + "' AND " +
+                    "$KEY_DEBT_PHONE_NUMBER = '" + newDebtInfo.PhoneNumber + "' AND " +
+                    "$KEY_DEBT_AMOUNT = '" + newDebtInfo.DebtAmount + "'"
 
         db.execSQL(updateCommand)
 
@@ -355,7 +357,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun readContractInfo(id: Int): ContractInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor = db.query(
-                TABLE_NAME4, arrayOf(
+            TABLE_NAME4, arrayOf(
                 KEY_CONTRACT_ID,
                 KEY_CONTRACT_NAME,
                 KEY_CONTRACT_NATIONAL_CODE,
@@ -363,7 +365,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 KEY_CONTRACT_CONTRACT_TITLE,
                 KEY_CONTRACT_PRODUCT_INFORMATON,
                 KEY_CONTRACT_DATE
-        ), KEY_CONTRACT_ID + "=?", arrayOf(id.toString()), null, null, null
+            ), KEY_CONTRACT_ID + "=?", arrayOf(id.toString()), null, null, null
         )
 
         if (cursor != null) {
@@ -372,24 +374,24 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             var contractinfo = ContractInfo()
             contractinfo.name = cursor.getString(cursor.getColumnIndex(KEY_CONTRACT_NAME))
             contractinfo.nationalCode = cursor.getLong(
-                    cursor.getColumnIndex(
-                            KEY_CONTRACT_NATIONAL_CODE
-                    )
+                cursor.getColumnIndex(
+                    KEY_CONTRACT_NATIONAL_CODE
+                )
             )
             contractinfo.transactionVolume = cursor.getLong(
-                    cursor.getColumnIndex(
-                            KEY_CONTRACT_TRANSACION_VOlLME
-                    )
+                cursor.getColumnIndex(
+                    KEY_CONTRACT_TRANSACION_VOlLME
+                )
             )
             contractinfo.contractTitle = cursor.getString(
-                    cursor.getColumnIndex(
-                            KEY_CONTRACT_CONTRACT_TITLE
-                    )
+                cursor.getColumnIndex(
+                    KEY_CONTRACT_CONTRACT_TITLE
+                )
             )
             contractinfo.productInformation = cursor.getString(
-                    cursor.getColumnIndex(
-                            KEY_CONTRACT_PRODUCT_INFORMATON
-                    )
+                cursor.getColumnIndex(
+                    KEY_CONTRACT_PRODUCT_INFORMATON
+                )
             )
             contractinfo.date = cursor.getString(cursor.getColumnIndex(KEY_CONTRACT_DATE))
 
@@ -401,23 +403,24 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
 
     }
-    fun updateContractRowDate(oldContractInfo: ContractInfo,newContractInfo: ContractInfo){
+
+    fun updateContractRowDate(oldContractInfo: ContractInfo, newContractInfo: ContractInfo) {
         val db: SQLiteDatabase = writableDatabase
 
         val updateCommand =
-            "UPDATE "+ TABLE_NAME4 +" SET "+
-                    KEY_CONTRACT_NAME + " = '"+oldContractInfo.name+"', "+
-                    KEY_CONTRACT_NATIONAL_CODE + " = '"+oldContractInfo.nationalCode+"', "+
-                    KEY_CONTRACT_TRANSACION_VOlLME + " = '"+oldContractInfo.transactionVolume+"' "+
-                    KEY_CONTRACT_CONTRACT_TITLE + " = '"+oldContractInfo.contractTitle+"' "+
-                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '"+oldContractInfo.productInformation+"' "+
-                    KEY_CONTRACT_DATE + " = '"+oldContractInfo.date+"' "+
-                    "WHERE $KEY_CONTRACT_NAME = '"+newContractInfo.name+"' AND "+
-                    "$KEY_CONTRACT_NATIONAL_CODE = '"+newContractInfo.nationalCode+"' AND "+
-                    "$KEY_CONTRACT_TRANSACION_VOlLME = '"+newContractInfo.transactionVolume+"' AND "+
-                    "$KEY_CONTRACT_CONTRACT_TITLE = '"+newContractInfo.contractTitle+"' AND "+
-                    "$KEY_CONTRACT_PRODUCT_INFORMATON = '"+newContractInfo.productInformation+"' AND "+
-                    "$KEY_CONTRACT_DATE = '"+newContractInfo.date+"'"
+            "UPDATE " + TABLE_NAME4 + " SET " +
+                    KEY_CONTRACT_NAME + " = '" + oldContractInfo.name + "', " +
+                    KEY_CONTRACT_NATIONAL_CODE + " = '" + oldContractInfo.nationalCode + "', " +
+                    KEY_CONTRACT_TRANSACION_VOlLME + " = '" + oldContractInfo.transactionVolume + "' " +
+                    KEY_CONTRACT_CONTRACT_TITLE + " = '" + oldContractInfo.contractTitle + "' " +
+                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '" + oldContractInfo.productInformation + "' " +
+                    KEY_CONTRACT_DATE + " = '" + oldContractInfo.date + "' " +
+                    "WHERE $KEY_CONTRACT_NAME = '" + newContractInfo.name + "' AND " +
+                    "$KEY_CONTRACT_NATIONAL_CODE = '" + newContractInfo.nationalCode + "' AND " +
+                    "$KEY_CONTRACT_TRANSACION_VOlLME = '" + newContractInfo.transactionVolume + "' AND " +
+                    "$KEY_CONTRACT_CONTRACT_TITLE = '" + newContractInfo.contractTitle + "' AND " +
+                    "$KEY_CONTRACT_PRODUCT_INFORMATON = '" + newContractInfo.productInformation + "' AND " +
+                    "$KEY_CONTRACT_DATE = '" + newContractInfo.date + "'"
 
         db.execSQL(updateCommand)
     }
@@ -435,14 +438,14 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     ////////////////////////////////
 
 
-    fun addFruit(fruit:FruitInfo){
-        val db=this.writableDatabase
-        val values=ContentValues()
-        values.put(KEY_FRUIT_ID,fruit.id)
-        values.put(KEY_FRUIT_NAME,fruit.name)
-        values.put(KEY_FRUIT_PRICE,fruit.price)
-        values.put(KEY_FRUIT_QUALITY,fruit.qlt)
-        db.insert(TABLE_NAME2,null,values)
+    fun addFruit(fruit: FruitInfo) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(KEY_FRUIT_ID, fruit.id)
+        values.put(KEY_FRUIT_NAME, fruit.name)
+        values.put(KEY_FRUIT_PRICE, fruit.price)
+        values.put(KEY_FRUIT_QUALITY, fruit.qlt)
+        db.insert(TABLE_NAME2, null, values)
 //        db.close()
     }
 
@@ -517,19 +520,22 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     fun getFruitByName(): Cursor {
-        val fruitDb =this.readableDatabase
-        val id:Int=100
+        val fruitDb = this.readableDatabase
+        val id: Int = 100
 //        val selectQuery="name = " + qname
-        val cursor: Cursor = fruitDb.query(TABLE_NAME2, arrayOf(
-            KEY_FRUIT_ID,
-            KEY_FRUIT_NAME,
-            KEY_FRUIT_PRICE,
-            KEY_FRUIT_QUALITY
-        ), null, null,null,null,null)
+        val cursor: Cursor = fruitDb.query(
+            TABLE_NAME2, arrayOf(
+                KEY_FRUIT_ID,
+                KEY_FRUIT_NAME,
+                KEY_FRUIT_PRICE,
+                KEY_FRUIT_QUALITY
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         fruitDb.close()
         return cursor
     }
+
     fun readFruitDataBase(id: Int): FruitInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor: Cursor = db.query(
@@ -557,17 +563,17 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return null
     }
 
-    fun updateFruitRowData(oldFruitInfo: FruitInfo,newFruitInfo: FruitInfo){
+    fun updateFruitRowData(oldFruitInfo: FruitInfo, newFruitInfo: FruitInfo) {
         val db: SQLiteDatabase = writableDatabase
 
         val updateCommand =
-            "UPDATE "+ TABLE_NAME2 +" SET "+
-                    KEY_FRUIT_NAME + " = '"+oldFruitInfo.name+"', "+
-                    KEY_FRUIT_PRICE + " = '"+oldFruitInfo.price+"', "+
-                    KEY_FRUIT_QUALITY + " = '"+oldFruitInfo.qlt+"' "+
-                    "WHERE $KEY_FRUIT_NAME = '"+newFruitInfo.name+"' AND "+
-                    "$KEY_FRUIT_PRICE = '"+newFruitInfo.price+"' AND "+
-                    "$KEY_FRUIT_QUALITY = '"+newFruitInfo.qlt+"'"
+            "UPDATE " + TABLE_NAME2 + " SET " +
+                    KEY_FRUIT_NAME + " = '" + oldFruitInfo.name + "', " +
+                    KEY_FRUIT_PRICE + " = '" + oldFruitInfo.price + "', " +
+                    KEY_FRUIT_QUALITY + " = '" + oldFruitInfo.qlt + "' " +
+                    "WHERE $KEY_FRUIT_NAME = '" + newFruitInfo.name + "' AND " +
+                    "$KEY_FRUIT_PRICE = '" + newFruitInfo.price + "' AND " +
+                    "$KEY_FRUIT_QUALITY = '" + newFruitInfo.qlt + "'"
 
         db.execSQL(updateCommand)
     }
@@ -666,17 +672,17 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.close()
     }
 
-    fun updateSalaryRowData(oldSalaryInfo: SalaryInfo,newSalaryInfo: SalaryInfo){
+    fun updateSalaryRowData(oldSalaryInfo: SalaryInfo, newSalaryInfo: SalaryInfo) {
         val db: SQLiteDatabase = writableDatabase
 
         val updateCommand =
-            "UPDATE "+ TABLE_NAME3 +" SET "+
-                    KEY_SALARY_NAME + " = '"+oldSalaryInfo.name+"', "+
-                    KEY_SALARY_SALARY + " = '"+oldSalaryInfo.salary+"', "+
-                    KEY_SALARY_PHONENUMBER + " = '"+oldSalaryInfo.phoneNumber+"' "+
-                    "WHERE $KEY_SALARY_NAME = '"+newSalaryInfo.name+"' AND "+
-                    "$KEY_SALARY_SALARY = '"+newSalaryInfo.salary+"' AND "+
-                    "$KEY_SALARY_PHONENUMBER = '"+newSalaryInfo.phoneNumber+"'"
+            "UPDATE " + TABLE_NAME3 + " SET " +
+                    KEY_SALARY_NAME + " = '" + oldSalaryInfo.name + "', " +
+                    KEY_SALARY_SALARY + " = '" + oldSalaryInfo.salary + "', " +
+                    KEY_SALARY_PHONENUMBER + " = '" + oldSalaryInfo.phoneNumber + "' " +
+                    "WHERE $KEY_SALARY_NAME = '" + newSalaryInfo.name + "' AND " +
+                    "$KEY_SALARY_SALARY = '" + newSalaryInfo.salary + "' AND " +
+                    "$KEY_SALARY_PHONENUMBER = '" + newSalaryInfo.phoneNumber + "'"
 
         db.execSQL(updateCommand)
 
@@ -718,25 +724,30 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun readEmployeeManagementInfo(id: Int): EmployeeManagementInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor = db.query(
-                TABLE_NAME7, arrayOf(
+            TABLE_NAME7, arrayOf(
                 KEY_EMPLOYEE_MANAGEMENT_ID,
                 KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME,
                 KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER,
                 KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
                 KEY_EMPLOYEE_MANAGEMENT_SALARY,
                 KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE
-        ), KEY_EMPLOYEE_MANAGEMENT_ID + "=?", arrayOf(id.toString()), null, null, null
+            ), KEY_EMPLOYEE_MANAGEMENT_ID + "=?", arrayOf(id.toString()), null, null, null
         )
 
         if (cursor != null) {
             cursor.moveToFirst()
 
             var employeeManagementInfo = EmployeeManagementInfo()
-            employeeManagementInfo.firstName = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME))
-            employeeManagementInfo.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER))
-            employeeManagementInfo.dateOfEmployee = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE))
-            employeeManagementInfo.salary = cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_SALARY))
-            employeeManagementInfo.jobTitle = cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE))
+            employeeManagementInfo.firstName =
+                cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME))
+            employeeManagementInfo.phoneNumber =
+                cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER))
+            employeeManagementInfo.dateOfEmployee =
+                cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE))
+            employeeManagementInfo.salary =
+                cursor.getLong(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_SALARY))
+            employeeManagementInfo.jobTitle =
+                cursor.getString(cursor.getColumnIndex(KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE))
 
 
             return employeeManagementInfo
@@ -747,21 +758,24 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     }
 
-    fun updateEmployeeRowData(oldEmployeeManagementInfo: EmployeeManagementInfo,newEmployeeManagementInfo: EmployeeManagementInfo){
+    fun updateEmployeeRowData(
+        oldEmployeeManagementInfo: EmployeeManagementInfo,
+        newEmployeeManagementInfo: EmployeeManagementInfo
+    ) {
         val db: SQLiteDatabase = writableDatabase
 
         val updateCommand =
-            "UPDATE "+ TABLE_NAME7 +" SET "+
-                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " = '"+oldEmployeeManagementInfo.firstName+"', "+
-                    KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " = '"+oldEmployeeManagementInfo.phoneNumber+"', "+
-                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '"+oldEmployeeManagementInfo.dateOfEmployee+"' "+
-                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '"+oldEmployeeManagementInfo.salary+"' "+
-                    KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " = '"+oldEmployeeManagementInfo.jobTitle+"' "+
-                    "WHERE $KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME = '"+newEmployeeManagementInfo.firstName+"' AND "+
-                    "$KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER = '"+newEmployeeManagementInfo.phoneNumber+"' AND "+
-                    "$KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE = '"+newEmployeeManagementInfo.dateOfEmployee+"' AND "+
-                    "$KEY_EMPLOYEE_MANAGEMENT_SALARY = '"+newEmployeeManagementInfo.salary+"' AND "+
-                    "$KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE = '"+newEmployeeManagementInfo.jobTitle+"'"
+            "UPDATE " + TABLE_NAME7 + " SET " +
+                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " = '" + oldEmployeeManagementInfo.firstName + "', " +
+                    KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " = '" + oldEmployeeManagementInfo.phoneNumber + "', " +
+                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '" + oldEmployeeManagementInfo.dateOfEmployee + "' " +
+                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '" + oldEmployeeManagementInfo.salary + "' " +
+                    KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " = '" + oldEmployeeManagementInfo.jobTitle + "' " +
+                    "WHERE $KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME = '" + newEmployeeManagementInfo.firstName + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER = '" + newEmployeeManagementInfo.phoneNumber + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE = '" + newEmployeeManagementInfo.dateOfEmployee + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_SALARY = '" + newEmployeeManagementInfo.salary + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE = '" + newEmployeeManagementInfo.jobTitle + "'"
 
         db.execSQL(updateCommand)
     }
@@ -797,12 +811,12 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun readSettingInfo(id: Int): SettingInfo? {
         var db: SQLiteDatabase = writableDatabase
         var cursor = db.query(
-                TABLE_NAME8, arrayOf(
+            TABLE_NAME8, arrayOf(
                 KET_SETTING_NAME,
                 KEY_SETTING_COLOR,
                 KEY_SETTING_FONT
 
-        ), KEY_SETTING_ID + "=?", arrayOf(id.toString()), null, null, null
+            ), KEY_SETTING_ID + "=?", arrayOf(id.toString()), null, null, null
         )
 
         if (cursor != null) {
@@ -830,11 +844,13 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         //   values.put(KEY_FONT, settingInfo.font)
 
 
-        db.execSQL("UPDATE " + TABLE_NAME8 + " SET " +
-                "name = " + "'" + settingInfo.name + "'," +
-                "color= " + "'" + settingInfo.color + "'," +
-                "font= '" + settingInfo.font + "'" +
-                " WHERE id = " + "'" + id + "'");
+        db.execSQL(
+            "UPDATE " + TABLE_NAME8 + " SET " +
+                    "name = " + "'" + settingInfo.name + "'," +
+                    "color= " + "'" + settingInfo.color + "'," +
+                    "font= '" + settingInfo.font + "'" +
+                    " WHERE id = " + "'" + id + "'"
+        );
         //  return db.update(TABLE_NAME2, values, KEY_ID + "=?", new String[] { id })
     }
 
@@ -867,12 +883,12 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db: SQLiteDatabase = writableDatabase
 
         var cursor = db.query(
-                TABLE_NAME9, arrayOf(
+            TABLE_NAME9, arrayOf(
                 KEY_CONTACT_ID,
                 KEY_CONTACT_FIRST_NAME,
                 KEY_CONTACT_TITLE,
                 KEY_CONTACT_PHONE_NUMBER
-        ), KEY_CONTACT_ID + "=?", arrayOf(id.toString()), null, null, null
+            ), KEY_CONTACT_ID + "=?", arrayOf(id.toString()), null, null, null
         )
 
         if (cursor != null) {
@@ -881,7 +897,8 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             val contactInfo = ContactInfo()
             contactInfo.firstName = cursor.getString(cursor.getColumnIndex(KEY_CONTACT_FIRST_NAME))
             contactInfo.title = cursor.getString(cursor.getColumnIndex(KEY_CONTACT_TITLE))
-            contactInfo.phoneNumber = cursor.getLong(cursor.getColumnIndex(KEY_CONTACT_PHONE_NUMBER))
+            contactInfo.phoneNumber =
+                cursor.getLong(cursor.getColumnIndex(KEY_CONTACT_PHONE_NUMBER))
 
 
             return contactInfo
@@ -899,15 +916,17 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         //   values.put(KEY_FONT, settingInfo.font)
 
 
-        db.execSQL("UPDATE " + TABLE_NAME9 + " SET " +
-                "first name = " + "'" + contactInfo.firstName + "'," +
-                "last name= " + "'" + contactInfo.title + "'," +
-                "phone number= '" + contactInfo.phoneNumber + "'" +
-                " WHERE id = " + "'" + id + "'");
+        db.execSQL(
+            "UPDATE " + TABLE_NAME9 + " SET " +
+                    "first name = " + "'" + contactInfo.firstName + "'," +
+                    "last name= " + "'" + contactInfo.title + "'," +
+                    "phone number= '" + contactInfo.phoneNumber + "'" +
+                    " WHERE id = " + "'" + id + "'"
+        );
         //  return db.update(TABLE_NAME2, values, KEY_ID + "=?", new String[] { id })
     }
 
-    fun deleteContactInfo(id:Int){
+    fun deleteContactInfo(id: Int) {
         val db: SQLiteDatabase = writableDatabase
         val sqlCommand = "DELETE FROM $TABLE_NAME9 WHERE id= '$id'"
         db.execSQL(sqlCommand)
@@ -921,167 +940,187 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     }
 
-    fun userDbCopy():Cursor{
-        val fruitDb : SQLiteDatabase = readableDatabase
-        val cursor: Cursor = fruitDb.query(TABLE_NAME1, arrayOf(
-            KEY_USER_ID,
-            KEY_USER_NAME,
-            KEY_USER_EMAIL,
-            KEY_USER_PASSWORD
-        ), null, null,null,null,null)
+    fun userDbCopy(): Cursor {
+        val fruitDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = fruitDb.query(
+            TABLE_NAME1, arrayOf(
+                KEY_USER_ID,
+                KEY_USER_NAME,
+                KEY_USER_EMAIL,
+                KEY_USER_PASSWORD
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         fruitDb.close()
         return cursor
     }
 
-    fun debtDbCopy():Cursor{
-        val debtDb:SQLiteDatabase = readableDatabase
-        val cursor:Cursor = debtDb.query(TABLE_NAME6, arrayOf(
-            KEY_DEBT_ID,
-            KEY_DEBT_NAME,
-            KEY_DEBT_PHONE_NUMBER,
-            KEY_DEBT_PHONE_NUMBER
-        ), null, null, null, null, null)
+    fun debtDbCopy(): Cursor {
+        val debtDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = debtDb.query(
+            TABLE_NAME6, arrayOf(
+                KEY_DEBT_ID,
+                KEY_DEBT_NAME,
+                KEY_DEBT_PHONE_NUMBER,
+                KEY_DEBT_PHONE_NUMBER
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         debtDb.close()
         return cursor
     }
 
-    fun costDbCopy():Cursor{
-        val costDb:SQLiteDatabase = readableDatabase
-        val cursor:Cursor = costDb.query(TABLE_NAME5, arrayOf(
-            KEY_COST_ID,
-            KEY_COST_REASON,
-            KEY_COST_AMOUNT,
-            KEY_COST_DATE
-        ),null, null, null, null, null)
+    fun costDbCopy(): Cursor {
+        val costDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = costDb.query(
+            TABLE_NAME5, arrayOf(
+                KEY_COST_ID,
+                KEY_COST_REASON,
+                KEY_COST_AMOUNT,
+                KEY_COST_DATE
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         costDb.close()
         return cursor
     }
 
-    fun contractDbCopy():Cursor{
-        val contractDb:SQLiteDatabase = readableDatabase
-        val cursor:Cursor = contractDb.query(TABLE_NAME4, arrayOf(
-            KEY_CONTRACT_ID,
-            KEY_CONTRACT_NAME,
-            KEY_CONTRACT_NATIONAL_CODE,
-            KEY_CONTRACT_TRANSACION_VOlLME,
-            KEY_CONTRACT_CONTRACT_TITLE,
-            KEY_CONTRACT_PRODUCT_INFORMATON,
-            KEY_CONTRACT_DATE
-        ),null, null, null, null, null)
+    fun contractDbCopy(): Cursor {
+        val contractDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = contractDb.query(
+            TABLE_NAME4, arrayOf(
+                KEY_CONTRACT_ID,
+                KEY_CONTRACT_NAME,
+                KEY_CONTRACT_NATIONAL_CODE,
+                KEY_CONTRACT_TRANSACION_VOlLME,
+                KEY_CONTRACT_CONTRACT_TITLE,
+                KEY_CONTRACT_PRODUCT_INFORMATON,
+                KEY_CONTRACT_DATE
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         contractDb.close()
         return cursor
     }
 
-    fun fruitDbCopy():Cursor{
-        val fruitDb:SQLiteDatabase = readableDatabase
-        val cursor:Cursor = fruitDb.query(TABLE_NAME2, arrayOf(
-            KEY_FRUIT_ID,
-            KEY_FRUIT_NAME,
-            KEY_FRUIT_PRICE,
-            KEY_FRUIT_QUALITY
-        ), null, null,null,null,null)
+    fun fruitDbCopy(): Cursor {
+        val fruitDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = fruitDb.query(
+            TABLE_NAME2, arrayOf(
+                KEY_FRUIT_ID,
+                KEY_FRUIT_NAME,
+                KEY_FRUIT_PRICE,
+                KEY_FRUIT_QUALITY
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         fruitDb.close()
         return cursor
     }
 
-    fun salaryDbCopy():Cursor{
-        val salaryDb:SQLiteDatabase = readableDatabase
-        val cursor:Cursor = salaryDb.query(TABLE_NAME3, arrayOf(
-            KEY_SALARY_ID,
-            KEY_SALARY_NAME,
-            KEY_SALARY_SALARY,
-            KEY_SALARY_PHONENUMBER
-        ),null, null, null, null, null)
+    fun salaryDbCopy(): Cursor {
+        val salaryDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = salaryDb.query(
+            TABLE_NAME3, arrayOf(
+                KEY_SALARY_ID,
+                KEY_SALARY_NAME,
+                KEY_SALARY_SALARY,
+                KEY_SALARY_PHONENUMBER
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         salaryDb.close()
         return cursor
     }
 
-    fun employeeDbCopy():Cursor{
-        val employeeDb:SQLiteDatabase = readableDatabase
-        val cursor:Cursor = employeeDb.query(TABLE_NAME7, arrayOf(
-            KEY_EMPLOYEE_MANAGEMENT_ID,
-            KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME,
-            KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER,
-            KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
-            KEY_EMPLOYEE_MANAGEMENT_SALARY,
-            KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE
-        ), null, null, null, null, null)
+    fun employeeDbCopy(): Cursor {
+        val employeeDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = employeeDb.query(
+            TABLE_NAME7, arrayOf(
+                KEY_EMPLOYEE_MANAGEMENT_ID,
+                KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME,
+                KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER,
+                KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
+                KEY_EMPLOYEE_MANAGEMENT_SALARY,
+                KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         employeeDb.close()
         return cursor
     }
 
-    fun contactDbCopy():Cursor{
-        val contactDb:SQLiteDatabase= readableDatabase
-        val cursor:Cursor = contactDb.query(TABLE_NAME9, arrayOf(
-            KEY_CONTACT_ID,
-            KEY_CONTACT_FIRST_NAME,
-            KEY_CONTACT_TITLE,
-            KEY_CONTACT_PHONE_NUMBER
-        ),null, null, null, null, null)
+    fun contactDbCopy(): Cursor {
+        val contactDb: SQLiteDatabase = readableDatabase
+        val cursor: Cursor = contactDb.query(
+            TABLE_NAME9, arrayOf(
+                KEY_CONTACT_ID,
+                KEY_CONTACT_FIRST_NAME,
+                KEY_CONTACT_TITLE,
+                KEY_CONTACT_PHONE_NUMBER
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         contactDb.close()
         return cursor
     }
 
 
-    fun addInvoice(invoice:InvoiceInfo){
-        val db=this.writableDatabase
-        val values=ContentValues()
-        values.put(KEY_INVOICE_ID,invoice.id)
-        values.put(KEY_INVOICE_FRUIT_NAME,invoice.name)
-        values.put(KEY_INVOICE_FRUIT_AMOUNT,invoice.amount)
-        values.put(KEY_INVOICE_SUM,invoice.sum)
-        values.put(KEY_INVOICE_NUM,invoice.invoiceNumber)
-        db.insert(TABLE_NAME10,null,values)
+    fun addInvoice(invoice: InvoiceInfo) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(KEY_INVOICE_ID, invoice.id)
+        values.put(KEY_INVOICE_FRUIT_NAME, invoice.name)
+        values.put(KEY_INVOICE_FRUIT_AMOUNT, invoice.amount)
+        values.put(KEY_INVOICE_SUM, invoice.sum)
+        values.put(KEY_INVOICE_NUM, invoice.invoiceNumber)
+        db.insert(TABLE_NAME10, null, values)
         db.close()
     }
 
     fun getInvoiceNumber(): Cursor {
-        val fruitDb =this.readableDatabase
-        val id:Int=100
+        val fruitDb = this.readableDatabase
+        val id: Int = 100
 //        val selectQuery="name = " + qname
-        val cursor: Cursor = fruitDb.query(TABLE_NAME10, arrayOf(
-            KEY_INVOICE_NUM
-        ), null, null,null,null,null)
+        val cursor: Cursor = fruitDb.query(
+            TABLE_NAME10, arrayOf(
+                KEY_INVOICE_NUM
+            ), null, null, null, null, null
+        )
         cursor.moveToFirst()
         fruitDb.close()
         return cursor
     }
 
-    fun getInvoice(invoiceNumber:Int): Cursor {
-        val fruitDb =this.readableDatabase
-        val id:Int=100
+    fun getInvoice(invoiceNumber: Int): Cursor {
+        val fruitDb = this.readableDatabase
+        val id: Int = 100
 //        val selectQuery="name = " + qname
-        val cursor: Cursor = fruitDb.query(TABLE_NAME10, arrayOf(
-            KEY_INVOICE_ID,
-            KEY_INVOICE_FRUIT_NAME,
-            KEY_INVOICE_FRUIT_AMOUNT,
-            KEY_INVOICE_SUM
-        ), KEY_INVOICE_NUM + "="+ invoiceNumber, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
+        val cursor: Cursor = fruitDb.query(
+            TABLE_NAME10,
+            arrayOf(
+                KEY_INVOICE_ID,
+                KEY_INVOICE_FRUIT_NAME,
+                KEY_INVOICE_FRUIT_AMOUNT,
+                KEY_INVOICE_SUM
+            ),
+            KEY_INVOICE_NUM + "=" + invoiceNumber,
+            null,
+            null,
+            null,
+            KEY_INVOICE_TIMESTAMP + " DESC"
+        )
         cursor.moveToFirst()
         fruitDb.close()
         return cursor
     }
 
-    fun deleteItemInvoice(id:Int){
-        val db=this.writableDatabase
+    fun deleteItemInvoice(id: Int) {
+        val db = this.writableDatabase
 
         db.delete(TABLE_NAME10, KEY_INVOICE_ID + "=" + id, null)
         db.close()
     }
-
-
-
-
-
-
 
 
 }
