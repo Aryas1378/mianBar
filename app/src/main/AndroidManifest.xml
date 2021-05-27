@@ -38,7 +38,7 @@
         <activity
             android:name=".controller.SMSPanelActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-            
+
         </activity>
         <activity android:name=".controller.ForgotPasswordActivity" />
         <activity

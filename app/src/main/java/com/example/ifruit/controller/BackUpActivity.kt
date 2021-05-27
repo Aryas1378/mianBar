@@ -139,18 +139,18 @@ class BackUpActivity : AppCompatActivity() {
 //                fruitFileOutPutStream.close()
 
 
-                while (!salaryCurser.isNull(0)){
-                    salaryFileOutPutStream?.write("\n".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
-                    salaryFileOutPutStream?.write(",".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
-                    salaryFileOutPutStream?.write(",".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
-                    salaryFileOutPutStream?.write(",".toByteArray())
-                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
-                    salaryCurser.moveToNext()
-                }
-                salaryFileOutPutStream.close()
+//                while (!salaryCurser.isNull(0)){
+//                    salaryFileOutPutStream?.write("\n".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
+//                    salaryFileOutPutStream?.write(",".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(1).toByteArray())
+//                    salaryFileOutPutStream?.write(",".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(2).toByteArray())
+//                    salaryFileOutPutStream?.write(",".toByteArray())
+//                    salaryFileOutPutStream?.write(salaryCurser.getString(3).toByteArray())
+//                    salaryCurser.moveToNext()
+//                }
+//                salaryFileOutPutStream.close()
 
 //                while (!employeeCurser.isNull(0)){
 //                    employeeFileOutPutStream?.write("\n".toByteArray())
