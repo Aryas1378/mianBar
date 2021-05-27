@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.*
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -172,7 +171,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         logoutDrawer_btn=item0.actionView.findViewById(R.id.nav_logout) as ImageView
         logout_text_btn=item0.actionView.findViewById(R.id.nav_logout_text) as TextView
 
-        acc_btn=findViewById(R.id.acc_btn) as Button
+        acc_btn=findViewById(R.id.sms_panel_btn) as Button
 //        mng_btn=findViewById(R.id.mng_btn) as Button
     }
 }
