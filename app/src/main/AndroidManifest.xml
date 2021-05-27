@@ -69,7 +69,7 @@
             android:name=".controller.SettingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".controller.StaffManagingActivity" />
-            
+
         <activity
             android:name=".controller.LoginActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

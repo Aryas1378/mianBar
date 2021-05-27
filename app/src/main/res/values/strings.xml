@@ -30,7 +30,7 @@
     ////////////////////////////////////////////////////////Costs
     <string name="fee_reason_hint">مورد هزینه</string>
     <string name="fee_amount_hint">مقدار هزینه</string>
-    <string name="date_hint">تاریخ</string>
+    <string name="date_hint">تاریخ(YYYY-MM-DD)</string>
     <string name="save">ثبت</string>
 
     ///////////////////////////////////////////////////////Contract
@@ -39,7 +39,7 @@
     <string name="Transaction_volume_hint">حجم معامله</string>
     <string name="Contract_title_hint">عنوان قرارداد</string>
     <string name="Product_Information_hint">اطلاعات محصول</string>
-    <string name="contract_date_hint">تاریخ </string>
+    <string name="contract_date_hint">تاریخ(YYYY-MM-DD) </string>
 
     ///////////////////////////////////////////////////////fruit info AC
     <string name="fruit_name_hint">نام میوه</string>
