@@ -18,6 +18,7 @@ class AddContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_contact)
 
+        dbHandler=DataBaseHelper(this)
 
         val addContactHeader = findViewById<TextView>(R.id.contact_header)
         val addContactEditText = findViewById<EditText>(R.id.contact_name_ac)
@@ -26,15 +27,15 @@ class AddContactActivity : AppCompatActivity() {
         val saveContactData = findViewById<ImageButton>(R.id.contact_save_btn)
         val background = findViewById<RelativeLayout>(R.id.background)
 
-//        val getSetting = dbHandler?.readSettingInfo(1)
-//        // SET BACKGROUND COLOR OF COST ACTIVITY
-//        var color = Color.parseColor(getSetting?.color.toString())
-//        background.setBackgroundColor(color)
-//
-//        // SET TEXTS FONT INSIDE COST ACTIVITY
-//        var fontName = getSetting?.font?.toLowerCase()
-//        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
-//        addContactHeader.typeface = font
+        val getSetting = dbHandler?.readSettingInfo(1)
+        // SET BACKGROUND COLOR OF COST ACTIVITY
+        var color = Color.parseColor(getSetting?.color.toString())
+        background.setBackgroundColor(color)
+
+        // SET TEXTS FONT INSIDE COST ACTIVITY
+        var fontName = getSetting?.font?.toLowerCase()
+        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
+        addContactHeader.typeface = font
 
 
         saveContactData.setOnClickListener {

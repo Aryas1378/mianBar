@@ -53,7 +53,7 @@ class CostActivity : AppCompatActivity() {
 
 
 
-        if (updateRequire == null) {
+        if (!updateRequire.equals("update")) {
             searchButton.setOnClickListener {
                 val intent = Intent(this, SearchViewActivity::class.java)
                 intent.putExtra("TABLE", "cost")
@@ -129,7 +129,7 @@ class CostActivity : AppCompatActivity() {
         oldCostInfo.amount = oldCostAmount.toLong()
         oldCostInfo.date = oldCostDate
 
-
+        dbHandler?.updateCostRow(oldCostInfo,newCostInfo)
     }
 
 }
