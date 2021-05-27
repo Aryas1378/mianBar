@@ -85,7 +85,7 @@
     //////////////////////////////////////////////////////Employee management
     <string name="employee_name_hint">نام کارمند</string>
     <string name="employee_job_title_hint">سمت کاری کارمند</string>
-    <string name="employee_phone_num_hint">شماره تماس کارمد</string>
+    <string name="employee_phone_num_hint">شماره تماس کارمند</string>
     <string name="employee_salary_hint">حقوق پایه</string>
 
 

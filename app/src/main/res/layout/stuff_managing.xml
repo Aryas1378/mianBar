@@ -98,6 +98,8 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="phone"
+        android:gravity="right"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         />
