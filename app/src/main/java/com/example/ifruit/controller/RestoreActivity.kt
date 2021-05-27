@@ -25,6 +25,7 @@ class RestoreActivity : AppCompatActivity() {
             val contactFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/contact.csv").readLines() as MutableList<String>
             val employeeFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/employee.csv").readLines() as MutableList<String>
             val salaryFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/salary.csv").readLines() as MutableList<String>
+            val fruitFileRead:MutableList<String> = File("data/data/com.example.ifruit/files/fruit.csv").readLines() as MutableList<String>
             var counter = 0
 
             //user repairing database is successful
@@ -131,6 +132,19 @@ class RestoreActivity : AppCompatActivity() {
 //            }
 //            counter = 0
 
+
+            fruitFileRead.forEach { read ->
+                if(counter>0){
+                    val fruitCorrectForm:List<String> = read.split(",")
+                    val newFruit = FruitInfo()
+                    newFruit.name = fruitCorrectForm.get(1)
+                    newFruit.price = fruitCorrectForm.get(2).toInt()
+                    newFruit.qlt = fruitCorrectForm.get(3).toInt()
+                    dbHandler?.addFruit(newFruit)
+                }
+                counter++
+            }
+            counter = 0
 
 
 

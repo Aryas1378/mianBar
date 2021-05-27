@@ -97,8 +97,10 @@ class StaffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetLi
         SavedYear = year
 
         val btn_date = findViewById(R.id.button_date) as Button
-        btn_date.text = "$SavedMonth-$SavedDay-$SavedYear"
-        dateValue = "$SavedMonth-$SavedDay-$SavedYear"
+//        "$year-"+(month+1).toString()+"-$dayOfMonth"
+//        btn_date.text = "$SavedMonth-$SavedDay-$SavedYear"
+        btn_date.text = "$SavedYear-"+(month+1).toString()+"-$SavedDay"
+        dateValue = "$SavedYear-"+(month+1).toString()+"-$SavedDay"
         getDateTimeCalender()
 
     }
