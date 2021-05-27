@@ -4,14 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#757575"
-    android:id="@+id/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".controller.IncomeActivity"
     android:padding="8dp">
 
 
     <TextView
-        android:id="@+id/income_header"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large_margin"
@@ -205,6 +204,8 @@
         android:layout_marginTop="@dimen/btn_margin"
         android:layout_marginBottom="@dimen/large_margin"
         android:background="@drawable/search_btn"
+        android:textSize="@dimen/text_large_size"
+        android:textStyle="bold"
         android:layout_gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
