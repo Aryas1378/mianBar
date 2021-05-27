@@ -16,7 +16,7 @@
 
         </activity>
 
-        <activity android:name=".controller.AddContact"
+        <activity android:name=".controller.AddContactActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
 
         <activity
