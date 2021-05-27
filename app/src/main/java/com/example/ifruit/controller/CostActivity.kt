@@ -129,7 +129,7 @@ class CostActivity : AppCompatActivity() {
         oldCostInfo.amount = oldCostAmount.toLong()
         oldCostInfo.date = oldCostDate
 
-
+        dbHandler?.updateCostRow(oldCostInfo,newCostInfo)
     }
 
 }

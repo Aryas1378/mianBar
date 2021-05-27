@@ -226,6 +226,22 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     }
 
+    fun updateCostRow(costInfo1: CostInfo,costInfo2: CostInfo) {
+        val db: SQLiteDatabase = writableDatabase
+
+        val updateCommand =
+            "UPDATE "+ TABLE_NAME5 +" SET "+
+                    KEY_COST_REASON + " = '"+costInfo1.reason+"', "+
+                    KEY_COST_AMOUNT + " = '"+costInfo1.amount+"', "+
+                    KEY_COST_DATE + " = '"+costInfo1.date+"' "+
+                    "WHERE $KEY_COST_REASON = '"+costInfo2.reason+"' AND "+
+                    "$KEY_COST_AMOUNT = '"+costInfo2.amount+"' AND "+
+                    "$KEY_COST_DATE = '"+costInfo2.date+"'"
+
+        db.execSQL(updateCommand)
+
+    }
+
     fun getCostTableRowCount(): Int {
         val db: SQLiteDatabase = readableDatabase
         val counter = "SELECT * FROM $TABLE_NAME5"
@@ -278,6 +294,22 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             return Mydb
         }
         return null
+    }
+
+    fun updateDebtRow(oldDebtInfo: DebtInfo,newDebtInfo: DebtInfo){
+        val db: SQLiteDatabase = writableDatabase
+
+        val updateCommand =
+            "UPDATE "+ TABLE_NAME6 +" SET "+
+                    KEY_DEBT_NAME + " = '"+oldDebtInfo.Name+"', "+
+                    KEY_DEBT_PHONE_NUMBER + " = '"+oldDebtInfo.PhoneNumber+"', "+
+                    KEY_DEBT_AMOUNT + " = '"+oldDebtInfo.DebtAmount+"' "+
+                    "WHERE $KEY_DEBT_NAME = '"+newDebtInfo.Name+"' AND "+
+                    "$KEY_DEBT_PHONE_NUMBER = '"+newDebtInfo.PhoneNumber+"' AND "+
+                    "$KEY_DEBT_AMOUNT = '"+newDebtInfo.DebtAmount+"'"
+
+        db.execSQL(updateCommand)
+
     }
 
     fun getDebtTableRowCount(): Int {
@@ -359,6 +391,26 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             return null
 
 
+    }
+    fun updateContractRowDate(oldContractInfo: ContractInfo,newContractInfo: ContractInfo){
+        val db: SQLiteDatabase = writableDatabase
+
+        val updateCommand =
+            "UPDATE "+ TABLE_NAME4 +" SET "+
+                    KEY_CONTRACT_NAME + " = '"+oldContractInfo.name+"', "+
+                    KEY_CONTRACT_NATIONAL_CODE + " = '"+oldContractInfo.nationalCode+"', "+
+                    KEY_CONTRACT_TRANSACION_VOlLME + " = '"+oldContractInfo.transactionVolume+"' "+
+                    KEY_CONTRACT_CONTRACT_TITLE + " = '"+oldContractInfo.contractTitle+"' "+
+                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '"+oldContractInfo.productInformation+"' "+
+                    KEY_CONTRACT_DATE + " = '"+oldContractInfo.date+"' "+
+                    "WHERE $KEY_CONTRACT_NAME = '"+newContractInfo.name+"' AND "+
+                    "$KEY_CONTRACT_NATIONAL_CODE = '"+newContractInfo.nationalCode+"' AND "+
+                    "$KEY_CONTRACT_TRANSACION_VOlLME = '"+newContractInfo.transactionVolume+"' AND "+
+                    "$KEY_CONTRACT_CONTRACT_TITLE = '"+newContractInfo.contractTitle+"' AND "+
+                    "$KEY_CONTRACT_PRODUCT_INFORMATON = '"+newContractInfo.productInformation+"' AND "+
+                    "$KEY_CONTRACT_DATE = '"+newContractInfo.date+"'"
+
+        db.execSQL(updateCommand)
     }
 
     fun getContractTableRowCount(): Int {
@@ -469,6 +521,21 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return null
     }
 
+    fun updateFruitRowData(oldFruitInfo: FruitInfo,newFruitInfo: FruitInfo){
+        val db: SQLiteDatabase = writableDatabase
+
+        val updateCommand =
+            "UPDATE "+ TABLE_NAME2 +" SET "+
+                    KEY_FRUIT_NAME + " = '"+oldFruitInfo.name+"', "+
+                    KEY_FRUIT_PRICE + " = '"+oldFruitInfo.price+"', "+
+                    KEY_FRUIT_QUALITY + " = '"+oldFruitInfo.qlt+"' "+
+                    "WHERE $KEY_FRUIT_NAME = '"+newFruitInfo.name+"' AND "+
+                    "$KEY_FRUIT_PRICE = '"+newFruitInfo.price+"' AND "+
+                    "$KEY_FRUIT_QUALITY = '"+newFruitInfo.qlt+"'"
+
+        db.execSQL(updateCommand)
+    }
+
 
     fun getFruitTableRowCount(): Int {
         val db: SQLiteDatabase = readableDatabase
@@ -562,6 +629,24 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.delete(TABLE_NAME3, "$KEY_SALARY_ID=?", arrayOf(salaryInfo.id.toString()))
         db.close()
     }
+
+    fun updateSalaryRowData(oldSalaryInfo: SalaryInfo,newSalaryInfo: SalaryInfo){
+        val db: SQLiteDatabase = writableDatabase
+
+        val updateCommand =
+            "UPDATE "+ TABLE_NAME3 +" SET "+
+                    KEY_SALARY_NAME + " = '"+oldSalaryInfo.name+"', "+
+                    KEY_SALARY_SALARY + " = '"+oldSalaryInfo.salary+"', "+
+                    KEY_SALARY_PHONENUMBER + " = '"+oldSalaryInfo.phoneNumber+"' "+
+                    "WHERE $KEY_SALARY_NAME = '"+newSalaryInfo.name+"' AND "+
+                    "$KEY_SALARY_SALARY = '"+newSalaryInfo.salary+"' AND "+
+                    "$KEY_SALARY_PHONENUMBER = '"+newSalaryInfo.phoneNumber+"'"
+
+        db.execSQL(updateCommand)
+
+
+    }
+
     fun getSalaryTableRowCount(): Int {
         val db: SQLiteDatabase = readableDatabase
         val counter = "SELECT * FROM $TABLE_NAME3"
@@ -624,6 +709,25 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             return null
 
 
+    }
+
+    fun updateEmployeeRowData(oldEmployeeManagementInfo: EmployeeManagementInfo,newEmployeeManagementInfo: EmployeeManagementInfo){
+        val db: SQLiteDatabase = writableDatabase
+
+        val updateCommand =
+            "UPDATE "+ TABLE_NAME7 +" SET "+
+                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " = '"+oldEmployeeManagementInfo.firstName+"', "+
+                    KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " = '"+oldEmployeeManagementInfo.phoneNumber+"', "+
+                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '"+oldEmployeeManagementInfo.dateOfEmployee+"' "+
+                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '"+oldEmployeeManagementInfo.salary+"' "+
+                    KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " = '"+oldEmployeeManagementInfo.jobTitle+"' "+
+                    "WHERE $KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME = '"+newEmployeeManagementInfo.firstName+"' AND "+
+                    "$KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER = '"+newEmployeeManagementInfo.phoneNumber+"' AND "+
+                    "$KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE = '"+newEmployeeManagementInfo.dateOfEmployee+"' AND "+
+                    "$KEY_EMPLOYEE_MANAGEMENT_SALARY = '"+newEmployeeManagementInfo.salary+"' AND "+
+                    "$KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE = '"+newEmployeeManagementInfo.jobTitle+"'"
+
+        db.execSQL(updateCommand)
     }
 
     fun getEmployeeManagementTableRowCount(): Int {

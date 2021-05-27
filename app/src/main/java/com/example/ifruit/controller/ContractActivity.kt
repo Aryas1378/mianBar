@@ -125,6 +125,7 @@ class ContractActivity : AppCompatActivity() {
         newProductInformation: String,
         newDate: String
     ) {
+        dbHandler = DataBaseHelper(this)
 
         val oldContractInfo = ContractInfo()
         val newContractInfo = ContractInfo()
@@ -142,6 +143,8 @@ class ContractActivity : AppCompatActivity() {
         newContractInfo.contractTitle = newContractTitle
         newContractInfo.productInformation = newProductInformation
         newContractInfo.date = newDate
+
+        dbHandler?.updateContractRowDate(oldContractInfo,newContractInfo)
 
     }
 
