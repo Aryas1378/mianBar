@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#757575"
+    tools:context=".controller.InvoiceActivity"
+    android:id="@+id/main_invoice_layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:background="#757575"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="فاکتور"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_larger_size"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/btn_margin"/>
+
+
+            <AutoCompleteTextView
+                android:id="@+id/product_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="نام میوه..."
+                android:layout_marginTop="@dimen/btn_margin"/>
+
+
+
+            <EditText
+                android:id="@+id/textview_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/product_name_text"
+                android:layout_centerHorizontal="true"
+                android:hint="0.0"
+                android:layout_margin="8dp"
+                android:textSize="50sp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/decrease_btn"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_btn"
+                android:layout_alignBottom="@+id/textview_amount"
+                android:layout_alignTop="@+id/textview_amount"
+                android:layout_toStartOf="@+id/textview_amount"
+                android:textStyle="bold"
+                android:text="-"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/increase_btn"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_btn"
+                android:layout_alignBottom="@+id/textview_amount"
+                android:layout_alignTop="@+id/textview_amount"
+                android:layout_toEndOf="@+id/textview_amount"
+                android:textStyle="bold"
+                android:text="+"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addtobasket_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_btn"
+                android:layout_alignBottom="@+id/textview_amount"
+                android:layout_alignTop="@+id/textview_amount"
+                android:layout_toEndOf="@+id/increase_btn"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold"
+                android:text="افزودن"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/invoice_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@+id/textview_amount" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit_invoice_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_btn"
+                android:gravity="center"
+                android:layout_alignEnd="@id/invoice_recyclerview"
+                android:layout_alignStart="@+id/invoice_recyclerview"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/invoice_recyclerview"
+                android:textSize="20sp"
+                android:text="ثبت"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

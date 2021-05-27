@@ -2,7 +2,7 @@ package com.example.ifruit.model
 
 import java.util.*
 
-val DATABASE_VERSION: Int = 14
+val DATABASE_VERSION: Int = 15
 val DATABASE_NAME: String = "ifruit.db"
 val TABLE_NAME1: String = "User"
 val TABLE_NAME2: String = "Fruit"
@@ -13,6 +13,8 @@ val TABLE_NAME6: String = "Debt"
 val TABLE_NAME7: String = "EmployeeManagement"
 val TABLE_NAME8: String = "Setting"
 val TABLE_NAME9:String="contact"
+val TABLE_NAME10:String="Invoice"
+
 
 //table user columns
 
@@ -82,3 +84,13 @@ val KEY_CONTACT_ID:String="id"
 val KEY_CONTACT_FIRST_NAME:String="first_name"
 val KEY_CONTACT_TITLE:String="title"
 val KEY_CONTACT_PHONE_NUMBER:String="phone_number"
+
+
+
+//Table Invoice columns
+val KEY_INVOICE_ID:String="id"
+val KEY_INVOICE_FRUIT_NAME:String="name"
+val KEY_INVOICE_FRUIT_AMOUNT:String="amount"
+val KEY_INVOICE_SUM:String="sum"
+val KEY_INVOICE_NUM:String="invoiceNumber"
+val KEY_INVOICE_TIMESTAMP:String="timestamp"
