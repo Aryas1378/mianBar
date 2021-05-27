@@ -1,6 +1,8 @@
 package com.example.ifruit.controller
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -44,6 +46,18 @@ class ContractActivity : AppCompatActivity() {
         val contractNameEditText = findViewById<EditText>(R.id.contract_name_ac)
         val contractProductInfoEditText = findViewById<EditText>(R.id.contract_product_info_ac)
         val contractActivitySaveData = findViewById<ImageButton>(R.id.contract_save_btn)
+
+
+        val getSetting = dbHandler?.readSettingInfo(1)
+        // SET BACKGROUND COLOR OF COST ACTIVITY
+        var Color = Color.parseColor(getSetting?.color.toString())
+        background.setBackgroundColor(Color)
+
+        // SET TEXTS FONT INSIDE COST ACTIVITY
+        var fontName = getSetting?.font?.toLowerCase()
+        var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
+        activityHeader.typeface = font
+
 
         if (!updateRequire.equals("update")) {
             searchButton.setOnClickListener {

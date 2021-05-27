@@ -143,6 +143,7 @@
         tools:ignore="MissingConstraints"
         android:layout_below="@+id/job_title_spiner"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="@dimen/text_xlarge_size"
         android:layout_marginRight="@dimen/btn_margin_larger"
         android:layout_marginTop="@dimen/date_margin_top"

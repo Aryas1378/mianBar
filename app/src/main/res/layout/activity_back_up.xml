@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     android:orientation="vertical"
-
+    android:id="@+id/backup_background"
     tools:context=".controller.MainActivity">
 
 
@@ -18,7 +18,7 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/backup_header"
         style="@style/Toolbar.TitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
