@@ -82,7 +82,7 @@
                 tools:ignore="MissingConstraints" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/mng_btn"
+                android:id="@+id/staff_mng_btn"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="300dp"
@@ -94,14 +94,14 @@
                 android:textSize="@dimen/text_large_size"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/acc_btn"
+                app:layout_constraintTop_toBottomOf="@+id/sms_panel_btn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/acc_btn"
+                android:id="@+id/sms_panel_btn"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="265dp"
@@ -115,7 +115,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView"
-                app:layout_constraintBottom_toTopOf="@+id/mng_btn"
+                app:layout_constraintBottom_toTopOf="@+id/staff_mng_btn"
                 tools:ignore="MissingConstraints" />
 
 
