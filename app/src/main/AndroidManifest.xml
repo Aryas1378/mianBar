@@ -11,23 +11,18 @@
         android:roundIcon="@drawable/background_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.IFruit">
-        <activity android:name=".controller.ManagementActivity"></activity>
+        <activity android:name=".controller.IncomeActivity"></activity>
+        <activity android:name=".controller.InvoiceActivity"></activity>
+        <activity android:name=".controller.ManagementActivity" />
         <activity
             android:name=".controller.AccountingActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".controller.AddContactActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".controller.DebtActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".controller.SalaryActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
@@ -41,22 +36,27 @@
         <activity
             android:name=".controller.SearchViewActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".controller.BackUpActivity"></activity>
+        <activity android:name=".controller.BackUpActivity" />
         <activity
             android:name=".controller.SMSPanelActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".controller.ForgotPasswordActivity" />
         <activity
             android:name=".controller.MainMenuActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".controller.CostActivity"
@@ -64,24 +64,20 @@
         <activity
             android:name=".controller.SettingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".controller.StaffManagingActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".controller.StaffManagingActivity" />
         <activity
             android:name=".controller.LoginActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".controller.MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

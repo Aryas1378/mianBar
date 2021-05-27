@@ -69,6 +69,13 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                     KEY_CONTACT_TITLE + " VARCHAR(30)," +
                     KEY_CONTACT_PHONE_NUMBER + " LONG)"
 
+    val CREATE_INVOICE_TABLE =
+        "CREATE TABLE "+ TABLE_NAME10+"("+ KEY_INVOICE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," +
+     KEY_INVOICE_FRUIT_NAME + " TEXT," +
+     KEY_INVOICE_FRUIT_AMOUNT + " FLOAT,"+
+     KEY_INVOICE_SUM + " INTEGER," + KEY_INVOICE_NUM + " INTEGER,"+
+     KEY_INVOICE_TIMESTAMP +" TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
+
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL(CREATE_USER_TABLE)
         db?.execSQL(CREATE_FRUIT_TABLE)
@@ -79,6 +86,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db?.execSQL(CREATE_EMPLOYEE_MANAGEMENT_TABLE)
         db?.execSQL(CREATE_SETTING_TABLE)
         db?.execSQL(CREATE_CONTACT_TABLE)
+        db?.execSQL(CREATE_INVOICE_TABLE)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -91,6 +99,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME7")
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME8")
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME9")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME10")
         onCreate(db)
     }
 
@@ -425,6 +434,18 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     //CRUD functions for fruit data table
     ////////////////////////////////
 
+
+    fun addFruit(fruit:FruitInfo){
+        val db=this.writableDatabase
+        val values=ContentValues()
+        values.put(KEY_FRUIT_ID,fruit.id)
+        values.put(KEY_FRUIT_NAME,fruit.name)
+        values.put(KEY_FRUIT_PRICE,fruit.price)
+        values.put(KEY_FRUIT_QUALITY,fruit.qlt)
+        db.insert(TABLE_NAME2,null,values)
+//        db.close()
+    }
+
     fun readFruitData(): MutableList<FruitInfo> {
         System.out.println("Hello from read fruit")
         var list: MutableList<FruitInfo> = ArrayList()
@@ -493,6 +514,21 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.close()
         return listFruitInfo
 
+    }
+
+    fun getFruitByName(): Cursor {
+        val fruitDb =this.readableDatabase
+        val id:Int=100
+//        val selectQuery="name = " + qname
+        val cursor: Cursor = fruitDb.query(TABLE_NAME2, arrayOf(
+            KEY_FRUIT_ID,
+            KEY_FRUIT_NAME,
+            KEY_FRUIT_PRICE,
+            KEY_FRUIT_QUALITY
+        ), null, null,null,null,null)
+        cursor.moveToFirst()
+        fruitDb.close()
+        return cursor
     }
     fun readFruitDataBase(id: Int): FruitInfo? {
         var db: SQLiteDatabase = writableDatabase
@@ -992,6 +1028,53 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         cursor.moveToFirst()
         contactDb.close()
         return cursor
+    }
+
+
+    fun addInvoice(invoice:InvoiceInfo){
+        val db=this.writableDatabase
+        val values=ContentValues()
+        values.put(KEY_INVOICE_ID,invoice.id)
+        values.put(KEY_INVOICE_FRUIT_NAME,invoice.name)
+        values.put(KEY_INVOICE_FRUIT_AMOUNT,invoice.amount)
+        values.put(KEY_INVOICE_SUM,invoice.sum)
+        values.put(KEY_INVOICE_NUM,invoice.invoiceNumber)
+        db.insert(TABLE_NAME10,null,values)
+        db.close()
+    }
+
+    fun getInvoiceNumber(): Cursor {
+        val fruitDb =this.readableDatabase
+        val id:Int=100
+//        val selectQuery="name = " + qname
+        val cursor: Cursor = fruitDb.query(TABLE_NAME10, arrayOf(
+            KEY_INVOICE_NUM
+        ), null, null,null,null,null)
+        cursor.moveToFirst()
+        fruitDb.close()
+        return cursor
+    }
+
+    fun getInvoice(invoiceNumber:Int): Cursor {
+        val fruitDb =this.readableDatabase
+        val id:Int=100
+//        val selectQuery="name = " + qname
+        val cursor: Cursor = fruitDb.query(TABLE_NAME10, arrayOf(
+            KEY_INVOICE_ID,
+            KEY_INVOICE_FRUIT_NAME,
+            KEY_INVOICE_FRUIT_AMOUNT,
+            KEY_INVOICE_SUM
+        ), KEY_INVOICE_NUM + "="+ invoiceNumber, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
+        cursor.moveToFirst()
+        fruitDb.close()
+        return cursor
+    }
+
+    fun deleteItemInvoice(id:Int){
+        val db=this.writableDatabase
+
+        db.delete(TABLE_NAME10, KEY_INVOICE_ID + "=" + id, null)
+        db.close()
     }
 
 
