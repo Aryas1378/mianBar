@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.core.view.get
 import com.example.ifruit.R
 import java.util.*
 
-class stuffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener {
+class StaffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener {
     var day = 0
     var month = 0
     var year = 0
@@ -28,7 +27,7 @@ class stuffManagingActivity : AppCompatActivity() , DatePickerDialog.OnDateSetLi
         //job title spinner definitions
         val job_title_spiner: Spinner = findViewById(R.id.job_title_spiner)
         val spinTitleJobList = listOf("حسابداری", "غرفه دار", "راننده")
-        val spinnerAdaper = ArrayAdapter<Any?>(this@stuffManagingActivity, R.layout.support_simple_spinner_dropdown_item,
+        val spinnerAdaper = ArrayAdapter<Any?>(this@StaffManagingActivity, R.layout.support_simple_spinner_dropdown_item,
             spinTitleJobList)
 
         job_title_spiner.adapter = spinnerAdaper

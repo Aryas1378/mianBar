@@ -122,11 +122,11 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             startActivity(accountsIntent)
 //            finish()
         }
-//        mng_btn.setOnClickListener {
-//            val accountsIntent = Intent(this, ::class.java)
-//            startActivity(accountsIntent)
-////            finish()
-//        }
+        mng_btn.setOnClickListener {
+            val accountsIntent = Intent(this, ManagementActivity::class.java)
+            startActivity(accountsIntent)
+//            finish()
+        }
 
     }
 
@@ -171,7 +171,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         logoutDrawer_btn=item0.actionView.findViewById(R.id.nav_logout) as ImageView
         logout_text_btn=item0.actionView.findViewById(R.id.nav_logout_text) as TextView
 
-        acc_btn=findViewById(R.id.sms_panel_btn) as Button
-//        mng_btn=findViewById(R.id.mng_btn) as Button
+        acc_btn=findViewById(R.id.acc_btn) as Button
+        mng_btn=findViewById(R.id.mng_btn) as Button
     }
 }
