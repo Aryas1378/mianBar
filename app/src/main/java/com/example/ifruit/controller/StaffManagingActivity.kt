@@ -21,16 +21,16 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
     var SavedDay = 0
     var SavedMonth = 0
     var SavedYear = 0
-<<<<<<< HEAD
+
     var dateValue:String ?= null
-=======
+
     var dbHandler: DataBaseHelper? = null
->>>>>>> e55e8469410c79c5caa0ecec1a66e59b11d48a1b
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stuff_managing)
-<<<<<<< HEAD
+
         var spinnerRes:String ?= null
         var dbHandler = DataBaseHelper(this)
         var newStaff = EmployeeManagementInfo()
@@ -39,9 +39,9 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         val staffPhone = findViewById<EditText>(R.id.stuff_phone_number)
         val staffAmount = findViewById<EditText>(R.id.stuff_salary)
 
-=======
+
         dbHandler = DataBaseHelper(this)
->>>>>>> e55e8469410c79c5caa0ecec1a66e59b11d48a1b
+
         pickDate()
 
         val activityHeader = findViewById<TextView>(R.id.employee_header)
@@ -72,10 +72,10 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
 
         job_title_spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
-<<<<<<< HEAD
+
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 spinnerRes = parent?.getItemAtPosition(position).toString()
-=======
+
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -85,7 +85,7 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
 //                System.out.println(parent?.getItemAtPosition(position).toString())
                 //                should be completed
 
->>>>>>> e55e8469410c79c5caa0ecec1a66e59b11d48a1b
+
 
             }
 
