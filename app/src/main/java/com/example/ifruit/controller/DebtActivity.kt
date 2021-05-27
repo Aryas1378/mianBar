@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.*
 import com.example.annimation.CostInfo
+import com.example.annimation.DebtInfo
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
 
@@ -15,26 +16,27 @@ class DebtActivity : AppCompatActivity() {
 
     var dbHandler: DataBaseHelper? = null
     private var updateRequire: String? = ""
-    private var costReasonUpdateData: String? = null
-    private var costAmountUpdateData: Long? = null
-    private var costDateUpdateData: String? = null
+    private var debtNameUpdateData: String? = null
+    private var debtPhoneUpdateData: Long? = null
+    private var debtAmountUpdateData: Long? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_debt)
 
         updateRequire = intent.getStringExtra("UPDATE").toString()
-        costReasonUpdateData = intent.getStringExtra("COSTREASON").toString()
-        costAmountUpdateData = intent.getLongExtra("COSTAMOUNT", 0)
-        costDateUpdateData = intent.getStringExtra("COSTDATE")
+        debtNameUpdateData = intent.getStringExtra("DEBTORNAME").toString()
+        debtPhoneUpdateData = intent.getLongExtra("DEBTORPHONENUM", 0)
+        debtAmountUpdateData = intent.getLongExtra("DEBTAMOUNT",0)
 
 
         val background = findViewById<RelativeLayout>(R.id.background)
-        val activityHeader = findViewById<TextView>(R.id.cost_header)
+        val activityHeader = findViewById<TextView>(R.id.debt_header)
         val searchButton = findViewById<ImageButton>(R.id.search_button)
-        val costReasonEditText = findViewById<EditText>(R.id.feereason_ac)
-        val costAmountEditText = findViewById<EditText>(R.id.feeamont_ac)
-        val costDateEditText = findViewById<EditText>(R.id.date_ac)
-        val costActivitySaveData = findViewById<ImageButton>(R.id.cost_save_btn)
+        val debtorNameEditText = findViewById<EditText>(R.id.debtor_name_ac)
+        val debtorAmountEditText = findViewById<EditText>(R.id.debtor_debt_ac)
+        val debtorPhoneEditText = findViewById<EditText>(R.id.debtor_phone_num_ac)
+        val costActivitySaveData = findViewById<ImageButton>(R.id.debt_save_btn)
         dbHandler = DataBaseHelper(this)
 
 
@@ -53,39 +55,39 @@ class DebtActivity : AppCompatActivity() {
         if (!updateRequire.equals("update")) {
             searchButton.setOnClickListener {
                 val intent = Intent(this, SearchViewActivity::class.java)
-                intent.putExtra("TABLE", "cost")
+                intent.putExtra("TABLE", "debt")
                 startActivity(intent)
             }
         }
 
         costActivitySaveData.setOnClickListener {
             System.out.println("............."+updateRequire)
-            if (!TextUtils.isEmpty(costReasonEditText.text.toString())
-                && !TextUtils.isEmpty(costAmountEditText.text.toString())
-                && !TextUtils.isEmpty(costDateEditText.text.toString())
+            if (!TextUtils.isEmpty(debtorNameEditText.text.toString())
+                && !TextUtils.isEmpty(debtorAmountEditText.text.toString())
+                && !TextUtils.isEmpty(debtorPhoneEditText.text.toString())
                 && !updateRequire.equals("update")
             ) {
                 System.out.println("............."+updateRequire)
                 insertDataToDataBase(
-                    costReasonEditText.text.toString(), costAmountEditText.text.toString(),
-                    costDateEditText.text.toString()
+                    debtorNameEditText.text.toString(), debtorAmountEditText.text.toString(),
+                    debtorPhoneEditText.text.toString()
                 )
                 Toast.makeText(this, "با موفقیت ثبت شد", Toast.LENGTH_LONG).show()
 
             }
-            else if (!TextUtils.isEmpty(costReasonEditText.text.toString())
-                && !TextUtils.isEmpty(costAmountEditText.text.toString())
-                && !TextUtils.isEmpty(costDateEditText.text.toString())
+            else if (!TextUtils.isEmpty(debtorNameEditText.text.toString())
+                && !TextUtils.isEmpty(debtorAmountEditText.text.toString())
+                && !TextUtils.isEmpty(debtorPhoneEditText.text.toString())
                 && updateRequire.equals("update")
             ) {
 
                 updateCostDataDatabase(
-                    costReasonEditText.text.toString(),
-                    costAmountEditText.text.toString(),
-                    costDateEditText.text.toString(),
-                    costReasonUpdateData.toString(),
-                    costAmountUpdateData,
-                    costDateUpdateData.toString()
+                    debtNameUpdateData.toString(),
+                    debtPhoneUpdateData!!,
+                    debtAmountUpdateData!!,
+                    debtorNameEditText.text.toString(),
+                    debtorPhoneEditText.text.toString(),
+                    debtorAmountEditText.text.toString()
                 )
             }
 
@@ -94,38 +96,38 @@ class DebtActivity : AppCompatActivity() {
 
 
     }
-    fun insertDataToDataBase(costReason: String, costAmount: String, costDate: String) {
+    fun insertDataToDataBase(debtName: String, debtAmount: String, debtPhone: String) {
         dbHandler = DataBaseHelper(this)
 
-        val costInfo = CostInfo()
-        costInfo.reason = costReason
-        costInfo.amount = costAmount.toLong()
-        costInfo.date = costDate
-        dbHandler?.createCostInfo(costInfo)
+        val debtInfo = DebtInfo()
+        debtInfo.Name = debtName
+        debtInfo.PhoneNumber = debtPhone.toLong()
+        debtInfo.DebtAmount = debtAmount.toLong()
+        dbHandler?.createDebtDataBase(debtInfo)
 
     }
 
     fun updateCostDataDatabase(
-        oldCostReason: String,
-        oldCostAmount: String,
-        oldCostDate: String,
-        newCostReason: String,
-        newCostAmount: Long?,
-        newCostDate: String
+        oldDebtName: String,
+        oldDebtAmount: Long,
+        oldDebtPhone: Long,
+        newDebtName: String,
+        newDebtAmount: String?,
+        newDebtPhone: String
     ) {
         dbHandler = DataBaseHelper(this)
 
-        val newCostInfo = CostInfo()
-        val oldCostInfo = CostInfo()
+        val newDebtInfo = DebtInfo()
+        val oldDebtInfo = DebtInfo()
 
-        newCostInfo.reason = newCostReason
-        newCostInfo.amount = newCostAmount
-        newCostInfo.date = newCostDate
+        newDebtInfo.Name = newDebtName
+        newDebtInfo.DebtAmount = newDebtAmount?.toLong()
+        newDebtInfo.PhoneNumber = newDebtPhone.toLong()
 
-        oldCostInfo.reason = oldCostReason
-        oldCostInfo.amount = oldCostAmount.toLong()
-        oldCostInfo.date = oldCostDate
+        oldDebtInfo.Name = oldDebtName
+        oldDebtInfo.DebtAmount = oldDebtAmount.toLong()
+        oldDebtInfo.PhoneNumber = oldDebtPhone
 
-        dbHandler?.updateCostRow(oldCostInfo,newCostInfo)
+        dbHandler?.updateDebtRow(oldDebtInfo,newDebtInfo)
     }
 }

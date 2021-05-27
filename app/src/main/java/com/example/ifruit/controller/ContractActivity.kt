@@ -121,18 +121,18 @@ class ContractActivity : AppCompatActivity() {
     }
 
     fun updateContractDataDatabase(
-        oldName: String,
-        oldNationalCode: String,
-        oldTransactionVolume: String,
-        oldContractTitle: String,
-        oldProductInformation: String,
-        oldDate: String,
         newName: String,
-        newNationalCode: Long,
-        newTransactionVolume: Long,
+        newNationalCode: String,
+        newTransactionVolume: String,
         newContractTitle: String,
         newProductInformation: String,
-        newDate: String
+        newDate: String,
+        oldName: String,
+        oldNationalCode: Long,
+        oldTransactionVolume: Long,
+        oldContractTitle: String,
+        oldProductInformation: String,
+        oldDate: String
     ) {
         dbHandler = DataBaseHelper(this)
 
@@ -147,8 +147,8 @@ class ContractActivity : AppCompatActivity() {
         oldContractInfo.date = oldDate
 
         newContractInfo.name = newName
-        newContractInfo.nationalCode = newNationalCode
-        newContractInfo.transactionVolume = newTransactionVolume
+        newContractInfo.nationalCode = newNationalCode.toLong()
+        newContractInfo.transactionVolume = newTransactionVolume.toLong()
         newContractInfo.contractTitle = newContractTitle
         newContractInfo.productInformation = newProductInformation
         newContractInfo.date = newDate

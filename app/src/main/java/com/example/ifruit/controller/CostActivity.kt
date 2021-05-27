@@ -109,12 +109,12 @@ class CostActivity : AppCompatActivity() {
     }
 
     fun updateCostDataDatabase(
-        oldCostReason: String,
-        oldCostAmount: String,
-        oldCostDate: String,
         newCostReason: String,
-        newCostAmount: Long?,
-        newCostDate: String
+        newCostAmount: String,
+        newCostDate: String,
+        oldCostReason: String,
+        oldCostAmount: Long?,
+        oldCostDate: String
     ) {
         dbHandler = DataBaseHelper(this)
 
@@ -122,11 +122,11 @@ class CostActivity : AppCompatActivity() {
         val oldCostInfo = CostInfo()
 
         newCostInfo.reason = newCostReason
-        newCostInfo.amount = newCostAmount
+        newCostInfo.amount = newCostAmount.toLong()
         newCostInfo.date = newCostDate
 
         oldCostInfo.reason = oldCostReason
-        oldCostInfo.amount = oldCostAmount.toLong()
+        oldCostInfo.amount = oldCostAmount
         oldCostInfo.date = oldCostDate
 
         dbHandler?.updateCostRow(oldCostInfo,newCostInfo)

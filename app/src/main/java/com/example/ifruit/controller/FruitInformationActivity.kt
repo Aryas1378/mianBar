@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.*
 import com.example.annimation.CostInfo
+import com.example.annimation.FruitInfo
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
 
@@ -15,27 +16,27 @@ class FruitInformationActivity : AppCompatActivity() {
 
     var dbHandler: DataBaseHelper? = null
     private var updateRequire: String? = ""
-    private var costReasonUpdateData: String? = null
-    private var costAmountUpdateData: Long? = null
-    private var costDateUpdateData: String? = null
+    private var fruitNameUpdateData: String? = null
+    private var fruitPriceUpdateData: Int? = null
+    private var fruitQltUpdateData: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fruit_information)
 
         updateRequire = intent.getStringExtra("UPDATE").toString()
-        costReasonUpdateData = intent.getStringExtra("COSTREASON").toString()
-        costAmountUpdateData = intent.getLongExtra("COSTAMOUNT", 0)
-        costDateUpdateData = intent.getStringExtra("COSTDATE")
+        fruitNameUpdateData = intent.getStringExtra("FRUITNAME").toString()
+        fruitPriceUpdateData = intent.getIntExtra("FRUITPRICE", 0)
+        fruitQltUpdateData = intent.getIntExtra("FRUITQLT",0)
 
 
         val background = findViewById<RelativeLayout>(R.id.background)
-        val activityHeader = findViewById<TextView>(R.id.cost_header)
+        val activityHeader = findViewById<TextView>(R.id.fruit_header)
         val searchButton = findViewById<ImageButton>(R.id.search_button)
-        val costReasonEditText = findViewById<EditText>(R.id.feereason_ac)
-        val costAmountEditText = findViewById<EditText>(R.id.feeamont_ac)
-        val costDateEditText = findViewById<EditText>(R.id.date_ac)
-        val costActivitySaveData = findViewById<ImageButton>(R.id.cost_save_btn)
+        val fruitNameEditText = findViewById<EditText>(R.id.fruit_name_ac)
+        val fruitPriceEditText = findViewById<EditText>(R.id.fruit_price_ac)
+        val fruitQltEditText = findViewById<EditText>(R.id.fruit_qlt_ac)
+        val fruitActivitySaveData = findViewById<ImageButton>(R.id.fruit_save_btn)
         dbHandler = DataBaseHelper(this)
 
 
@@ -54,39 +55,41 @@ class FruitInformationActivity : AppCompatActivity() {
         if (!updateRequire.equals("update")) {
             searchButton.setOnClickListener {
                 val intent = Intent(this, SearchViewActivity::class.java)
-                intent.putExtra("TABLE", "cost")
+                intent.putExtra("TABLE", "fruit")
                 startActivity(intent)
             }
         }
 
-        costActivitySaveData.setOnClickListener {
+        fruitActivitySaveData.setOnClickListener {
             System.out.println("............."+updateRequire)
-            if (!TextUtils.isEmpty(costReasonEditText.text.toString())
-                && !TextUtils.isEmpty(costAmountEditText.text.toString())
-                && !TextUtils.isEmpty(costDateEditText.text.toString())
+
+            if (!TextUtils.isEmpty(fruitNameEditText.text.toString())
+                && !TextUtils.isEmpty(fruitPriceEditText.text.toString())
+                && !TextUtils.isEmpty(fruitQltEditText.text.toString())
                 && !updateRequire.equals("update")
             ) {
                 System.out.println("............."+updateRequire)
+
                 insertDataToDataBase(
-                    costReasonEditText.text.toString(), costAmountEditText.text.toString(),
-                    costDateEditText.text.toString()
+                    fruitNameEditText.text.toString(), fruitPriceEditText.text.toString(),
+                    fruitQltEditText.text.toString()
                 )
                 Toast.makeText(this, "با موفقیت ثبت شد", Toast.LENGTH_LONG).show()
 
             }
-            else if (!TextUtils.isEmpty(costReasonEditText.text.toString())
-                && !TextUtils.isEmpty(costAmountEditText.text.toString())
-                && !TextUtils.isEmpty(costDateEditText.text.toString())
+            else if (!TextUtils.isEmpty(fruitNameEditText.text.toString())
+                && !TextUtils.isEmpty(fruitPriceEditText.text.toString())
+                && !TextUtils.isEmpty(fruitQltEditText.text.toString())
                 && updateRequire.equals("update")
             ) {
 
                 updateCostDataDatabase(
-                    costReasonEditText.text.toString(),
-                    costAmountEditText.text.toString(),
-                    costDateEditText.text.toString(),
-                    costReasonUpdateData.toString(),
-                    costAmountUpdateData,
-                    costDateUpdateData.toString()
+                    fruitNameUpdateData.toString(),
+                    fruitPriceUpdateData!!.toInt(),
+                    fruitQltUpdateData!!.toInt(),
+                    fruitNameEditText.text.toString(),
+                    fruitPriceEditText.text.toString(),
+                    fruitQltEditText.text.toString()
                 )
             }
 
@@ -96,38 +99,39 @@ class FruitInformationActivity : AppCompatActivity() {
 
     }
 
-    fun insertDataToDataBase(costReason: String, costAmount: String, costDate: String) {
+    fun insertDataToDataBase(fruitName: String, fruitPrice: String, fruitQlt: String) {
         dbHandler = DataBaseHelper(this)
 
-        val costInfo = CostInfo()
-        costInfo.reason = costReason
-        costInfo.amount = costAmount.toLong()
-        costInfo.date = costDate
-        dbHandler?.createCostInfo(costInfo)
+        val fruitInfo = FruitInfo()
+        fruitInfo.name = fruitName
+        fruitInfo.price = fruitPrice.toInt()
+        fruitInfo.qlt = fruitQlt.toInt()
+        dbHandler?.addFruit(fruitInfo)
 
     }
 
+
     fun updateCostDataDatabase(
-        oldCostReason: String,
-        oldCostAmount: String,
-        oldCostDate: String,
-        newCostReason: String,
-        newCostAmount: Long?,
-        newCostDate: String
+        oldFruitName: String,
+        oldFruitPrice: Int,
+        oldFruitQlt: Int,
+        newFruitName: String,
+        newFruitPrice: String,
+        newFruitQlt: String
     ) {
         dbHandler = DataBaseHelper(this)
 
-        val newCostInfo = CostInfo()
-        val oldCostInfo = CostInfo()
+        val newFruitInfo = FruitInfo()
+        val oldFruitInfo = FruitInfo()
 
-        newCostInfo.reason = newCostReason
-        newCostInfo.amount = newCostAmount
-        newCostInfo.date = newCostDate
+        newFruitInfo.name = newFruitName
+        newFruitInfo.price = newFruitPrice.toInt()
+        newFruitInfo.qlt = newFruitQlt.toInt()
 
-        oldCostInfo.reason = oldCostReason
-        oldCostInfo.amount = oldCostAmount.toLong()
-        oldCostInfo.date = oldCostDate
+        oldFruitInfo.name = oldFruitName
+        oldFruitInfo.price = oldFruitPrice
+        oldFruitInfo.qlt = oldFruitQlt
 
-        dbHandler?.updateCostRow(oldCostInfo,newCostInfo)
+        dbHandler?.updateFruitRowData(oldFruitInfo,newFruitInfo)
     }
 }

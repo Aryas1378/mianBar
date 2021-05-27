@@ -235,9 +235,7 @@ class SearchViewActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        dialog.setNegativeButton("حذف") { _, witch ->
-            //costConfirmDeletion(costReason, costAmount, costDate)
-        }
+
         dialog.show()
 
     }
@@ -304,9 +302,7 @@ class SearchViewActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        dialog.setNegativeButton("حذف") { _, witch ->
-            //costConfirmDeletion(costReason, costAmount, costDate)
-        }
+
         dialog.show()
 
     }
@@ -344,14 +340,15 @@ class SearchViewActivity : AppCompatActivity() {
                     "مقدار بدهی : " + debtAmount
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,DebtActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            var intent = Intent(this,DebtActivity::class.java)
+            intent.putExtra("DEBTORNAME",debtorName)
+            intent.putExtra("DEBTORPHONENUM",debtorPhoneNum)
+            intent.putExtra("DEBTAMOUNT",debtAmount)
+            intent.putExtra("UPDATE","update")
+            startActivity(intent)
         }
 
-        dialog.setNegativeButton("حذف") { _, witch ->
-            //costConfirmDeletion(costReason, costAmount, costDate)
-        }
+
         dialog.show()
 
     }
@@ -404,14 +401,17 @@ class SearchViewActivity : AppCompatActivity() {
                     "سمت کاری کارمند : " + employeeJobTitle + "\n"
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,EmployeeManagementActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            var intent = Intent(this,StaffManagingActivity::class.java)
+            intent.putExtra("EMPLOYEENAME",employeeName)
+            intent.putExtra("EMPLOYEEPHONENUM",employeePhone)
+            intent.putExtra("EMPLOYEEDATEOFEMPLOYEE",employeeDateOfEmployee)
+            intent.putExtra("EMPLOYEESALARY",employeeSalary)
+            intent.putExtra("EMPLOYEEJOBTITLE",employeeJobTitle)
+            intent.putExtra("UPDATE","update")
+            startActivity(intent)
         }
 
-        dialog.setNegativeButton("حذف") { _, witch ->
-            //costConfirmDeletion(costReason, costAmount, costDate)
-        }
+
         dialog.show()
     }
 
@@ -444,14 +444,15 @@ class SearchViewActivity : AppCompatActivity() {
                     "درجه کیفیت : " + fruitQlt
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,FruitActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            var intent = Intent(this,FruitInformationActivity::class.java)
+            intent.putExtra("FRUITNAME",fruitName)
+            intent.putExtra("FRUITPRICE",fruitPrice)
+            intent.putExtra("FRUITQLT",fruitQlt)
+            intent.putExtra("UPDATE","update")
+            startActivity(intent)
         }
 
-        dialog.setNegativeButton("حذف") { _, witch ->
-            //costConfirmDeletion(costReason, costAmount, costDate)
-        }
+
         dialog.show()
     }
 
@@ -512,14 +513,15 @@ class SearchViewActivity : AppCompatActivity() {
                     "شماره تلفن کارمند : " + salaryPhone
         )
         dialog.setPositiveButton("ویرایش") { _, which ->
-//            var intent = Intent(this,SalaryActivity::class.java)
-//            intent.putExtra("updateCost","update")
-//            startActivity(intent)
+            var intent = Intent(this,SalaryActivity::class.java)
+            intent.putExtra("SALARYNAME",salaryName)
+            intent.putExtra("SALARYSALRY",salary)
+            intent.putExtra("SLARYPHONE",salaryPhone)
+            intent.putExtra("UPDATE","update")
+            startActivity(intent)
         }
 
-        dialog.setNegativeButton("حذف") { _, witch ->
-            //costConfirmDeletion(costReason, costAmount, costDate)
-        }
+
         dialog.show()
     }
 }
