@@ -24,6 +24,7 @@ class SMSPanelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_s_m_s_panel)
         dbHandler = DataBaseHelper(this)
+
         val contactNumber=  intent.getStringExtra("NUMBER").toString()
 
         val sendButton = findViewById<ImageButton>(R.id.send_massage)
@@ -46,10 +47,7 @@ class SMSPanelActivity : AppCompatActivity() {
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
 
-        if (phoneNumber.text!=null && contactNumber!=null){
-            phoneNumber.setText(contactNumber)
 
-        }
 
 
 
@@ -64,8 +62,11 @@ class SMSPanelActivity : AppCompatActivity() {
 
         addNumImageButton.setOnClickListener {
            // startActivity(Intent(this,Contact::class.java))
+
             val intent = Intent(this,SearchViewActivity::class.java)
-            intent.putExtra("NUMBER",phoneNumber.text)
+            if(phoneNumber.length() > 6)
+                intent.putExtra("ALLNUMBER",phoneNumber.text)
+        //    intent.putExtra("NUMBER",phoneNumber.text)
             intent.putExtra("TABLE","contact")
             startActivity(intent)
             //this.finish()
@@ -76,11 +77,16 @@ class SMSPanelActivity : AppCompatActivity() {
             startActivity(intent)
             this.finish()
         }
-        //if (contactNumber.length > 5){
+//        if (phoneNumber.length() > 5 || contactNumber.length > 5){
+//            val num =phoneNumber.text.toString() + contactNumber
+//            phoneNumber.setText(num)
+//        }
 
-            System.out.println(number)
-            phoneNumber.setText(number)
-        //}
+        if (contactNumber.length > 5){
+
+            System.out.println(contactNumber)
+            phoneNumber.setText(number+contactNumber)
+        }
 
     }
 

@@ -48,7 +48,8 @@ class SearchViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search_view)
 
         val tableRequire: String = intent.getStringExtra("TABLE").toString()
-        number = intent.getStringExtra("NUMBER")
+        number = intent.getStringExtra("ALLNUMBER")
+
 
         dbHandler = DataBaseHelper(this)
         costList = ArrayList()
@@ -498,7 +499,7 @@ class SearchViewActivity : AppCompatActivity() {
                 var intent = Intent(this,SMSPanelActivity::class.java)
                 //var num = intent.getStringExtra("PASTENUMBER")
                 System.out.println("joooooooon be maola velet nmikonam"+ number)
-                intent.putExtra("NUMBER", phoneContactDataBaseModel.phoneNumber.toString() + ",")
+                intent.putExtra("NUMBER", phoneContactDataBaseModel.phoneNumber.toString() +","+number +"," )
                 startActivity(intent)
                 //this.finish()
             }
