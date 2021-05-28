@@ -44,6 +44,8 @@ class SettingActivity : AppCompatActivity() {
         val changeNameTitle = findViewById<TextView>(R.id.change_name_title)
         val changeNameEditText = findViewById<EditText>(R.id.change_name)
         val saveButton = findViewById<ImageButton>(R.id.contract_save_btn)
+        val checkBx= findViewById<CheckBox>(R.id.checkBx)
+        val restoreData = findViewById<TextView>(R.id.restore_data)
 
         dbHandler = DataBaseHelper(this)
 
@@ -64,7 +66,7 @@ class SettingActivity : AppCompatActivity() {
         changeColorTitle.typeface = font
         changeFontTitle.typeface = font
         changeNameTitle.typeface = font
-
+        restoreData.typeface = font
 
         val fontStyleList = arrayOf(
                 "IArabics",
@@ -147,6 +149,12 @@ class SettingActivity : AppCompatActivity() {
             }
             settinginfo.name = PRIMARY_NAME
             dbHandler!!.updateSettingInfo(settinginfo, 1)
+
+            if(checkBx.isChecked){
+                val restore:RestoreActivity = RestoreActivity(this)
+                restore.createRestore()
+            }
+
 
             Toast.makeText(this, "با موفقیت ثبت شد", Toast.LENGTH_LONG).show()
         }

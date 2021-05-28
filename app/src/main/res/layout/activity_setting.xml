@@ -167,6 +167,33 @@
             android:layout_margin="@dimen/small_margin"
             
             />
+        <RelativeLayout
+            android:layout_below="@id/change_font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/restore_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="بازیابی اطلاعات"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/text_normal_size"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/normal_margin"
+                />
+            <CheckBox
+                android:id="@+id/checkBx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/restore_data"
+                android:theme="@style/goldenCheck"
+                android:checked="false"
+                />
+
+        </RelativeLayout>
+
 
         <ImageButton
             android:id="@+id/contract_save_btn"

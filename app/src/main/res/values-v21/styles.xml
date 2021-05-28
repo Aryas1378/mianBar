@@ -3,4 +3,9 @@
     <style name="Theme.IFruit.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="goldenCheck">
+        <item name="colorAccent">#FFC400</item>
+    </style>
+
 </resources>

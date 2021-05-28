@@ -10,6 +10,7 @@ import com.example.annimation.*
 import com.example.ifruit.model.*
 
 class DataBaseHelper(context: Context) :
+
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     //sql command to creating all table

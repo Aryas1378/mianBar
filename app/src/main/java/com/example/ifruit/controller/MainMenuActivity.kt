@@ -3,6 +3,7 @@ package com.example.ifruit.controller
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Process
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
@@ -99,16 +100,17 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         logoutDrawer_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
             val accountsIntent = Intent(this, LoginActivity::class.java)
-            startActivity(accountsIntent)
+//            startActivity(accountsIntent)
             finish()
-            drawer.closeDrawer(GravityCompat.END)
+
+//            drawer.closeDrawer(GravityCompat.END)
         }
         logout_text_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
             val accountsIntent = Intent(this, LoginActivity::class.java)
-            startActivity(accountsIntent)
+//            startActivity(accountsIntent)
             finish()
-            drawer.closeDrawer(GravityCompat.END)
+//            drawer.closeDrawer(GravityCompat.END)
         }
 //
 //

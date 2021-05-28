@@ -12,6 +12,8 @@ import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.solver.state.State
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ifruit.R
@@ -61,7 +63,7 @@ class SearchViewActivity : AppCompatActivity() {
         val listProduct = findViewById<RecyclerView>(R.id.information_list)
         val searchViewEditText = findViewById<EditText>(R.id.search_edittext)
         val searchViewButton = findViewById<ImageButton>(R.id.search_btn)
-        val background = findViewById<RelativeLayout>(R.id.search_background)
+        val background = findViewById<ConstraintLayout>(R.id.search_background)
         val activityHeader = findViewById<TextView>(R.id.search_title)
 
         ////////////////////////////////////////////////////////////////////////
