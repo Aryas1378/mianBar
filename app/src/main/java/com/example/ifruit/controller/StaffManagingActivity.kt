@@ -1,6 +1,7 @@
 package com.example.ifruit.controller
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,7 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         val staffName = findViewById<EditText>(R.id.stuff_name)
         val staffPhone = findViewById<EditText>(R.id.stuff_phone_number)
         val staffAmount = findViewById<EditText>(R.id.stuff_salary)
+        val searchBtn = findViewById<ImageButton>(R.id.search_button)
 
         pickDate()
 
@@ -95,6 +97,11 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
                 dbHandler?.createEmployeeManagementInfo(newStaff)
                 Toast.makeText(this@StaffManagingActivity, "ذخیره شد", Toast.LENGTH_LONG).show()
             }
+        }
+        searchBtn.setOnClickListener {
+            val intent = Intent(this, SearchViewActivity::class.java)
+            intent.putExtra("TABLE", "employee")
+            startActivity(intent)
         }
 
     }

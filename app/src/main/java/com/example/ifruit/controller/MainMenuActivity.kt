@@ -99,7 +99,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         logoutDrawer_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
-            val accountsIntent = Intent(this, LoginActivity::class.java)
+//            val accountsIntent = Intent(this, LoginActivity::class.java)
 //            startActivity(accountsIntent)
             finish()
 
@@ -107,7 +107,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         }
         logout_text_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
-            val accountsIntent = Intent(this, LoginActivity::class.java)
+//            val accountsIntent = Intent(this, LoginActivity::class.java)
 //            startActivity(accountsIntent)
             finish()
 //            drawer.closeDrawer(GravityCompat.END)
