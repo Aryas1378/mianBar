@@ -56,7 +56,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
       //  userNameInDrawerLayout.text = getSetting?.name
         System.out.println("امه اکاته یوزر نیم کمان کاکه //...." + userNameInDrawerLayout.text)
 
-        
+
 
 
         drawer = findViewById(R.id.drawer_layout)

@@ -168,9 +168,10 @@
             
             />
         <RelativeLayout
-            android:layout_below="@id/change_font_style"
+            android:layout_below="@id/change_font_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin">
             <TextView
                 android:id="@+id/restore_data"
                 android:layout_width="wrap_content"
@@ -198,10 +199,10 @@
         <ImageButton
             android:id="@+id/contract_save_btn"
             android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:layout_below="@id/change_font_style"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginTop="@dimen/normal_margin"
             android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
 
 

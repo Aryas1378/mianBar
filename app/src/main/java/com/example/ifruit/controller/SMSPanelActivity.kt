@@ -75,17 +75,14 @@ class SMSPanelActivity : AppCompatActivity() {
         addContact.setOnClickListener {
             val intent = Intent(this,AddContactActivity::class.java)
             startActivity(intent)
-            this.finish()
+            //this.finish()
         }
-//        if (phoneNumber.length() > 5 || contactNumber.length > 5){
-//            val num =phoneNumber.text.toString() + contactNumber
-//            phoneNumber.setText(num)
-//        }
+
 
         if (contactNumber.length > 5){
 
             System.out.println(contactNumber)
-            phoneNumber.setText(number+contactNumber)
+            phoneNumber.setText(contactNumber)
         }
 
     }
@@ -108,7 +105,7 @@ class SMSPanelActivity : AppCompatActivity() {
 
     fun sendSMS(phoneNo: List<String>?, msg: String?) {
         try {
-            for (i in phoneNo!!.indices) {
+            for (i in phoneNo!!.indices-1) {
                 val smsManager: SmsManager = SmsManager.getDefault()
                 smsManager.sendTextMessage(phoneNo[0], null, msg, null, null)
             }

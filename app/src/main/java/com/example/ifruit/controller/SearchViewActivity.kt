@@ -499,7 +499,7 @@ class SearchViewActivity : AppCompatActivity() {
                 var intent = Intent(this,SMSPanelActivity::class.java)
                 //var num = intent.getStringExtra("PASTENUMBER")
                 System.out.println("joooooooon be maola velet nmikonam"+ number)
-                intent.putExtra("NUMBER", phoneContactDataBaseModel.phoneNumber.toString() +","+number +"," )
+                intent.putExtra("NUMBER",  phoneContactDataBaseModel.phoneNumber.toString() +"," )
                 startActivity(intent)
                 //this.finish()
             }
