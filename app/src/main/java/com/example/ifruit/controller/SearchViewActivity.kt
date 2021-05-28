@@ -365,8 +365,8 @@ class SearchViewActivity : AppCompatActivity() {
         dialog.setPositiveButton("ویرایش") { _, which ->
             var intent = Intent(this,DebtActivity::class.java)
             intent.putExtra("DEBTORNAME",debtorName)
-            intent.putExtra("DEBTORPHONENUM",debtorPhoneNum)
-            intent.putExtra("DEBTAMOUNT",debtAmount)
+            intent.putExtra("DEBTORPHONENUM",debtorPhoneNum.toString())
+            intent.putExtra("DEBTAMOUNT",debtAmount.toString())
             intent.putExtra("UPDATE","update")
             startActivity(intent)
         }

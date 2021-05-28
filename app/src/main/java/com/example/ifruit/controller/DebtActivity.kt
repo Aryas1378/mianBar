@@ -17,17 +17,18 @@ class DebtActivity : AppCompatActivity() {
     var dbHandler: DataBaseHelper? = null
     private var updateRequire: String? = ""
     private var debtNameUpdateData: String? = null
-    private var debtPhoneUpdateData: Long? = null
-    private var debtAmountUpdateData: Long? = null
+    private var debtPhoneUpdateData: String? = null
+    private var debtAmountUpdateData: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_debt)
+        dbHandler = DataBaseHelper(this)
 
         updateRequire = intent.getStringExtra("UPDATE").toString()
         debtNameUpdateData = intent.getStringExtra("DEBTORNAME").toString()
-        debtPhoneUpdateData = intent.getLongExtra("DEBTORPHONENUM", 0)
-        debtAmountUpdateData = intent.getLongExtra("DEBTAMOUNT",0)
+        debtPhoneUpdateData = intent.getStringExtra("DEBTORPHONENUM")
+        debtAmountUpdateData = intent.getStringExtra("DEBTAMOUNT")
 
 
         val background = findViewById<RelativeLayout>(R.id.background)
@@ -37,8 +38,11 @@ class DebtActivity : AppCompatActivity() {
         val debtorAmountEditText = findViewById<EditText>(R.id.debtor_debt_ac)
         val debtorPhoneEditText = findViewById<EditText>(R.id.debtor_phone_num_ac)
         val costActivitySaveData = findViewById<ImageButton>(R.id.debt_save_btn)
-        dbHandler = DataBaseHelper(this)
 
+        System.out.println("مقدار اپدیت :" + updateRequire)
+        System.out.println("چاپ  : "+debtNameUpdateData.toString())
+        System.out.println("چاپ  : "+debtPhoneUpdateData)
+        System.out.println("چاپ  : "+debtAmountUpdateData)
 
         ////////////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
@@ -81,15 +85,22 @@ class DebtActivity : AppCompatActivity() {
                 && !TextUtils.isEmpty(debtorPhoneEditText.text.toString())
                 && updateRequire.equals("update")
             ) {
+                System.out.println("jooooon jooooon"+updateRequire)
 
                 updateCostDataDatabase(
                     debtNameUpdateData.toString(),
-                    debtPhoneUpdateData!!,
-                    debtAmountUpdateData!!,
+                    debtPhoneUpdateData!!.toLong(),
+                    debtAmountUpdateData!!.toLong(),
                     debtorNameEditText.text.toString(),
                     debtorPhoneEditText.text.toString(),
                     debtorAmountEditText.text.toString()
                 )
+                System.out.println(debtNameUpdateData.toString())
+                System.out.println(debtPhoneUpdateData)
+                System.out.println(debtAmountUpdateData)
+                System.out.println(debtorNameEditText.text.toString())
+                System.out.println(debtorPhoneEditText.text.toString())
+                System.out.println(debtorAmountEditText.text.toString())
                 Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
 
