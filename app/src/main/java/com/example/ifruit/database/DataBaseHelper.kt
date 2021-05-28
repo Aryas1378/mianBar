@@ -332,6 +332,7 @@ class DataBaseHelper(context: Context) :
                     KEY_DEBT_NAME + " = '" + newDebtInfo.Name + "', " +
                     KEY_DEBT_PHONE_NUMBER + " = '" + newDebtInfo.PhoneNumber + "', " +
                     KEY_DEBT_AMOUNT + " = '" + newDebtInfo.DebtAmount + "' " +
+
                     "WHERE $KEY_DEBT_NAME = '" + oldDebtInfo.Name + "' AND " +
                     "$KEY_DEBT_PHONE_NUMBER = '" + oldDebtInfo.PhoneNumber + "' AND " +
                     "$KEY_DEBT_AMOUNT = '" + oldDebtInfo.DebtAmount + "'"
@@ -428,10 +429,11 @@ class DataBaseHelper(context: Context) :
             "UPDATE " + TABLE_NAME4 + " SET " +
                     KEY_CONTRACT_NAME + " = '" + newContractInfo.name + "', " +
                     KEY_CONTRACT_NATIONAL_CODE + " = '" + newContractInfo.nationalCode + "', " +
-                    KEY_CONTRACT_TRANSACION_VOlLME + " = '" + newContractInfo.transactionVolume + "' " +
-                    KEY_CONTRACT_CONTRACT_TITLE + " = '" + newContractInfo.contractTitle + "' " +
-                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '" + newContractInfo.productInformation + "' " +
+                    KEY_CONTRACT_TRANSACION_VOlLME + " = '" + newContractInfo.transactionVolume + "', " +
+                    KEY_CONTRACT_CONTRACT_TITLE + " = '" + newContractInfo.contractTitle + "', " +
+                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '" + newContractInfo.productInformation + "', " +
                     KEY_CONTRACT_DATE + " = '" + newContractInfo.date + "' " +
+
                     "WHERE $KEY_CONTRACT_NAME = '" + oldContractInfo.name + "' AND " +
                     "$KEY_CONTRACT_NATIONAL_CODE = '" + oldContractInfo.nationalCode + "' AND " +
                     "$KEY_CONTRACT_TRANSACION_VOlLME = '" + oldContractInfo.transactionVolume + "' AND " +
@@ -588,6 +590,7 @@ class DataBaseHelper(context: Context) :
                     KEY_FRUIT_NAME + " = '" + newFruitInfo.name + "', " +
                     KEY_FRUIT_PRICE + " = '" + newFruitInfo.price + "', " +
                     KEY_FRUIT_QUALITY + " = '" + newFruitInfo.qlt + "' " +
+
                     "WHERE $KEY_FRUIT_NAME = '" + oldFruitInfo.name + "' AND " +
                     "$KEY_FRUIT_PRICE = '" + oldFruitInfo.price + "' AND " +
                     "$KEY_FRUIT_QUALITY = '" + oldFruitInfo.qlt + "'"
@@ -697,6 +700,7 @@ class DataBaseHelper(context: Context) :
                     KEY_SALARY_NAME + " = '" + newSalaryInfo.name + "', " +
                     KEY_SALARY_SALARY + " = '" + newSalaryInfo.salary + "', " +
                     KEY_SALARY_PHONENUMBER + " = '" + newSalaryInfo.phoneNumber + "' " +
+
                     "WHERE $KEY_SALARY_NAME = '" + oldSalaryInfo.name + "' AND " +
                     "$KEY_SALARY_SALARY = '" + oldSalaryInfo.salary + "' AND " +
                     "$KEY_SALARY_PHONENUMBER = '" + oldSalaryInfo.phoneNumber + "'"
@@ -785,9 +789,10 @@ class DataBaseHelper(context: Context) :
             "UPDATE " + TABLE_NAME7 + " SET " +
                     KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " = '" + newEmployeeManagementInfo.firstName + "', " +
                     KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " = '" + newEmployeeManagementInfo.phoneNumber + "', " +
-                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '" + newEmployeeManagementInfo.dateOfEmployee + "' " +
-                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '" + newEmployeeManagementInfo.salary + "' " +
+                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '" + newEmployeeManagementInfo.dateOfEmployee + "', " +
+                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '" + newEmployeeManagementInfo.salary + "', " +
                     KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " = '" + newEmployeeManagementInfo.jobTitle + "' " +
+
                     "WHERE $KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME = '" + oldEmployeeManagementInfo.firstName + "' AND " +
                     "$KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER = '" + oldEmployeeManagementInfo.phoneNumber + "' AND " +
                     "$KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE = '" + oldEmployeeManagementInfo.dateOfEmployee + "' AND " +
