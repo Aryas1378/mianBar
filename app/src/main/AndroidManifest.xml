@@ -14,39 +14,63 @@
 
 
         <activity android:name=".controller.IncomeActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation = "portrait"></activity>
+
         <activity android:name=".controller.InvoiceActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation = "portrait">
 
 
         </activity>
-        <activity android:name=".controller.ManagementActivity" />
+
+        <activity android:name=".controller.ManagementActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation = "portrait"/>
+
         <activity
             android:name=".controller.AccountingActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.AddContactActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.DebtActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.SalaryActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.FruitInformationActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.ContractActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
 <!--        <activity android:name=".controller.RestoreActivity" />-->
         <activity
             android:name=".controller.SearchViewActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".controller.BackUpActivity" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".controller.BackUpActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.SMSPanelActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait">
 
 <!--             <intent-filter>-->
 <!--             <action android:name="android.intent.action.MAIN" />-->
@@ -56,10 +80,14 @@
 <!--             </intent-filter>-->
 
         </activity>
-        <activity android:name=".controller.ForgotPasswordActivity" />
+        <activity android:name=".controller.ForgotPasswordActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".controller.MainMenuActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
@@ -68,18 +96,25 @@
         </activity>
         <activity
             android:name=".controller.CostActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".controller.SettingActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".controller.StaffManagingActivity" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".controller.StaffManagingActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".controller.LoginActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".controller.MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait">
 
 
              <intent-filter>
@@ -89,12 +124,6 @@
              <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
 
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
 
         </activity>
     </application>

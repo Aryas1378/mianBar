@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Process
 import android.view.MenuItem
+import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -33,7 +34,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private lateinit var toolbar: Toolbar
     private lateinit var drawer: DrawerLayout
     private lateinit var username_text_view: TextView
-//    private lateinit var dbHandler: DataBaseHelper
+    private var dbHandler: DataBaseHelper? = null
 
     //    private lateinit var toggle:ActionBarDrawerToggle
     private lateinit var navigationView: NavigationView
@@ -44,6 +45,20 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        dbHandler = DataBaseHelper(this)
+        val getSetting = dbHandler?.readSettingInfo(1)
+        var factory = layoutInflater
+        var textView: View = factory.inflate(R.layout.nav_header, null)
+        var userNameInDrawerLayout = textView.findViewById<TextView>(R.id.username_textview)
+
+        userNameInDrawerLayout.setText(getSetting?.name)
+      //  userNameInDrawerLayout.text = getSetting?.name
+        System.out.println("امه اکاته یوزر نیم کمان کاکه //...." + userNameInDrawerLayout.text)
+
+
+        var text = findViewById<TextView>(R.id.textView)
+        text.setText(getSetting?.name)
 
 
         drawer = findViewById(R.id.drawer_layout)
@@ -106,17 +121,19 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         logoutDrawer_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
-//            val accountsIntent = Intent(this, LoginActivity::class.java)
-//            startActivity(accountsIntent)
+            val accountsIntent = Intent(this, LoginActivity::class.java)
             finish()
+            startActivity(accountsIntent)
+            //finish()
 
 //            drawer.closeDrawer(GravityCompat.END)
         }
         logout_text_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
-//            val accountsIntent = Intent(this, LoginActivity::class.java)
-//            startActivity(accountsIntent)
+            val accountsIntent = Intent(this, LoginActivity::class.java)
             finish()
+            startActivity(accountsIntent)
+            //  finish()
 //            drawer.closeDrawer(GravityCompat.END)
         }
 //
@@ -128,11 +145,13 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 //        }
         acc_btn.setOnClickListener {
             val accountsIntent = Intent(this, AccountingActivity::class.java)
+            // finish()
             startActivity(accountsIntent)
 //            finish()
         }
         mng_btn.setOnClickListener {
             val accountsIntent = Intent(this, ManagementActivity::class.java)
+            //finish()
             startActivity(accountsIntent)
 //            finish()
         }
@@ -156,7 +175,8 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
             R.id.nav_backup -> Toast.makeText(this, "Backup Clicked", Toast.LENGTH_LONG).show()
 
-            R.id.nav_contactUs -> Toast.makeText(this, "ContactUs Clicked", Toast.LENGTH_LONG).show()
+            R.id.nav_contactUs -> Toast.makeText(this, "ContactUs Clicked", Toast.LENGTH_LONG)
+                .show()
 
             R.id.nav_logout -> Toast.makeText(this, "Logout Clicked", Toast.LENGTH_LONG).show()
         }
@@ -166,7 +186,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     private fun initViews() {
 //        log_out = findViewById(R.id.log_out) as Button
-        item0=navigationView.menu.getItem(0)
+        item0 = navigationView.menu.getItem(0)
 
         setting_btn = item0.actionView.findViewById(R.id.nav_setting) as ImageView
         setting_text_btn = item0.actionView.findViewById(R.id.nav_setting_text) as TextView
@@ -174,15 +194,15 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         backup_btn = item0.actionView.findViewById(R.id.nav_backup) as ImageView
         backup_text_btn = item0.actionView.findViewById(R.id.nav_backup_text) as TextView
 
-        contactus_btn=item0.actionView.findViewById(R.id.nav_contactUs) as ImageView
-        contactus_text_btn=item0.actionView.findViewById(R.id.nav_contactUs_text) as TextView
+        contactus_btn = item0.actionView.findViewById(R.id.nav_contactUs) as ImageView
+        contactus_text_btn = item0.actionView.findViewById(R.id.nav_contactUs_text) as TextView
 
-        logoutDrawer_btn=item0.actionView.findViewById(R.id.nav_logout) as ImageView
-        logout_text_btn=item0.actionView.findViewById(R.id.nav_logout_text) as TextView
+        logoutDrawer_btn = item0.actionView.findViewById(R.id.nav_logout) as ImageView
+        logout_text_btn = item0.actionView.findViewById(R.id.nav_logout_text) as TextView
 
 //        username_text_view=findViewById(R.id.username_textview) as TextView
 
-        acc_btn=findViewById(R.id.acc_btn) as Button
-        mng_btn=findViewById(R.id.mng_btn) as Button
+        acc_btn = findViewById(R.id.acc_btn) as Button
+        mng_btn = findViewById(R.id.mng_btn) as Button
     }
 }
