@@ -272,7 +272,7 @@ class DataBaseHelper(context: Context) :
              KEY_COST_AMOUNT,
              KEY_COST_DATE
 
-        ), null, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
+        ), null, null,null,null, null)
         cursor.moveToFirst()
         employeeDb.close()
         return cursor
@@ -815,10 +815,14 @@ class DataBaseHelper(context: Context) :
         val id:Int=100
 //        val selectQuery="name = " + qname
         val cursor: Cursor = employeeDb.query(TABLE_NAME7, arrayOf( //table7
+            KEY_EMPLOYEE_MANAGEMENT_ID,
+            KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME,
+            KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER,
             KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE,
-            KEY_EMPLOYEE_MANAGEMENT_SALARY
+            KEY_EMPLOYEE_MANAGEMENT_SALARY,
+            KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE
 
-        ), null, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
+        ), null, null,null,null, null)
         cursor.moveToFirst()
         employeeDb.close()
         return cursor
@@ -1136,7 +1140,9 @@ class DataBaseHelper(context: Context) :
             KEY_INVOICE_ID,
             KEY_INVOICE_FRUIT_NAME,
             KEY_INVOICE_FRUIT_AMOUNT,
-            KEY_INVOICE_SUM
+            KEY_INVOICE_SUM,
+            KEY_INVOICE_NUM,
+            KEY_INVOICE_TIMESTAMP
         ), null, null,null,null, KEY_INVOICE_TIMESTAMP + " DESC")
         cursor.moveToFirst()
         fruitDb.close()

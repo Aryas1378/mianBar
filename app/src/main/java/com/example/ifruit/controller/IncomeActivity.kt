@@ -48,9 +48,9 @@ class IncomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener 
 
 
         search_btn.setOnClickListener {
-            var taxOverProfit:Int=taxOverProfit()
-            var insurance:Int=insurance()
-            var income:Int=income()
+            var taxOverProfit:Float=taxOverProfit()
+            var insurance:Float=insurance()
+            var income:Float=income().toFloat()
             income-=(taxOverProfit.plus(insurance))
             income_textiew.text=income.toString()
 
@@ -100,13 +100,13 @@ class IncomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener 
 
             }while (cursor2.moveToNext())
         }
-
-        return totalMoney.minus(totalFee) as Int
+        var total = totalMoney.minus(totalFee)
+        return total.toInt()
 
     }
 
 
-    private fun insurance(): Int {
+    private fun insurance(): Float {
         var cursor1: Cursor =db!!.getAllEmployee()
         var resultStart=startDate_textview.text.toString()+"-".split("-")
         var resultEnd=endDate_textiew.text.toString()+"-".split("-")
@@ -128,13 +128,14 @@ class IncomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener 
 
             }while (cursor1.moveToNext())
         }
-        return totalMoney.times(0.2) as Int
+        var total = totalMoney.times(0.2)
+        return "%.3f".format(total).toFloat()
 
 
     }
 
 
-    private fun taxOverProfit(): Int {
+    private fun taxOverProfit(): Float {
         var cursor1: Cursor =db!!.getAllInvoice()
         var resultStart=startDate_textview.text.toString()+"-".split("-")
         var resultEnd=endDate_textiew.text.toString()+"-".split("-")
@@ -157,9 +158,8 @@ class IncomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener 
 
             }while (cursor1.moveToNext())
         }
-        return totalMoney.times(0.09) as Int
-
-
+        var total = totalMoney.times(0.09)
+        return "%.3f".format(total).toFloat()
 
 
     }
