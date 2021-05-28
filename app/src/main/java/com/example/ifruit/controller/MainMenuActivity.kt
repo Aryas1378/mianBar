@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 
 import com.example.ifruit.R
+import com.example.ifruit.database.DataBaseHelper
 import com.google.android.material.navigation.NavigationView
 
 class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +32,8 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private lateinit var toggle: ImageButton
     private lateinit var toolbar: Toolbar
     private lateinit var drawer: DrawerLayout
+    private lateinit var username_text_view: TextView
+//    private lateinit var dbHandler: DataBaseHelper
 
     //    private lateinit var toggle:ActionBarDrawerToggle
     private lateinit var navigationView: NavigationView
@@ -47,6 +50,9 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         navigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+//        dbHandler = DataBaseHelper(this)
+//        val getSetting = dbHandler?.readSettingInfo(1)
+
 
 //        toggle= ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close)
         toggle = findViewById(R.id.nav_toggle)
@@ -57,6 +63,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 //        toggle.syncState()
 
         initViews()
+//        username_text_view.text=getSetting?.name
 
         setting_btn.setOnClickListener {
 //            Toast.makeText(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
@@ -172,6 +179,8 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         logoutDrawer_btn=item0.actionView.findViewById(R.id.nav_logout) as ImageView
         logout_text_btn=item0.actionView.findViewById(R.id.nav_logout_text) as TextView
+
+//        username_text_view=findViewById(R.id.username_textview) as TextView
 
         acc_btn=findViewById(R.id.acc_btn) as Button
         mng_btn=findViewById(R.id.mng_btn) as Button
