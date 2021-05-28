@@ -67,6 +67,7 @@ class SettingActivity : AppCompatActivity() {
         changeFontTitle.typeface = font
         changeNameTitle.typeface = font
         restoreData.typeface = font
+        ///////////////////////////////////////////////////////////////
 
         val fontStyleList = arrayOf(
                 "IArabics",

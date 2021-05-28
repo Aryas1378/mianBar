@@ -32,9 +32,7 @@
             app:layout_constraintBottom_toTopOf="@+id/app_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/app_logo"
@@ -45,7 +43,7 @@
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintTop_toBottomOf="@id/management_header"
             app:layout_constraintBottom_toTopOf="@id/staff_mng_btn"
             tools:ignore="MissingConstraints"
             android:layout_margin="8dp"/>
@@ -62,7 +60,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintTop_toBottomOf="@id/management_header"
             app:layout_constraintBottom_toTopOf="@+id/sms_panel_btn"
             tools:ignore="MissingConstraints" />
 

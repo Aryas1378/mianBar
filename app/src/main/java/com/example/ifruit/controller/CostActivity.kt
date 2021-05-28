@@ -91,6 +91,7 @@ class CostActivity : AppCompatActivity() {
                     costAmountUpdateData,
                     costDateUpdateData.toString()
                 )
+                Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
 
 

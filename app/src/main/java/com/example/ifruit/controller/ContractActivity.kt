@@ -108,6 +108,7 @@ class ContractActivity : AppCompatActivity() {
                     contractProductInfoUpdateData.toString(),
                     contractDateUpdateData.toString()
                 )
+                Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
 
 

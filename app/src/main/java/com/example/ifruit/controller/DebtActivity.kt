@@ -90,6 +90,7 @@ class DebtActivity : AppCompatActivity() {
                     debtorPhoneEditText.text.toString(),
                     debtorAmountEditText.text.toString()
                 )
+                Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
 
 

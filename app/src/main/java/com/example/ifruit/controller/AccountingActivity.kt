@@ -5,10 +5,7 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
 
@@ -23,7 +20,7 @@ class AccountingActivity : AppCompatActivity() {
         dbHandler = DataBaseHelper(this)
 
         val activityHeader = findViewById<TextView>(R.id.accounting_title)
-        val background = findViewById<RelativeLayout>(R.id.background)
+        val background = findViewById<ScrollView>(R.id.background)
         val costBtn = findViewById<ImageButton>(R.id.fee)
         val incomeBtn = findViewById<ImageButton>(R.id.income)
         val salaryBtn = findViewById<ImageButton>(R.id.salary)

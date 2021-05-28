@@ -243,12 +243,12 @@ class DataBaseHelper(context: Context) :
 
         val updateCommand =
             "UPDATE " + TABLE_NAME5 + " SET " +
-                    KEY_COST_REASON + " = '" + costInfo1.reason + "', " +
-                    KEY_COST_AMOUNT + " = '" + costInfo1.amount + "', " +
-                    KEY_COST_DATE + " = '" + costInfo1.date + "' " +
-                    "WHERE $KEY_COST_REASON = '" + costInfo2.reason + "' AND " +
-                    "$KEY_COST_AMOUNT = '" + costInfo2.amount + "' AND " +
-                    "$KEY_COST_DATE = '" + costInfo2.date + "'"
+                    KEY_COST_REASON + " = '" + costInfo2.reason + "', " +
+                    KEY_COST_AMOUNT + " = '" + costInfo2.amount + "', " +
+                    KEY_COST_DATE + " = '" + costInfo2.date + "' " +
+                    "WHERE $KEY_COST_REASON = '" + costInfo1.reason + "' AND " +
+                    "$KEY_COST_AMOUNT = '" + costInfo1.amount + "' AND " +
+                    "$KEY_COST_DATE = '" + costInfo1.date + "'"
 
         db.execSQL(updateCommand)
 
@@ -329,12 +329,12 @@ class DataBaseHelper(context: Context) :
 
         val updateCommand =
             "UPDATE " + TABLE_NAME6 + " SET " +
-                    KEY_DEBT_NAME + " = '" + oldDebtInfo.Name + "', " +
-                    KEY_DEBT_PHONE_NUMBER + " = '" + oldDebtInfo.PhoneNumber + "', " +
-                    KEY_DEBT_AMOUNT + " = '" + oldDebtInfo.DebtAmount + "' " +
-                    "WHERE $KEY_DEBT_NAME = '" + newDebtInfo.Name + "' AND " +
-                    "$KEY_DEBT_PHONE_NUMBER = '" + newDebtInfo.PhoneNumber + "' AND " +
-                    "$KEY_DEBT_AMOUNT = '" + newDebtInfo.DebtAmount + "'"
+                    KEY_DEBT_NAME + " = '" + newDebtInfo.Name + "', " +
+                    KEY_DEBT_PHONE_NUMBER + " = '" + newDebtInfo.PhoneNumber + "', " +
+                    KEY_DEBT_AMOUNT + " = '" + newDebtInfo.DebtAmount + "' " +
+                    "WHERE $KEY_DEBT_NAME = '" + oldDebtInfo.Name + "' AND " +
+                    "$KEY_DEBT_PHONE_NUMBER = '" + oldDebtInfo.PhoneNumber + "' AND " +
+                    "$KEY_DEBT_AMOUNT = '" + oldDebtInfo.DebtAmount + "'"
 
         db.execSQL(updateCommand)
 
@@ -426,18 +426,18 @@ class DataBaseHelper(context: Context) :
 
         val updateCommand =
             "UPDATE " + TABLE_NAME4 + " SET " +
-                    KEY_CONTRACT_NAME + " = '" + oldContractInfo.name + "', " +
-                    KEY_CONTRACT_NATIONAL_CODE + " = '" + oldContractInfo.nationalCode + "', " +
-                    KEY_CONTRACT_TRANSACION_VOlLME + " = '" + oldContractInfo.transactionVolume + "' " +
-                    KEY_CONTRACT_CONTRACT_TITLE + " = '" + oldContractInfo.contractTitle + "' " +
-                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '" + oldContractInfo.productInformation + "' " +
-                    KEY_CONTRACT_DATE + " = '" + oldContractInfo.date + "' " +
-                    "WHERE $KEY_CONTRACT_NAME = '" + newContractInfo.name + "' AND " +
-                    "$KEY_CONTRACT_NATIONAL_CODE = '" + newContractInfo.nationalCode + "' AND " +
-                    "$KEY_CONTRACT_TRANSACION_VOlLME = '" + newContractInfo.transactionVolume + "' AND " +
-                    "$KEY_CONTRACT_CONTRACT_TITLE = '" + newContractInfo.contractTitle + "' AND " +
-                    "$KEY_CONTRACT_PRODUCT_INFORMATON = '" + newContractInfo.productInformation + "' AND " +
-                    "$KEY_CONTRACT_DATE = '" + newContractInfo.date + "'"
+                    KEY_CONTRACT_NAME + " = '" + newContractInfo.name + "', " +
+                    KEY_CONTRACT_NATIONAL_CODE + " = '" + newContractInfo.nationalCode + "', " +
+                    KEY_CONTRACT_TRANSACION_VOlLME + " = '" + newContractInfo.transactionVolume + "' " +
+                    KEY_CONTRACT_CONTRACT_TITLE + " = '" + newContractInfo.contractTitle + "' " +
+                    KEY_CONTRACT_PRODUCT_INFORMATON + " = '" + newContractInfo.productInformation + "' " +
+                    KEY_CONTRACT_DATE + " = '" + newContractInfo.date + "' " +
+                    "WHERE $KEY_CONTRACT_NAME = '" + oldContractInfo.name + "' AND " +
+                    "$KEY_CONTRACT_NATIONAL_CODE = '" + oldContractInfo.nationalCode + "' AND " +
+                    "$KEY_CONTRACT_TRANSACION_VOlLME = '" + oldContractInfo.transactionVolume + "' AND " +
+                    "$KEY_CONTRACT_CONTRACT_TITLE = '" + oldContractInfo.contractTitle + "' AND " +
+                    "$KEY_CONTRACT_PRODUCT_INFORMATON = '" + oldContractInfo.productInformation + "' AND " +
+                    "$KEY_CONTRACT_DATE = '" + oldContractInfo.date + "'"
 
         db.execSQL(updateCommand)
     }
@@ -585,12 +585,12 @@ class DataBaseHelper(context: Context) :
 
         val updateCommand =
             "UPDATE " + TABLE_NAME2 + " SET " +
-                    KEY_FRUIT_NAME + " = '" + oldFruitInfo.name + "', " +
-                    KEY_FRUIT_PRICE + " = '" + oldFruitInfo.price + "', " +
-                    KEY_FRUIT_QUALITY + " = '" + oldFruitInfo.qlt + "' " +
-                    "WHERE $KEY_FRUIT_NAME = '" + newFruitInfo.name + "' AND " +
-                    "$KEY_FRUIT_PRICE = '" + newFruitInfo.price + "' AND " +
-                    "$KEY_FRUIT_QUALITY = '" + newFruitInfo.qlt + "'"
+                    KEY_FRUIT_NAME + " = '" + newFruitInfo.name + "', " +
+                    KEY_FRUIT_PRICE + " = '" + newFruitInfo.price + "', " +
+                    KEY_FRUIT_QUALITY + " = '" + newFruitInfo.qlt + "' " +
+                    "WHERE $KEY_FRUIT_NAME = '" + oldFruitInfo.name + "' AND " +
+                    "$KEY_FRUIT_PRICE = '" + oldFruitInfo.price + "' AND " +
+                    "$KEY_FRUIT_QUALITY = '" + oldFruitInfo.qlt + "'"
 
         db.execSQL(updateCommand)
     }
@@ -694,12 +694,12 @@ class DataBaseHelper(context: Context) :
 
         val updateCommand =
             "UPDATE " + TABLE_NAME3 + " SET " +
-                    KEY_SALARY_NAME + " = '" + oldSalaryInfo.name + "', " +
-                    KEY_SALARY_SALARY + " = '" + oldSalaryInfo.salary + "', " +
-                    KEY_SALARY_PHONENUMBER + " = '" + oldSalaryInfo.phoneNumber + "' " +
-                    "WHERE $KEY_SALARY_NAME = '" + newSalaryInfo.name + "' AND " +
-                    "$KEY_SALARY_SALARY = '" + newSalaryInfo.salary + "' AND " +
-                    "$KEY_SALARY_PHONENUMBER = '" + newSalaryInfo.phoneNumber + "'"
+                    KEY_SALARY_NAME + " = '" + newSalaryInfo.name + "', " +
+                    KEY_SALARY_SALARY + " = '" + newSalaryInfo.salary + "', " +
+                    KEY_SALARY_PHONENUMBER + " = '" + newSalaryInfo.phoneNumber + "' " +
+                    "WHERE $KEY_SALARY_NAME = '" + oldSalaryInfo.name + "' AND " +
+                    "$KEY_SALARY_SALARY = '" + oldSalaryInfo.salary + "' AND " +
+                    "$KEY_SALARY_PHONENUMBER = '" + oldSalaryInfo.phoneNumber + "'"
 
         db.execSQL(updateCommand)
 
@@ -783,16 +783,16 @@ class DataBaseHelper(context: Context) :
 
         val updateCommand =
             "UPDATE " + TABLE_NAME7 + " SET " +
-                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " = '" + oldEmployeeManagementInfo.firstName + "', " +
-                    KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " = '" + oldEmployeeManagementInfo.phoneNumber + "', " +
-                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '" + oldEmployeeManagementInfo.dateOfEmployee + "' " +
-                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '" + oldEmployeeManagementInfo.salary + "' " +
-                    KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " = '" + oldEmployeeManagementInfo.jobTitle + "' " +
-                    "WHERE $KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME = '" + newEmployeeManagementInfo.firstName + "' AND " +
-                    "$KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER = '" + newEmployeeManagementInfo.phoneNumber + "' AND " +
-                    "$KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE = '" + newEmployeeManagementInfo.dateOfEmployee + "' AND " +
-                    "$KEY_EMPLOYEE_MANAGEMENT_SALARY = '" + newEmployeeManagementInfo.salary + "' AND " +
-                    "$KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE = '" + newEmployeeManagementInfo.jobTitle + "'"
+                    KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME + " = '" + newEmployeeManagementInfo.firstName + "', " +
+                    KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER + " = '" + newEmployeeManagementInfo.phoneNumber + "', " +
+                    KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE + " = '" + newEmployeeManagementInfo.dateOfEmployee + "' " +
+                    KEY_EMPLOYEE_MANAGEMENT_SALARY + " = '" + newEmployeeManagementInfo.salary + "' " +
+                    KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE + " = '" + newEmployeeManagementInfo.jobTitle + "' " +
+                    "WHERE $KEY_EMPLOYEE_MANAGEMENT_FIRST_NAME = '" + oldEmployeeManagementInfo.firstName + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_PHONE_NUMBER = '" + oldEmployeeManagementInfo.phoneNumber + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_DATE_OF_EMPLOYEE = '" + oldEmployeeManagementInfo.dateOfEmployee + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_SALARY = '" + oldEmployeeManagementInfo.salary + "' AND " +
+                    "$KEY_EMPLOYEE_MANAGEMENT_JOB_TITLE = '" + oldEmployeeManagementInfo.jobTitle + "'"
 
         db.execSQL(updateCommand)
     }

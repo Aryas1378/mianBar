@@ -41,14 +41,15 @@ class InvoiceActivity : AppCompatActivity() {
         recyclerView.layoutManager=LinearLayoutManager(this)
 
 
-        val background = findViewById<ConstraintLayout>(R.id.background)
+        val background = findViewById<ConstraintLayout>(R.id.main_invoice_layout)
         val activityHeader = findViewById<TextView>(R.id.invoice_header)
-
+        val recycleBackground = findViewById<RelativeLayout>(R.id.invoice_RL)
         ////////////////////////////////////////////////////////////////////////
         val getSetting = db?.readSettingInfo(1)
         // SET BACKGROUND COLOR OF COST ACTIVITY
         var color = Color.parseColor(getSetting?.color.toString())
         background.setBackgroundColor(color)
+        recycleBackground.setBackgroundColor(color)
 
         // SET TEXTS FONT INSIDE COST ACTIVITY
         var fontName = getSetting?.font?.toLowerCase()

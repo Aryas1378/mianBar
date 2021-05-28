@@ -20,9 +20,10 @@ class SalaryRecycleViewAdapter(val context: Context, var salaryList: ArrayList<S
 
         fun bindProduct(salaryDataBaseModel: SalaryDataBaseModel, context: Context) {
 
-            salaryName.text=salaryDataBaseModel.name
+            salaryName.text=salaryDataBaseModel.name.toString()
             salary.text=salaryDataBaseModel.salary.toString()
             salaryPhoneNumber.text=salaryDataBaseModel.phoneNumber.toString()
+
             itemView.setOnClickListener {
                 itemClick(salaryDataBaseModel)
             }
@@ -31,7 +32,7 @@ class SalaryRecycleViewAdapter(val context: Context, var salaryList: ArrayList<S
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.phone_contact_layout, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.salary_layout, parent, false)
         return ViewHolder(view,itemClick)
     }
 

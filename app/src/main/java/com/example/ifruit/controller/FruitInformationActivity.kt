@@ -91,6 +91,7 @@ class FruitInformationActivity : AppCompatActivity() {
                     fruitPriceEditText.text.toString(),
                     fruitQltEditText.text.toString()
                 )
+                Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
 
 

@@ -89,6 +89,7 @@ class SalaryActivity : AppCompatActivity() {
                     salarySalaryEditText.text.toString(),
                     salaryPhoneNumEditText.text.toString()
                 )
+                Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
 
 
