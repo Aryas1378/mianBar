@@ -1,16 +1,14 @@
 package com.example.ifruit.controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Process
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
 import com.google.android.material.navigation.NavigationView
@@ -120,18 +118,20 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         logoutDrawer_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
             val accountsIntent = Intent(this, LoginActivity::class.java)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+////            finish()
+//            startActivity(accountsIntent)
             finish()
-            startActivity(accountsIntent)
-            //finish()
 
 //            drawer.closeDrawer(GravityCompat.END)
         }
         logout_text_btn.setOnClickListener {
 //            Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
             val accountsIntent = Intent(this, LoginActivity::class.java)
-            finish()
-            startActivity(accountsIntent)
-            //  finish()
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+//            startActivity(accountsIntent)
+//            finish()
+              finish()
 //            drawer.closeDrawer(GravityCompat.END)
         }
 //

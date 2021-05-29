@@ -64,7 +64,7 @@
         <ImageButton
             android:id="@+id/staff_mng_btn"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_marginTop="265dp"
             android:layout_marginBottom="@dimen/small_margin"
             android:background="@drawable/employeemanag"
@@ -79,7 +79,7 @@
         <ImageButton
             android:id="@+id/sms_panel_btn"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_marginBottom="300dp"
             android:layout_marginTop="@dimen/small_margin"
             android:background="@drawable/smspanel"

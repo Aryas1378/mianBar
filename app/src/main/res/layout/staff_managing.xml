@@ -27,7 +27,7 @@
             android:id="@+id/employee_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/contract_back"
+            android:layout_toLeftOf="@id/employee_back"
             android:padding="@dimen/normal_margin"
             android:text="@string/employee_manage"
             android:textColor="@color/white"
