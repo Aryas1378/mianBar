@@ -68,8 +68,9 @@ class ContractActivity : AppCompatActivity() {
             finish()
         }
 
-        if (!updateRequire.equals("update")) {
+
             searchButton.setOnClickListener {
+                if (!updateRequire.equals("update")) {
                 val intent = Intent(this, SearchViewActivity::class.java)
                 intent.putExtra("TABLE", "contract")
                 startActivity(intent)

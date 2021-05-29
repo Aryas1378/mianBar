@@ -52,7 +52,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         userNameInDrawerLayout.setText(getSetting?.name)
       //  userNameInDrawerLayout.text = getSetting?.name
-        System.out.println("امه اکاته یوزر نیم کمان کاکه //...." + userNameInDrawerLayout.text)
+     //   System.out.println("امه اکاته یوزر نیم کمان کاکه //...." + userNameInDrawerLayout.text)
 
 
 

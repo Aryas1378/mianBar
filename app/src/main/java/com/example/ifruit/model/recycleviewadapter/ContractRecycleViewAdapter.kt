@@ -18,6 +18,7 @@ class ContractRecycleViewAdapter(
 
 
     inner class ViewHolder(itemView: View,val itemClick : (ContractDataBaseModel) ->Unit) : RecyclerView.ViewHolder(itemView) {
+
         val contractTitle = itemView.findViewById<TextView>(R.id.contract_title)
         val name = itemView.findViewById<TextView>(R.id.contract_name)
         val transactionVolume = itemView.findViewById<TextView>(R.id.transaction_volume)
@@ -33,7 +34,8 @@ class ContractRecycleViewAdapter(
             transactionVolume.text = contractDataBaseModel.transactionVolume.toString()
             nationalCode.text = contractDataBaseModel.nationalCode.toString()
             productInfo.text = contractDataBaseModel.productInformation
-            date.text = contractDataBaseModel.date.toString()
+            date.text = contractDataBaseModel.date
+
             itemView.setOnClickListener {
                 itemClick(contractDataBaseModel)
             }

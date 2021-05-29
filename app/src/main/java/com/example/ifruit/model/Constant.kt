@@ -2,7 +2,7 @@ package com.example.ifruit.model
 
 import java.util.*
 
-val DATABASE_VERSION: Int = 17
+val DATABASE_VERSION: Int = 18
 val DATABASE_NAME: String = "ifruit.db"
 val TABLE_NAME1: String = "User"
 val TABLE_NAME2: String = "Fruit"

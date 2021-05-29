@@ -265,6 +265,7 @@ class SearchViewActivity : AppCompatActivity() {
     }
 
     fun getContractDataAndAdaptIt() {
+        System.out.println("contract reycle ......")
         dbHandler = DataBaseHelper(this)
         val dataGeneratorFromDataBase = DataGeneratorFromDataBase()
         for (i in 1..dbHandler!!.getContactTableRowCount()) {

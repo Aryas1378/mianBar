@@ -974,7 +974,7 @@ class DataBaseHelper(context: Context) :
 
     fun getContactTableRowCount(): Int {
         val db: SQLiteDatabase = readableDatabase
-        val counter = "SELECT * FROM $TABLE_NAME9"
+        val counter = "SELECT * FROM $TABLE_NAME4"
         var cursor: Cursor = db.rawQuery(counter, null)
         return cursor.count
 
