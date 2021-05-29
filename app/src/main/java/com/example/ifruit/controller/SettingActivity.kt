@@ -1,5 +1,6 @@
 package com.example.ifruit.controller
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
@@ -68,6 +69,14 @@ class SettingActivity : AppCompatActivity() {
         changeNameTitle.typeface = font
         restoreData.typeface = font
         ///////////////////////////////////////////////////////////////
+
+        val backButton = findViewById<ImageButton>(R.id.setting_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
         val fontStyleList = arrayOf(
                 "IArabics",

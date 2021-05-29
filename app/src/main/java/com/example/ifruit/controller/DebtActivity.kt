@@ -56,6 +56,14 @@ class DebtActivity : AppCompatActivity() {
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
 
+        val backButton = findViewById<ImageButton>(R.id.debt_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, AccountingActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
+
 
         if (!updateRequire.equals("update")) {
             searchButton.setOnClickListener {

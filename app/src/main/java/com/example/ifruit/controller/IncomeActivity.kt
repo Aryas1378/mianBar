@@ -2,6 +2,7 @@ package com.example.ifruit.controller
 
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.database.Cursor
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -55,6 +56,14 @@ class IncomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener 
             income_textiew.text=income.toString()
 
 
+        }
+
+        val backButton = findViewById<ImageButton>(R.id.income_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, AccountingActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
         }
 
 

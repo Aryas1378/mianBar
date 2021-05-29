@@ -17,6 +17,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+        <ImageButton
+            android:id="@+id/setting_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"
+            android:padding="@dimen/small_margin" />
+
         <TextView
             android:id="@+id/title_content"
             android:layout_width="match_parent"
@@ -24,18 +33,22 @@
             android:layout_margin="@dimen/normal_margin"
             android:padding="@dimen/small_margin"
             android:text="@string/setting"
+            android:layout_toLeftOf="@id/setting_back"
             android:textColor="@color/white"
             android:textSize="@dimen/text_header_size"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/dividing_line"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title_content"
-            android:background="@drawable/line"
-            app:layout_constraintTop_toBottomOf="@id/title_content" />
+
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dividing_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_layout"
+        android:background="@drawable/line"
+        app:layout_constraintTop_toBottomOf="@id/title_layout"
+        tools:ignore="MissingConstraints" />
 
     <RelativeLayout
         android:id="@+id/setting_layout"

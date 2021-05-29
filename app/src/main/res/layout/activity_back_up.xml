@@ -16,6 +16,19 @@
         android:background="@color/bright_yellow"
 
         />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+    <ImageButton
+        android:id="@+id/backup_back"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_back"
+        android:padding="@dimen/small_margin"/>
 
     <TextView
         android:id="@+id/backup_header"
@@ -29,6 +42,8 @@
 
         android:textColor="@color/black"
         android:textSize="25dp" />
+
+    </RelativeLayout>
 
     <RadioGroup
         android:id="@+id/radio_group"

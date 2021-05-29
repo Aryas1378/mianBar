@@ -39,7 +39,7 @@ class FruitInformationActivity : AppCompatActivity() {
         val fruitActivitySaveData = findViewById<ImageButton>(R.id.fruit_save_btn)
         dbHandler = DataBaseHelper(this)
 
-
+        ////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
         // SET BACKGROUND COLOR OF COST ACTIVITY
         var Color = Color.parseColor(getSetting?.color.toString())
@@ -49,6 +49,15 @@ class FruitInformationActivity : AppCompatActivity() {
         var fontName = getSetting?.font?.toLowerCase()
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
+        ///////////////////////////////////////////////////////////////
+
+        val backButton = findViewById<ImageButton>(R.id.fruitinfo_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, AccountingActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
 
 

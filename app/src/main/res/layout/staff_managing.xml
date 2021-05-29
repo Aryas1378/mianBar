@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/background"
     android:background="#757575"
     tools:context=".controller.StaffManagingActivity">
 
@@ -15,11 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageButton
+            android:id="@+id/employee_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"
+            android:padding="@dimen/small_margin" />
+
         <TextView
             android:id="@+id/employee_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_toLeftOf="@id/contract_back"
             android:padding="@dimen/normal_margin"
             android:text="@string/employee_manage"
             android:textColor="@color/white"
@@ -32,9 +40,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/normal_margin"
             android:background="@drawable/ic_search"
-            android:padding="@dimen/normal_margin"
-            android:layout_marginLeft="@dimen/normal_margin"/>
+            android:padding="@dimen/normal_margin" />
     </RelativeLayout>
 
     <TextView
@@ -44,12 +52,10 @@
         android:layout_below="@+id/header"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/line"
-        android:gravity="center_horizontal"
-        android:layout_marginRight="@dimen/text_small_size"
         android:layout_marginLeft="@dimen/text_small_size"
-        />
-
+        android:layout_marginRight="@dimen/text_small_size"
+        android:background="@drawable/line"
+        android:gravity="center_horizontal" />
 
 
     <EditText
@@ -65,26 +71,25 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
-        />
+        android:textColorHint="@color/white" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/stuff_job_title"-->
-<!--        android:layout_width="350dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/stuff_name"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_margin="@dimen/normal_margin"-->
-<!--        android:layout_marginTop="@dimen/large_margin"-->
-<!--        android:background="@drawable/edit_text_border2"-->
-<!--        android:hint="@string/employee_job_title_hint"-->
-<!--        android:maxLength="@android:integer/config_shortAnimTime"-->
-<!--        android:maxLines="1"-->
-<!--        android:padding="@dimen/normal_margin"-->
-<!--        android:textColorHint="@color/white"-->
-<!--        android:textColor="@color/white"-->
-<!--        />-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/stuff_job_title"-->
+    <!--        android:layout_width="350dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/stuff_name"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_margin="@dimen/normal_margin"-->
+    <!--        android:layout_marginTop="@dimen/large_margin"-->
+    <!--        android:background="@drawable/edit_text_border2"-->
+    <!--        android:hint="@string/employee_job_title_hint"-->
+    <!--        android:maxLength="@android:integer/config_shortAnimTime"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:padding="@dimen/normal_margin"-->
+    <!--        android:textColorHint="@color/white"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        />-->
 
     <EditText
         android:id="@+id/stuff_phone_number"
@@ -95,15 +100,14 @@
         android:layout_margin="@dimen/normal_margin"
         android:layout_marginTop="@dimen/large_margin"
         android:background="@drawable/edit_text_border2"
+        android:gravity="right"
         android:hint="@string/employee_phone_num_hint"
+        android:inputType="phone"
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
-        android:inputType="phone"
-        android:gravity="right"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
-        />
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/stuff_salary"
@@ -118,51 +122,47 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
-        />
+        android:textColorHint="@color/white" />
 
 
     <Spinner
         android:id="@+id/job_title_spiner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/stuff_managing_size_text_filed"
-        android:entries="@array/job_title"
         android:layout_below="@+id/stuff_salary"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/text_xlarge_size"
         android:layout_marginRight="@dimen/xxxlarge_margin"
-        />
+        android:entries="@array/job_title" />
 
     <TextView
         android:id="@+id/date_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="تاریخ"
-        tools:ignore="MissingConstraints"
         android:layout_below="@+id/job_title_spiner"
-        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/date_margin_top"
+        android:layout_marginRight="@dimen/btn_margin_larger"
+        android:text="تاریخ"
         android:textColor="@color/white"
         android:textSize="@dimen/text_xlarge_size"
-        android:layout_marginRight="@dimen/btn_margin_larger"
-        android:layout_marginTop="@dimen/date_margin_top"
-        />
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button_date"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Jan 01 2020"
-        android:textSize="20sp"
-        android:textColor="@color/black"
         android:layout_below="@id/job_title_spiner"
         android:layout_marginLeft="@dimen/btn_margin"
-        android:background="@drawable/edit_text_border"
         android:layout_marginTop="33sp"
-        app:backgroundTint="@color/gray"
-        />
+        android:background="@drawable/edit_text_border"
+        android:text="Jan 01 2020"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/gray" />
 
     <ImageButton
         android:id="@+id/stuff_sub_btn"
@@ -170,13 +170,12 @@
         android:layout_height="150dp"
 
         android:layout_below="@id/button_date"
-        android:layout_marginTop="@dimen/normal_margin"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/normal_margin"
 
 
-        android:text="ثبت"
         android:background="@drawable/save_button"
-        />
+        android:text="ثبت" />
 
 
 </RelativeLayout>

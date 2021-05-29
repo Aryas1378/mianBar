@@ -1,5 +1,6 @@
 package com.example.ifruit.controller
 
+import android.content.Intent
 import android.database.Cursor
 import android.database.DatabaseUtils
 import android.graphics.Color
@@ -56,6 +57,8 @@ class InvoiceActivity : AppCompatActivity() {
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
+
+
 
         var result= db!!.readFruitData()
         for (i in 0..(result?.size-1)){

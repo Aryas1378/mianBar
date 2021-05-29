@@ -48,6 +48,7 @@ class ContractActivity : AppCompatActivity() {
         val contractActivitySaveData = findViewById<ImageButton>(R.id.contract_save_btn)
 
 
+        //////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
         // SET BACKGROUND COLOR OF COST ACTIVITY
         var Color = Color.parseColor(getSetting?.color.toString())
@@ -57,7 +58,15 @@ class ContractActivity : AppCompatActivity() {
         var fontName = getSetting?.font?.toLowerCase()
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
+        /////////////////////////////////////////////////////////////////////
 
+        val backButton = findViewById<ImageButton>(R.id.contract_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, AccountingActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
         if (!updateRequire.equals("update")) {
             searchButton.setOnClickListener {

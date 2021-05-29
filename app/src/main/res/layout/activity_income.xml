@@ -8,41 +8,76 @@
     tools:context=".controller.IncomeActivity"
     android:padding="8dp">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginBottom="@dimen/small_margin"
-        android:text="درآمد"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/app_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/income_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:padding="@dimen/small_margin" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:text="درآمد"
+            android:layout_toLeftOf="@id/income_back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_header_size"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </RelativeLayout>
 
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/large_margin"-->
+<!--        android:layout_marginBottom="@dimen/small_margin"-->
+<!--        android:text="درآمد"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/app_logo"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
 
-        android:foregroundGravity="left"
-        android:scaleType="centerInside"
-        android:src="@drawable/logo"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/app_logo"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+
+<!--        android:foregroundGravity="left"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@drawable/logo"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
 
     <LinearLayout
         android:id="@+id/start_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/app_logo"
+        app:layout_constraintTop_toBottomOf="@id/header"
         android:layoutDirection="rtl">
         <TextView
             android:id="@+id/startDate_textview"

@@ -13,11 +13,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+        <ImageButton
+            android:id="@+id/cost_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"
+            android:padding="@dimen/small_margin" />
+
         <TextView
             android:id="@+id/cost_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_toLeftOf="@id/cost_back"
             android:padding="@dimen/normal_margin"
             android:text="@string/fee"
             android:textColor="@color/white"
@@ -30,9 +40,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/normal_margin"
             android:background="@drawable/ic_search"
-            android:padding="@dimen/normal_margin"
-            android:layout_marginLeft="@dimen/normal_margin"/>
+            android:padding="@dimen/normal_margin" />
     </RelativeLayout>
 
     <TextView
@@ -56,8 +66,8 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         tools:ignore="MissingConstraints" />
 
     <EditText

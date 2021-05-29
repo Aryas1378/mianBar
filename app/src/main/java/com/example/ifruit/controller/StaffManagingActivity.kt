@@ -45,16 +45,26 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         val dataText = findViewById<TextView>(R.id.date_text_view)
         val background = findViewById<RelativeLayout>(R.id.background)
 
+        ///////////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
         // SET BACKGROUND COLOR OF COST ACTIVITY
         var Color = Color.parseColor(getSetting?.color.toString())
         background.setBackgroundColor(Color)
+
 
         // SET TEXTS FONT INSIDE COST ACTIVITY
         var fontName = getSetting?.font?.toLowerCase()
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
         dataText.typeface = font
+        ///////////////////////////////////////////////////////////////////////////////
+        val backButton = findViewById<ImageButton>(R.id.employee_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, ManagementActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
         //job title spinner definitions
         val job_title_spiner: Spinner = findViewById(R.id.job_title_spiner)

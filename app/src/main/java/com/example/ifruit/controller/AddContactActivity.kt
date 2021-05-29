@@ -1,5 +1,6 @@
 package com.example.ifruit.controller
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,13 @@ class AddContactActivity : AppCompatActivity() {
         addContactHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
 
+        val backButton = findViewById<ImageButton>(R.id.addcontact_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, SMSPanelActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
         saveContactData.setOnClickListener {
             if (!TextUtils.isEmpty(addContactEditText.text.toString())

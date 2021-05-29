@@ -1,6 +1,7 @@
 package com.example.ifruit.controller
 
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
@@ -50,6 +51,14 @@ class BackUpActivity : AppCompatActivity() {
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
+
+        val backButton = findViewById<ImageButton>(R.id.backup_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
         var userFileOutPutStream: FileOutputStream? = null
         var debtFileOutPutStream: FileOutputStream? = null

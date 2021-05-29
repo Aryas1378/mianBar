@@ -28,6 +28,7 @@ class AccountingActivity : AppCompatActivity() {
         val contractBtn = findViewById<ImageButton>(R.id.contract)
         val fruitInfoBtn = findViewById<ImageButton>(R.id.fruitinfo)
         val invoiceActivity = findViewById<ImageButton>(R.id.invoice)
+        val backButton = findViewById<ImageButton>(R.id.accounting_back)
 
         ////////////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
@@ -40,6 +41,13 @@ class AccountingActivity : AppCompatActivity() {
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
+
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
         costBtn.setOnClickListener {
             val intent = Intent(this, CostActivity::class.java)

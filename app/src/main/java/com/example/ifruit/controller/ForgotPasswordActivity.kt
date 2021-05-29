@@ -1,9 +1,11 @@
 package com.example.ifruit.controller
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.example.ifruit.R
@@ -42,5 +44,14 @@ class ForgotPasswordActivity : AppCompatActivity() {
         telegramID.typeface = font
         emailLink.typeface = font
         ////////////////////////////////////////////////////////////////////////
+
+//        val backButton = findViewById<ImageButton>(R.id.addcontact_back)
+//        backButton.setOnClickListener {
+//            val intent = Intent(this, MainMenuActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//            finish()
+//        }
+//
     }
 }

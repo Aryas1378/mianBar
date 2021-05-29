@@ -47,7 +47,13 @@ class SMSPanelActivity : AppCompatActivity() {
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
 
-
+        val backButton = findViewById<ImageButton>(R.id.smspanel_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, ManagementActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
 
 
 

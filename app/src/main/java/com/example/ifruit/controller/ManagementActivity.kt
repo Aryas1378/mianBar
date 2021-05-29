@@ -33,6 +33,14 @@ class ManagementActivity : AppCompatActivity() {
         activityHeader.typeface = font
         ////////////////////////////////////////////////////////////////////////
 
+        val backButton = findViewById<ImageButton>(R.id.management_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+            finish()
+            finish()
+        }
+
         initViews()
 
 
