@@ -40,17 +40,17 @@ class BackUpActivity : AppCompatActivity() {
         val background = findViewById<RelativeLayout>(R.id.backup_background)
         val activityHeader = findViewById<TextView>(R.id.backup_header)
 
-        ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
         val getSetting = dbHandler?.readSettingInfo(1)
-        // SET BACKGROUND COLOR OF COST ACTIVITY
+// SET BACKGROUND COLOR OF COST ACTIVITY
         var Color = Color.parseColor(getSetting?.color.toString())
         background.setBackgroundColor(Color)
 
-        // SET TEXTS FONT INSIDE COST ACTIVITY
+// SET TEXTS FONT INSIDE COST ACTIVITY
         var fontName = getSetting?.font?.toLowerCase()
         var font = Typeface.createFromAsset(assets, "font/$fontName.ttf")
         activityHeader.typeface = font
-        ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
         val backButton = findViewById<ImageButton>(R.id.backup_back)
         backButton.setOnClickListener {
@@ -104,8 +104,14 @@ class BackUpActivity : AppCompatActivity() {
                     userCurser.moveToNext()
                 }
                 userFileOutPutStream.close()
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
 
-
+            try{
                 while (!debtCurser.isNull(0)){
                     debtFileOutPutStream?.write("\n".toByteArray())
                     debtFileOutPutStream?.write(debtCurser.getString(0).toByteArray())
@@ -118,7 +124,14 @@ class BackUpActivity : AppCompatActivity() {
                     debtCurser.moveToNext()
                 }
                 debtFileOutPutStream.close()
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
 
+            try{
                 while (!costCurser.isNull(0)){
                     costFileOutPutStream?.write("\n".toByteArray())
                     costFileOutPutStream?.write(costCurser.getString(0).toByteArray())
@@ -131,7 +144,14 @@ class BackUpActivity : AppCompatActivity() {
                     costCurser.moveToNext()
                 }
                 costFileOutPutStream.close()
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
 
+            try{
                 while (!contractCurser.isNull(0)){
                     contractFileOutPutStream?.write("\n".toByteArray())
                     contractFileOutPutStream?.write(contractCurser.getString(0).toByteArray())
@@ -150,7 +170,14 @@ class BackUpActivity : AppCompatActivity() {
                     contractCurser.moveToNext()
                 }
                 contractFileOutPutStream.close()
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
 
+            try{
                 while (!fruitCurser.isNull(0)){
                     fruitFileOutPutStream?.write("\n".toByteArray())
                     fruitFileOutPutStream?.write(fruitCurser.getString(0).toByteArray())
@@ -163,8 +190,14 @@ class BackUpActivity : AppCompatActivity() {
                     fruitCurser.moveToNext()
                 }
                 fruitFileOutPutStream.close()
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
 
-
+            try{
                 while (!salaryCurser.isNull(0)){
                     salaryFileOutPutStream?.write("\n".toByteArray())
                     salaryFileOutPutStream?.write(salaryCurser.getString(0).toByteArray())
@@ -178,6 +211,13 @@ class BackUpActivity : AppCompatActivity() {
                 }
                 salaryFileOutPutStream.close()
 
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
+            try{
                 while (!employeeCurser.isNull(0)){
                     employeeFileOutPutStream?.write("\n".toByteArray())
                     employeeFileOutPutStream?.write(employeeCurser.getString(0).toByteArray())
@@ -194,7 +234,14 @@ class BackUpActivity : AppCompatActivity() {
                     employeeCurser.moveToNext()
                 }
                 employeeFileOutPutStream.close()
+            }catch (e: FileNotFoundException){
+                e.printStackTrace()
+            }
+            catch (e: Exception){
+                e.printStackTrace()
+            }
 
+            try{
                 while (!contactCurser.isNull(0)){
                     contactFileOutPutStream?.write("\n".toByteArray())
                     contactFileOutPutStream?.write(contactCurser.getString(0).toByteArray())
@@ -208,8 +255,6 @@ class BackUpActivity : AppCompatActivity() {
                 }
                 contactFileOutPutStream.close()
 
-
-
             }catch (e: FileNotFoundException){
                 e.printStackTrace()
             }
@@ -218,8 +263,9 @@ class BackUpActivity : AppCompatActivity() {
             }
 
 
+
+
         }
 
     }
 }
-
