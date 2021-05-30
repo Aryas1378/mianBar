@@ -268,7 +268,7 @@ class SearchViewActivity : AppCompatActivity() {
         System.out.println("contract reycle ......")
         dbHandler = DataBaseHelper(this)
         val dataGeneratorFromDataBase = DataGeneratorFromDataBase()
-        for (i in 1..dbHandler!!.getContactTableRowCount()) {
+        for (i in 1..dbHandler!!.getContractTableRowCount()) {
             val index = dbHandler!!.readContractInfo(i)
             dataGeneratorFromDataBase.contractGenerateData(
                 index?.name.toString(),
