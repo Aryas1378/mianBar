@@ -7,10 +7,7 @@ import android.database.Cursor
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.ifruit.R
 import com.example.ifruit.database.DataBaseHelper
@@ -49,11 +46,15 @@ class IncomeActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener 
 
 
         search_btn.setOnClickListener {
-            var taxOverProfit:Float=taxOverProfit()
-            var insurance:Float=insurance()
-            var income:Float=income().toFloat()
-            income-=(taxOverProfit.plus(insurance))
-            income_textiew.text=income.toString()
+            if(startDate_textview.text.toString().isEmpty() or endDate_textiew.text.toString().isEmpty())
+                Toast.makeText(this, "لطفا تاریخ ها را وارد کنید", Toast.LENGTH_LONG).show()
+            else {
+                var taxOverProfit: Float = taxOverProfit()
+                var insurance: Float = insurance()
+                var income: Float = income().toFloat()
+                income -= (taxOverProfit.plus(insurance))
+                income_textiew.text = income.toString()
+            }
 
 
         }

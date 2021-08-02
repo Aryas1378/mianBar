@@ -2,6 +2,7 @@ package com.example.ifruit.controller
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.database.Cursor
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -92,21 +93,40 @@ class StaffManagingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         }
 
         saveBtn.setOnClickListener {
-            if (staffName.text.isEmpty() or staffAmount.text.isEmpty() or staffPhone.text.isEmpty()) {
-                Toast.makeText(
-                    this@StaffManagingActivity,
-                    "اطلاعات را کامل کنید",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else {
-                newStaff.firstName = staffName.text.toString()
-                newStaff.phoneNumber = staffPhone!!.text.toString().toLong()
-                newStaff.dateOfEmployee = dateValue
-                newStaff.salary = staffAmount.text.toString().toLong()
-                newStaff.jobTitle = spinnerRes
-                dbHandler?.createEmployeeManagementInfo(newStaff)
-                Toast.makeText(this@StaffManagingActivity, "ذخیره شد", Toast.LENGTH_LONG).show()
+            var staffFound:Boolean = false
+            val getStuffInfo: Cursor? = dbHandler?.getEmployeeManagementTableRow()
+            getStuffInfo!!.moveToFirst()
+            while (getStuffInfo.moveToNext()){
+                
+                if(getStuffInfo.getString(1).equals(staffName.text.toString()) and getStuffInfo.getString(2).equals(staffPhone.text.toString())) {
+
+                    Toast.makeText(
+                        this@StaffManagingActivity,
+                        "کاربر قبلا ثبت شده!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    break
+                    staffFound = true
+                }
             }
+            if (!staffFound) {
+                if (staffName.text.isEmpty() or staffAmount.text.isEmpty() or staffPhone.text.isEmpty()) {
+                    Toast.makeText(
+                        this@StaffManagingActivity,
+                        "لطفا اطلاعات را کامل کنید",
+                        Toast.LENGTH_LONG
+                    ).show()
+                } else {
+                    newStaff.firstName = staffName.text.toString()
+                    newStaff.phoneNumber = staffPhone!!.text.toString().toLong()
+                    newStaff.dateOfEmployee = dateValue
+                    newStaff.salary = staffAmount.text.toString().toLong()
+                    newStaff.jobTitle = spinnerRes
+                    dbHandler?.createEmployeeManagementInfo(newStaff)
+                    Toast.makeText(this@StaffManagingActivity, "ذخیره شد", Toast.LENGTH_LONG).show()
+                }
+            }
+
         }
         searchBtn.setOnClickListener {
             val intent = Intent(this, SearchViewActivity::class.java)

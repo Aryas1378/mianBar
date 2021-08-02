@@ -810,6 +810,13 @@ class DataBaseHelper(context: Context) :
 
     }
 
+    fun getEmployeeManagementTableRow(): Cursor{
+        val db: SQLiteDatabase = readableDatabase
+        val counter = "SELECT * FROM $TABLE_NAME7"
+        var cursor: Cursor = db.rawQuery(counter, null)
+        return cursor
+    }
+
     fun getAllEmployee(): Cursor {
         val employeeDb =this.readableDatabase
         val id:Int=100
