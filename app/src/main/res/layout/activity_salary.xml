@@ -101,7 +101,8 @@
         android:inputType="phone"
         android:textColor="@color/white"
         android:gravity="right"
-        android:maxEms="5"
+        
+
         android:textColorHint="@color/white" />
 
     <ImageButton
