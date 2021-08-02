@@ -93,9 +93,11 @@
         android:layout_margin="@dimen/small_margin"
         android:background="@drawable/edit_text_border2"
         android:hint="@string/national_code_hint"
-        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLength="10"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="number"
+
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -112,6 +114,7 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
     <EditText
@@ -140,6 +143,7 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="date"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
