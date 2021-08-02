@@ -119,6 +119,8 @@ class InvoiceActivity : AppCompatActivity() {
         add_btn.setOnClickListener {
             if(amountTextview.text.toString().isEmpty())
                 Toast.makeText(this, "لطفا مقدار وزن را وارد کنید", Toast.LENGTH_LONG).show()
+            else if(fruitEditTextName.text.toString().isEmpty())
+                Toast.makeText(this, "لطفا نام محصول را وارد کنید", Toast.LENGTH_LONG).show()
             else {
                 if (invoiceNumber == 0) {
                     addItem(1)
@@ -132,9 +134,14 @@ class InvoiceActivity : AppCompatActivity() {
         }
 
         submit_btn.setOnClickListener {
-            invoiceNumber+=1
-            Toast.makeText(this,"فاکتور ثبت شد" , Toast.LENGTH_SHORT).show()
+            if(fruitEditTextName.text.toString().isEmpty() or amountTextview.text.toString().isEmpty())
+                Toast.makeText(this, "هیچ محصولی افزوده نشده!", Toast.LENGTH_LONG).show()
+            else {
+                invoiceNumber += 1
+                Toast.makeText(this, "فاکتور ثبت شد", Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 
     private fun removeItem(id: Int,invoiceNumber: Int) {
