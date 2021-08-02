@@ -111,6 +111,9 @@ class DebtActivity : AppCompatActivity() {
                 System.out.println(debtorAmountEditText.text.toString())
                 Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
+            else{
+                Toast.makeText(this, "لطفا فیلد ها را کامل کنید", Toast.LENGTH_LONG).show()
+            }
 
 
         }

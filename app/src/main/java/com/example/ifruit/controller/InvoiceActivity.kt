@@ -117,11 +117,14 @@ class InvoiceActivity : AppCompatActivity() {
         }
 
         add_btn.setOnClickListener {
-            if (invoiceNumber==0){
-                addItem(1)
-            }else
-                addItem(invoiceNumber + 1)
-
+            if(amountTextview.text.toString().isEmpty())
+                Toast.makeText(this, "لطفا مقدار وزن را وارد کنید", Toast.LENGTH_LONG).show()
+            else {
+                if (invoiceNumber == 0) {
+                    addItem(1)
+                } else
+                    addItem(invoiceNumber + 1)
+            }
         }
 
         decrease_btn.setOnClickListener {
