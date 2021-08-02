@@ -120,6 +120,9 @@ class ContractActivity : AppCompatActivity() {
                 )
                 Toast.makeText(this, "با موفقیت ویرایش شد", Toast.LENGTH_LONG).show()
             }
+            else{
+                Toast.makeText(this, "لفطا فیلد ها را کامل کنید", Toast.LENGTH_LONG).show()
+            }
 
 
         }
