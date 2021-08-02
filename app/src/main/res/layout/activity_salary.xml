@@ -95,14 +95,12 @@
         android:layout_margin="@dimen/normal_margin"
         android:background="@drawable/edit_text_border2"
         android:hint="@string/salary_phone_num_hint"
-        android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
         android:inputType="phone"
         android:textColor="@color/white"
         android:gravity="right"
-        
-
+        android:maxLength="11"
         android:textColorHint="@color/white" />
 
     <ImageButton

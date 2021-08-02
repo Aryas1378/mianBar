@@ -81,6 +81,7 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -96,6 +97,7 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 

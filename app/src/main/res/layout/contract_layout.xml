@@ -123,18 +123,25 @@
                 android:layout_below="@id/national_code"
                 android:padding="@dimen/cardview_margin"
                 />
+
             <TextView
                 android:id="@+id/contract_date_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="186dp"
+                android:layout_height="42dp"
                 android:layout_below="@id/contract_product_info"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="198dp"
+                android:layout_marginLeft="176dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
                 android:layout_toRightOf="@id/contract_date"
                 android:padding="@dimen/cardview_margin"
                 android:text="@string/contract_date"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="@dimen/text_normal_size"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/contract_date"
                 android:layout_width="wrap_content"

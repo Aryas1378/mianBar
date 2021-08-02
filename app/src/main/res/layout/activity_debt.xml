@@ -78,9 +78,11 @@
         android:layout_margin="@dimen/normal_margin"
         android:background="@drawable/edit_text_border2"
         android:hint="@string/debtor_phone_hint"
-        android:maxLength="@android:integer/config_shortAnimTime"
+        android:maxLength="11"
         android:maxLines="1"
+        android:inputType="phone"
         android:padding="@dimen/normal_margin"
+        android:gravity="right"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
@@ -96,6 +98,7 @@
         android:maxLength="@android:integer/config_shortAnimTime"
         android:maxLines="1"
         android:padding="@dimen/normal_margin"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
